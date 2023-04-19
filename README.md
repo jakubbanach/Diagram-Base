@@ -12,8 +12,8 @@ identificator <br>
 @enduml <br>
 
 * KLAS <br>
-Class <br>
-Attribute <br>
+Class = {"class"}<br>
+Attribute = {"attribute"}<br>
 Multiplicity <br>
 Role <br>
 Operation <br>
@@ -42,7 +42,7 @@ actor <br>
 ### Gramatyka:
 G = <N, T, P, S>
 
-N = {}
+N = {TYPE, }
 T = {}
 P = {}
 S = {TYPE}
