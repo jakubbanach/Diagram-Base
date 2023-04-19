@@ -12,8 +12,8 @@ identificator <br>
 @enduml <br>
 
 * KLAS <br>
-Class = {"class"}<br>
-Attribute = {"attribute"}<br>
+Class<br>
+Attribute<br>
 Multiplicity <br>
 Role <br>
 Operation <br>
