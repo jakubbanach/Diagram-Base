@@ -16,13 +16,13 @@ Extension	<|--	<br>
 Composition	*--	<br>
 Aggregation	o--<br>
 
-* USE CASE
+* USE CASE <br>
 (dashes) -- <br>
 (periods) .. <br>
 (equals) == <br>
 (underscores) __ <br>
 
-* SEKWENCYJNE
+* SEKWENCYJNE <br>
 
 
 ### Gramatyka:
