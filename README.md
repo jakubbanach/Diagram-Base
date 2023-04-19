@@ -21,8 +21,8 @@ Abstract Class <br>
 '+' <br>
 '-' <br>
 '#' <br>
-Composition	*--	<br>
-Aggregation	o--<br>
+Composition	(*--)	<br>
+Aggregation	(o--)<br>
 Dependency <br>
 Realization <br>
 Inheritance <br>
