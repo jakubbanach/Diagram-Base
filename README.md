@@ -48,3 +48,4 @@ P = {}
 S = {TYPE}
 
 ### Generator parserów: ANTLR
+cd parser; antlr4 Diagrams.g4
