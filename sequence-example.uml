@@ -1,0 +1,12 @@
+!sequence Nazwa
+
+lifeline Linia1;
+lifeline Linia2;
+lifeline Linia3;
+
+Linia1 ==> Linia2: "asdk";
+Linia2 --> Linia1;
+Linia2 -*> Linia1;
+
+Linia1 --> new Linia4;
+Linia2 --> delete Linia4;

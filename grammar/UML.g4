@@ -5,23 +5,24 @@ options{
 
 //Diagram klasy
 
-DiagramUML: (DiagramKlas|DiagramSekwencji|DiagramUseCase);
+s: DiagramKlas;
+// |DiagramSekwencji|DiagramUseCase;
 DiagramKlas: '!classdiagram' (Klasa|Interface|Enum|Abstract)+ Związek*;
 
-Klasa: 'class' Nazwa '{' Inside '}';
-Interface: 'interface' Nazwa '{' Inside '}';
-Enum: 'enum' Nazwa '{' InsideEnum '}';
-Abstract: 'abstract' Nazwa '{' Inside '}' ;
+Klasa: 'class' Nazwa ('{' Inside '}');
+Interface: 'interface' Nazwa ('{' Inside '}');
+Enum: 'enum' Nazwa ('{' InsideEnum '}');
+Abstract: 'abstract' Nazwa ('{' Inside '}');
 
-Nazwa: [a-Z]+[a-Z0-9]*;
-Inside: (Pole|Metoda)*;
+Nazwa: [a-zA-Z_]+ [a-zA-Z0-9_]*;
+Inside: (Pole|Metoda)+;
 Pole: Zasięg Nazwa ':' Typ ';';
 Zasięg: '+'|'-'|'#'|'~';
 Typ: 'int'|'string'|'double'|'char'|'float' ('[' ([1-9]+[0-9]*)? ']')?; //.....
 Metoda: Zasięg Nazwa '(' Argumenty ')' ':' Typ ';';
 Argumenty: Nazwa ':' Typ;
 
-InsideEnum: PoleEnum*;
+InsideEnum: PoleEnum+;
 PoleEnum: Nazwa ';';
 
 Związek: Nazwa ZKrotnością|Dziedziczenie';';
@@ -29,13 +30,14 @@ ZKrotnością: '{' Krotność '}' '..'|'--'|'o--'|'--o'|'*--'|'--*' Nazwa '{' Kr
 Dziedziczenie: '<--'|'-->' Nazwa;
 Krotność: Liczba|(Liczba|'*' '..' Liczba|'*');
 Liczba: '0'|([1-9]+[0-9]*);
+
 //SPRAWDZIĆ
 
 
 // Początek: '!';
 // DiagramKlas:;
-DiagramUseCase:;
-DiagramSekwencji:;
+// DiagramUseCase:;
+// DiagramSekwencji:;
 
 // Zależność: '..';
 // Asocjacja: '--';
