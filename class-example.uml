@@ -1,0 +1,15 @@
+!classdiagram
+
+class Klasa {
+    +asd: string;
+    -sd: int;
+    #sarae(arg1: int, arg2: string): void;
+}
+
+enum Enum {
+    pole;
+}
+
+Klasa --> Klasa;
+
+Klasa o-- Klasa;

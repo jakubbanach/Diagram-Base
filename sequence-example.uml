@@ -1,0 +1,40 @@
+!sequence Nazwa
+
+lifeline Linia1;
+lifeline Linia2;
+lifeline Linia3;
+
+Linia1 ==> Linia2: "asdk";
+
+if cond < 1 {
+    Linia2 --> Linia1;
+} else {
+    Linia2 -*> Linia1: "sa";
+}
+
+for 4 {
+Linia1 ==> Linia2: "asdk";
+    
+}
+
+while warunek {
+Linia1 ==> Linia2: "asdk";
+
+}
+
+par {
+Linia1 ==> Linia2: "asdk";
+
+} and {
+Linia1 ==> Linia2: "asdk";
+
+}
+
+critical {
+Linia1 ==> Linia2: "asdk";
+
+}
+
+
+Linia1 --> new Linia4: "sd";
+Linia2 --> delete Linia4: "sa";
