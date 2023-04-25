@@ -66,8 +66,8 @@ actionType:
 	| actionOperator 'delete';
 actionOperator: '==>' | '<==' | '-->' | '<--' | '-*>' | '<*-';
 actionsBlock: alt | opt | par | critical | forLoop | whileLoop;
-alt: 'if' condition instruction;
-opt: 'if' condition instruction 'else' instruction;
+alt: 'if' condition instruction 'else' instruction;
+opt: 'if' condition instruction;
 par: 'par' instruction ('and' instruction)*;
 critical: 'critical' instruction;
 forLoop: 'for' NUMBER instruction;
