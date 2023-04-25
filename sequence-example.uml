@@ -5,8 +5,31 @@ lifeline Linia2;
 lifeline Linia3;
 
 Linia1 ==> Linia2: "asdk";
-Linia2 --> Linia1;
-Linia2 -*> Linia1;
+if () {
+    Linia2 --> Linia1;
+} else {
+    Linia2 -*> Linia1;
+}
+
+for 4 {
+
+}
+
+while warunek {
+
+}
+
+par {
+
+} and {
+
+} and {
+
+}
+
+critical {
+
+}
 
 Linia1 --> new Linia4;
 Linia2 --> delete Linia4;
