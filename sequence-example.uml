@@ -7,7 +7,7 @@ lifeline Linia3;
 Linia1 ==> Linia2: "asdk";
 
 if cond < 1 {
-    Linia2 --> Linia1;
+    Linia2 ..> Linia1;
 } else {
     Linia2 -*> Linia1: "sa";
 }
@@ -36,5 +36,5 @@ Linia1 ==> Linia2: "asdk";
 }
 
 
-Linia1 --> new Linia4: "sd";
-Linia2 --> delete Linia4: "sa";
+Linia1 ..> new Linia4: "sd";
+Linia2 ..> delete Linia4: "sa";

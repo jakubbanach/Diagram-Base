@@ -1,89 +1,200 @@
 grammar UML;
 options {
-	language='Python3';
+	language = 'Python3';
 }
 
 s: (classDiagram | sequenceDiagram | useCaseDiagram) EOF;
 
 // Class diagram
 classDiagram:
-	'!classdiagram' IDENTIFIER? (
+	CLASS_START IDENTIFIER? (
 		class
 		| interface
 		| enum
 		| abstractClass
 	)+ relationship*;
-class: 'class' IDENTIFIER '{' classContents '}';
-interface: 'interface' IDENTIFIER '{' classContents '}';
-abstractClass: 'abstract' IDENTIFIER '{' classContents '}';
-enum: 'enum' IDENTIFIER '{' enumContents '}';
+class:
+	CLASS IDENTIFIER LEFT_CURLY_BRACKET classContents RIGHT_CURLY_BRACKET;
+interface:
+	INTERFACE IDENTIFIER LEFT_CURLY_BRACKET classContents RIGHT_CURLY_BRACKET;
+abstractClass:
+	ABSTRACT IDENTIFIER LEFT_CURLY_BRACKET classContents RIGHT_CURLY_BRACKET;
+enum:
+	ENUM IDENTIFIER LEFT_CURLY_BRACKET enumContents RIGHT_CURLY_BRACKET;
 classContents: (field | method)+;
-field: scope IDENTIFIER ':' type ';';
-scope: '+' | '-' | '#' | '~';
+field: scope IDENTIFIER COLON type LINE_END;
+scope:
+	PUBLIC_SCOPE
+	| PRIVATE_SCOPE
+	| PROTECTED_SCOPE
+	| PACKAGE_SCOPE;
 type: (
-		'int'
-		| 'string'
-		| 'double'
-		| 'char'
-		| 'float'
+		INT_TYPE
+		| STRING_TYPE
+		| DOUBLE_TYPE
+		| CHAR_TYPE
+		| FLOAT_TYPE
 		| IDENTIFIER
-	) ('[' NUMBER_NON_ZERO? ']')?;
-method: scope IDENTIFIER '(' arguments ')' ':' type ';';
-arguments: argument | argument ',' arguments;
-argument: IDENTIFIER ':' type;
+	) (LEFT_SQUARE_BRACKET NUMBER_NON_ZERO? RIGHT_SQUARE_BRACKET)?;
+method:
+	scope IDENTIFIER LEFT_PARENTHESIS arguments RIGHT_PARENTHESIS COLON type LINE_END;
+arguments: argument | argument COMMA arguments;
+argument: IDENTIFIER COLON type;
 enumContents: (enumField)+;
-enumField: IDENTIFIER ';';
-relationship: IDENTIFIER (objectRelationship | inheritance) ';';
+enumField: IDENTIFIER LINE_END;
+relationship:
+	IDENTIFIER (objectRelationship | inheritance) LINE_END;
 objectRelationship:
-	('{' multiplicity '}')? (
-		'..'
-		| '--'
-		| 'o--'
-		| '--o'
-		| '*--'
-		| '--*'
-	) IDENTIFIER ('{' multiplicity '}')?;
-inheritance: ('<--' | '-->') IDENTIFIER;
-multiplicity: NUMBER | ((NUMBER | '*') '..' (NUMBER | '*'));
+	(LEFT_CURLY_BRACKET multiplicity RIGHT_CURLY_BRACKET)? (
+		DEPENDENCY
+		| ASSOCIATION
+		| PARTIAL_AGGREGATION_LEFT
+		| PARTIAL_AGGREGATION_RIGHT
+		| FULL_AGGREGATION_LEFT
+		| FULL_AGGREGATION_RIGHT
+	) IDENTIFIER (
+		LEFT_CURLY_BRACKET multiplicity RIGHT_CURLY_BRACKET
+	)?;
+inheritance: (INHERITANCE_LEFT | INHERITANCE_RIGHT) IDENTIFIER;
+multiplicity:
+	NUMBER
+	| ((NUMBER | MANY) MULTIPLICITY_OPERATOR (NUMBER | MANY));
 
 // Use case diagram
-useCaseDiagram: '!usecase' IDENTIFIER? actor* useCaseStatement*;
-actor: 'actor' IDENTIFIER ';';
+useCaseDiagram:
+	USE_CASE_START IDENTIFIER? actor* useCaseStatement*;
+actor: ACTOR IDENTIFIER LINE_END;
 useCaseStatement: package | useCaseDeclaration | dependency;
-useCaseDeclaration: 'case' IDENTIFIER STRING ';';
-dependency: IDENTIFIER dependencyOperator IDENTIFIER ';';
-dependencyOperator: '--' | '-i>' | '<i-' | '-e>' | '<e-';
-package: 'package' '{' (useCaseDeclaration | dependency | package)* '}';
+useCaseDeclaration: CASE IDENTIFIER STRING LINE_END;
+dependency: IDENTIFIER dependencyOperator IDENTIFIER LINE_END;
+dependencyOperator:
+	ASSOCIATION
+	| INCLUDE_RIGHT
+	| INCLUDE_LEFT
+	| EXTEND_RIGHT
+	| EXTEND_LEFT;
+package:
+	PACKAGE LEFT_CURLY_BRACKET (
+		useCaseDeclaration
+		| dependency
+		| package
+	)* RIGHT_CURLY_BRACKET;
 
 // Sequence diagram
-sequenceDiagram: '!sequence' IDENTIFIER? lifeline* seqStatement*;
-lifeline: 'lifeline' IDENTIFIER ';';
+sequenceDiagram:
+	SEQUENCE_START IDENTIFIER? lifeline* seqStatement*;
+lifeline: LIFELINE IDENTIFIER LINE_END;
 seqStatement: actionsBlock | action;
-action: IDENTIFIER actionType IDENTIFIER (':' STRING)? ';';
+action:
+	IDENTIFIER actionType IDENTIFIER (COLON STRING)? LINE_END;
 actionType:
 	actionOperator
-	| actionOperator 'new'
-	| actionOperator 'delete';
-actionOperator: '==>' | '<==' | '-->' | '<--' | '-*>' | '<*-';
+	| actionOperator NEW
+	| actionOperator DELETE;
+actionOperator:
+	MESSAGE_LEFT
+	| MESSAGE_RIGHT
+	| ASYNC_MESSAGE_LEFT
+	| ASYNC_MESSAGE_RIGHT
+	| BACK_MESSAGE_LEFT
+	| BACK_MESSAGE_RIGHT;
 actionsBlock: alt | opt | par | critical | forLoop | whileLoop;
-alt: 'if' condition instruction 'else' instruction;
-opt: 'if' condition instruction;
-par: 'par' instruction ('and' instruction)*;
-critical: 'critical' instruction;
-forLoop: 'for' NUMBER instruction;
-whileLoop: 'while' condition instruction;
-instruction: action | '{' action '}';
+alt: IF condition instruction ELSE instruction;
+opt: IF condition instruction;
+par: PAR instruction (AND instruction)*;
+critical: CRITICAL instruction;
+forLoop: FOR NUMBER instruction;
+whileLoop: WHILE condition instruction;
+instruction:
+	action
+	| LEFT_CURLY_BRACKET action RIGHT_CURLY_BRACKET;
 condition: (IDENTIFIER | NUMBER) booleanOperator (
 		IDENTIFIER
 		| NUMBER
 	)
-	| '!' IDENTIFIER | IDENTIFIER;
-booleanOperator: '<' | '>' | '>=' | '<=' | '!=' | '==';
+	| NOT IDENTIFIER
+	| IDENTIFIER;
+booleanOperator:
+	LESS_THAN
+	| GREATER_THAN
+	| EQUAL
+	| NOT_EQUAL
+	| LESS_THAN_OR_EQUAL
+	| GREATER_THAN_OR_EQUAL;
 
 // Lexer
+
+CLASS_START: '!classdiagram';
+CLASS: 'class';
+INTERFACE: 'interface';
+ENUM: 'enum';
+ABSTRACT: 'abstract';
+PUBLIC_SCOPE: '+';
+PRIVATE_SCOPE: '-';
+PROTECTED_SCOPE: '#';
+PACKAGE_SCOPE: '~';
+INT_TYPE: 'int';
+STRING_TYPE: 'string';
+DOUBLE_TYPE: 'double';
+CHAR_TYPE: 'char';
+FLOAT_TYPE: 'float';
+DEPENDENCY: '...';
+ASSOCIATION: '--';
+INHERITANCE_RIGHT: '-->';
+INHERITANCE_LEFT: '<--';
+PARTIAL_AGGREGATION_RIGHT: '--o';
+PARTIAL_AGGREGATION_LEFT: 'o--';
+FULL_AGGREGATION_RIGHT: '--*';
+FULL_AGGREGATION_LEFT: '*--';
+MULTIPLICITY_OPERATOR: '..';
+MANY: '*';
+
+USE_CASE_START: '!usecase';
+ACTOR: 'actor';
+CASE: 'case';
+INCLUDE_RIGHT: '-i>';
+INCLUDE_LEFT: '<i-';
+EXTEND_RIGHT: '-e>';
+EXTEND_LEFT: '<e-';
+PACKAGE: 'package';
+
+SEQUENCE_START: '!sequence';
+LIFELINE: 'lifeline';
+NEW: 'new';
+DELETE: 'delete';
+MESSAGE_RIGHT: '==>';
+MESSAGE_LEFT: '<==';
+BACK_MESSAGE_RIGHT: '..>';
+BACK_MESSAGE_LEFT: '<..';
+ASYNC_MESSAGE_RIGHT: '-*>';
+ASYNC_MESSAGE_LEFT: '<*-';
+IF: 'if';
+ELSE: 'else';
+PAR: 'par';
+AND: 'and';
+CRITICAL: 'critical';
+FOR: 'for';
+WHILE: 'while';
+NOT: '!';
+LESS_THAN: '<';
+GREATER_THAN: '>';
+LESS_THAN_OR_EQUAL: '<=';
+GREATER_THAN_OR_EQUAL: '>=';
+NOT_EQUAL: '!=';
+EQUAL: '==';
+
 WHITESPACE: [ \n\t\r]+ -> skip;
 COMMENT: '//' .* '\n' -> skip;
 IDENTIFIER: [a-zA-Z_]+ [a-zA-Z0-9_]*;
 NUMBER: '0' | ([1-9]+ [0-9]*);
 NUMBER_NON_ZERO: [1-9]+ [0-9]*;
 STRING: '"' ~["]* '"';
+LEFT_SQUARE_BRACKET: '[';
+RIGHT_SQUARE_BRACKET: ']';
+LEFT_CURLY_BRACKET: '{';
+RIGHT_CURLY_BRACKET: '}';
+LEFT_PARENTHESIS: '(';
+RIGHT_PARENTHESIS: ')';
+COMMA: ',';
+LINE_END: ';';
+COLON: ':';

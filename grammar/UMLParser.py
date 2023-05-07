@@ -10,7 +10,7 @@ else:
 
 def serializedATN():
     return [
-        4,1,68,363,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,4,2,5,7,5,2,6,7,
+        4,1,71,363,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,4,2,5,7,5,2,6,7,
         6,2,7,7,7,2,8,7,8,2,9,7,9,2,10,7,10,2,11,7,11,2,12,7,12,2,13,7,13,
         2,14,7,14,2,15,7,15,2,16,7,16,2,17,7,17,2,18,7,18,2,19,7,19,2,20,
         7,20,2,21,7,21,2,22,7,22,2,23,7,23,2,24,7,24,2,25,7,25,2,26,7,26,
@@ -35,106 +35,106 @@ def serializedATN():
         10,26,12,26,277,9,26,1,27,1,27,1,27,1,27,1,28,1,28,3,28,285,8,28,
         1,29,1,29,1,29,1,29,1,29,3,29,292,8,29,1,29,1,29,1,30,1,30,1,30,
         1,30,1,30,1,30,1,30,3,30,303,8,30,1,31,1,31,1,32,1,32,1,32,1,32,
-        1,32,1,32,3,32,313,8,32,1,33,1,33,1,33,1,33,1,34,1,34,1,34,1,34,
+        1,32,1,32,3,32,313,8,32,1,33,1,33,1,33,1,33,1,33,1,33,1,34,1,34,
         1,34,1,34,1,35,1,35,1,35,1,35,5,35,329,8,35,10,35,12,35,332,9,35,
         1,36,1,36,1,36,1,37,1,37,1,37,1,37,1,38,1,38,1,38,1,38,1,39,1,39,
         1,39,1,39,1,39,3,39,350,8,39,1,40,1,40,1,40,1,40,1,40,1,40,1,40,
         3,40,359,8,40,1,41,1,41,1,41,0,0,42,0,2,4,6,8,10,12,14,16,18,20,
         22,24,26,28,30,32,34,36,38,40,42,44,46,48,50,52,54,56,58,60,62,64,
-        66,68,70,72,74,76,78,80,82,0,9,1,0,10,13,2,0,14,18,65,65,1,0,24,
-        29,1,0,30,31,2,0,32,32,66,66,2,0,25,25,36,39,2,0,30,31,45,48,1,0,
-        65,66,1,0,57,62,362,0,87,1,0,0,0,2,91,1,0,0,0,4,109,1,0,0,0,6,115,
-        1,0,0,0,8,121,1,0,0,0,10,127,1,0,0,0,12,135,1,0,0,0,14,139,1,0,0,
-        0,16,145,1,0,0,0,18,147,1,0,0,0,20,155,1,0,0,0,22,169,1,0,0,0,24,
-        171,1,0,0,0,26,176,1,0,0,0,28,180,1,0,0,0,30,183,1,0,0,0,32,194,
-        1,0,0,0,34,204,1,0,0,0,36,211,1,0,0,0,38,213,1,0,0,0,40,229,1,0,
-        0,0,42,236,1,0,0,0,44,238,1,0,0,0,46,243,1,0,0,0,48,248,1,0,0,0,
-        50,250,1,0,0,0,52,262,1,0,0,0,54,278,1,0,0,0,56,284,1,0,0,0,58,286,
-        1,0,0,0,60,302,1,0,0,0,62,304,1,0,0,0,64,312,1,0,0,0,66,314,1,0,
-        0,0,68,318,1,0,0,0,70,324,1,0,0,0,72,333,1,0,0,0,74,336,1,0,0,0,
-        76,340,1,0,0,0,78,349,1,0,0,0,80,358,1,0,0,0,82,360,1,0,0,0,84,88,
-        3,2,1,0,85,88,3,52,26,0,86,88,3,38,19,0,87,84,1,0,0,0,87,85,1,0,
-        0,0,87,86,1,0,0,0,88,89,1,0,0,0,89,90,5,0,0,1,90,1,1,0,0,0,91,93,
-        5,1,0,0,92,94,5,65,0,0,93,92,1,0,0,0,93,94,1,0,0,0,94,99,1,0,0,0,
-        95,100,3,4,2,0,96,100,3,6,3,0,97,100,3,10,5,0,98,100,3,8,4,0,99,
-        95,1,0,0,0,99,96,1,0,0,0,99,97,1,0,0,0,99,98,1,0,0,0,100,101,1,0,
-        0,0,101,99,1,0,0,0,101,102,1,0,0,0,102,106,1,0,0,0,103,105,3,30,
-        15,0,104,103,1,0,0,0,105,108,1,0,0,0,106,104,1,0,0,0,106,107,1,0,
-        0,0,107,3,1,0,0,0,108,106,1,0,0,0,109,110,5,2,0,0,110,111,5,65,0,
-        0,111,112,5,3,0,0,112,113,3,12,6,0,113,114,5,4,0,0,114,5,1,0,0,0,
-        115,116,5,5,0,0,116,117,5,65,0,0,117,118,5,3,0,0,118,119,3,12,6,
-        0,119,120,5,4,0,0,120,7,1,0,0,0,121,122,5,6,0,0,122,123,5,65,0,0,
-        123,124,5,3,0,0,124,125,3,12,6,0,125,126,5,4,0,0,126,9,1,0,0,0,127,
-        128,5,7,0,0,128,129,5,65,0,0,129,130,5,3,0,0,130,131,3,26,13,0,131,
-        132,5,4,0,0,132,11,1,0,0,0,133,136,3,14,7,0,134,136,3,20,10,0,135,
+        66,68,70,72,74,76,78,80,82,0,9,1,0,6,9,2,0,10,14,59,59,2,0,15,16,
+        19,22,1,0,17,18,2,0,24,24,60,60,2,0,16,16,28,31,1,0,37,42,1,0,59,
+        60,1,0,51,56,362,0,87,1,0,0,0,2,91,1,0,0,0,4,109,1,0,0,0,6,115,1,
+        0,0,0,8,121,1,0,0,0,10,127,1,0,0,0,12,135,1,0,0,0,14,139,1,0,0,0,
+        16,145,1,0,0,0,18,147,1,0,0,0,20,155,1,0,0,0,22,169,1,0,0,0,24,171,
+        1,0,0,0,26,176,1,0,0,0,28,180,1,0,0,0,30,183,1,0,0,0,32,194,1,0,
+        0,0,34,204,1,0,0,0,36,211,1,0,0,0,38,213,1,0,0,0,40,229,1,0,0,0,
+        42,236,1,0,0,0,44,238,1,0,0,0,46,243,1,0,0,0,48,248,1,0,0,0,50,250,
+        1,0,0,0,52,262,1,0,0,0,54,278,1,0,0,0,56,284,1,0,0,0,58,286,1,0,
+        0,0,60,302,1,0,0,0,62,304,1,0,0,0,64,312,1,0,0,0,66,314,1,0,0,0,
+        68,320,1,0,0,0,70,324,1,0,0,0,72,333,1,0,0,0,74,336,1,0,0,0,76,340,
+        1,0,0,0,78,349,1,0,0,0,80,358,1,0,0,0,82,360,1,0,0,0,84,88,3,2,1,
+        0,85,88,3,52,26,0,86,88,3,38,19,0,87,84,1,0,0,0,87,85,1,0,0,0,87,
+        86,1,0,0,0,88,89,1,0,0,0,89,90,5,0,0,1,90,1,1,0,0,0,91,93,5,1,0,
+        0,92,94,5,59,0,0,93,92,1,0,0,0,93,94,1,0,0,0,94,99,1,0,0,0,95,100,
+        3,4,2,0,96,100,3,6,3,0,97,100,3,10,5,0,98,100,3,8,4,0,99,95,1,0,
+        0,0,99,96,1,0,0,0,99,97,1,0,0,0,99,98,1,0,0,0,100,101,1,0,0,0,101,
+        99,1,0,0,0,101,102,1,0,0,0,102,106,1,0,0,0,103,105,3,30,15,0,104,
+        103,1,0,0,0,105,108,1,0,0,0,106,104,1,0,0,0,106,107,1,0,0,0,107,
+        3,1,0,0,0,108,106,1,0,0,0,109,110,5,2,0,0,110,111,5,59,0,0,111,112,
+        5,65,0,0,112,113,3,12,6,0,113,114,5,66,0,0,114,5,1,0,0,0,115,116,
+        5,3,0,0,116,117,5,59,0,0,117,118,5,65,0,0,118,119,3,12,6,0,119,120,
+        5,66,0,0,120,7,1,0,0,0,121,122,5,5,0,0,122,123,5,59,0,0,123,124,
+        5,65,0,0,124,125,3,12,6,0,125,126,5,66,0,0,126,9,1,0,0,0,127,128,
+        5,4,0,0,128,129,5,59,0,0,129,130,5,65,0,0,130,131,3,26,13,0,131,
+        132,5,66,0,0,132,11,1,0,0,0,133,136,3,14,7,0,134,136,3,20,10,0,135,
         133,1,0,0,0,135,134,1,0,0,0,136,137,1,0,0,0,137,135,1,0,0,0,137,
-        138,1,0,0,0,138,13,1,0,0,0,139,140,3,16,8,0,140,141,5,65,0,0,141,
-        142,5,8,0,0,142,143,3,18,9,0,143,144,5,9,0,0,144,15,1,0,0,0,145,
-        146,7,0,0,0,146,17,1,0,0,0,147,153,7,1,0,0,148,150,5,19,0,0,149,
-        151,5,67,0,0,150,149,1,0,0,0,150,151,1,0,0,0,151,152,1,0,0,0,152,
-        154,5,20,0,0,153,148,1,0,0,0,153,154,1,0,0,0,154,19,1,0,0,0,155,
-        156,3,16,8,0,156,157,5,65,0,0,157,158,5,21,0,0,158,159,3,22,11,0,
-        159,160,5,22,0,0,160,161,5,8,0,0,161,162,3,18,9,0,162,163,5,9,0,
-        0,163,21,1,0,0,0,164,170,3,24,12,0,165,166,3,24,12,0,166,167,5,23,
-        0,0,167,168,3,22,11,0,168,170,1,0,0,0,169,164,1,0,0,0,169,165,1,
-        0,0,0,170,23,1,0,0,0,171,172,5,65,0,0,172,173,5,8,0,0,173,174,3,
-        18,9,0,174,25,1,0,0,0,175,177,3,28,14,0,176,175,1,0,0,0,177,178,
+        138,1,0,0,0,138,13,1,0,0,0,139,140,3,16,8,0,140,141,5,59,0,0,141,
+        142,5,71,0,0,142,143,3,18,9,0,143,144,5,70,0,0,144,15,1,0,0,0,145,
+        146,7,0,0,0,146,17,1,0,0,0,147,153,7,1,0,0,148,150,5,63,0,0,149,
+        151,5,61,0,0,150,149,1,0,0,0,150,151,1,0,0,0,151,152,1,0,0,0,152,
+        154,5,64,0,0,153,148,1,0,0,0,153,154,1,0,0,0,154,19,1,0,0,0,155,
+        156,3,16,8,0,156,157,5,59,0,0,157,158,5,67,0,0,158,159,3,22,11,0,
+        159,160,5,68,0,0,160,161,5,71,0,0,161,162,3,18,9,0,162,163,5,70,
+        0,0,163,21,1,0,0,0,164,170,3,24,12,0,165,166,3,24,12,0,166,167,5,
+        69,0,0,167,168,3,22,11,0,168,170,1,0,0,0,169,164,1,0,0,0,169,165,
+        1,0,0,0,170,23,1,0,0,0,171,172,5,59,0,0,172,173,5,71,0,0,173,174,
+        3,18,9,0,174,25,1,0,0,0,175,177,3,28,14,0,176,175,1,0,0,0,177,178,
         1,0,0,0,178,176,1,0,0,0,178,179,1,0,0,0,179,27,1,0,0,0,180,181,5,
-        65,0,0,181,182,5,9,0,0,182,29,1,0,0,0,183,186,5,65,0,0,184,187,3,
-        32,16,0,185,187,3,34,17,0,186,184,1,0,0,0,186,185,1,0,0,0,187,188,
-        1,0,0,0,188,189,5,9,0,0,189,31,1,0,0,0,190,191,5,3,0,0,191,192,3,
-        36,18,0,192,193,5,4,0,0,193,195,1,0,0,0,194,190,1,0,0,0,194,195,
-        1,0,0,0,195,196,1,0,0,0,196,197,7,2,0,0,197,202,5,65,0,0,198,199,
-        5,3,0,0,199,200,3,36,18,0,200,201,5,4,0,0,201,203,1,0,0,0,202,198,
-        1,0,0,0,202,203,1,0,0,0,203,33,1,0,0,0,204,205,7,3,0,0,205,206,5,
-        65,0,0,206,35,1,0,0,0,207,212,5,66,0,0,208,209,7,4,0,0,209,210,5,
-        24,0,0,210,212,7,4,0,0,211,207,1,0,0,0,211,208,1,0,0,0,212,37,1,
-        0,0,0,213,215,5,33,0,0,214,216,5,65,0,0,215,214,1,0,0,0,215,216,
-        1,0,0,0,216,220,1,0,0,0,217,219,3,40,20,0,218,217,1,0,0,0,219,222,
-        1,0,0,0,220,218,1,0,0,0,220,221,1,0,0,0,221,226,1,0,0,0,222,220,
-        1,0,0,0,223,225,3,42,21,0,224,223,1,0,0,0,225,228,1,0,0,0,226,224,
-        1,0,0,0,226,227,1,0,0,0,227,39,1,0,0,0,228,226,1,0,0,0,229,230,5,
-        34,0,0,230,231,5,65,0,0,231,232,5,9,0,0,232,41,1,0,0,0,233,237,3,
-        50,25,0,234,237,3,44,22,0,235,237,3,46,23,0,236,233,1,0,0,0,236,
-        234,1,0,0,0,236,235,1,0,0,0,237,43,1,0,0,0,238,239,5,35,0,0,239,
-        240,5,65,0,0,240,241,5,68,0,0,241,242,5,9,0,0,242,45,1,0,0,0,243,
-        244,5,65,0,0,244,245,3,48,24,0,245,246,5,65,0,0,246,247,5,9,0,0,
-        247,47,1,0,0,0,248,249,7,5,0,0,249,49,1,0,0,0,250,251,5,40,0,0,251,
-        257,5,3,0,0,252,256,3,44,22,0,253,256,3,46,23,0,254,256,3,50,25,
+        59,0,0,181,182,5,70,0,0,182,29,1,0,0,0,183,186,5,59,0,0,184,187,
+        3,32,16,0,185,187,3,34,17,0,186,184,1,0,0,0,186,185,1,0,0,0,187,
+        188,1,0,0,0,188,189,5,70,0,0,189,31,1,0,0,0,190,191,5,65,0,0,191,
+        192,3,36,18,0,192,193,5,66,0,0,193,195,1,0,0,0,194,190,1,0,0,0,194,
+        195,1,0,0,0,195,196,1,0,0,0,196,197,7,2,0,0,197,202,5,59,0,0,198,
+        199,5,65,0,0,199,200,3,36,18,0,200,201,5,66,0,0,201,203,1,0,0,0,
+        202,198,1,0,0,0,202,203,1,0,0,0,203,33,1,0,0,0,204,205,7,3,0,0,205,
+        206,5,59,0,0,206,35,1,0,0,0,207,212,5,60,0,0,208,209,7,4,0,0,209,
+        210,5,23,0,0,210,212,7,4,0,0,211,207,1,0,0,0,211,208,1,0,0,0,212,
+        37,1,0,0,0,213,215,5,25,0,0,214,216,5,59,0,0,215,214,1,0,0,0,215,
+        216,1,0,0,0,216,220,1,0,0,0,217,219,3,40,20,0,218,217,1,0,0,0,219,
+        222,1,0,0,0,220,218,1,0,0,0,220,221,1,0,0,0,221,226,1,0,0,0,222,
+        220,1,0,0,0,223,225,3,42,21,0,224,223,1,0,0,0,225,228,1,0,0,0,226,
+        224,1,0,0,0,226,227,1,0,0,0,227,39,1,0,0,0,228,226,1,0,0,0,229,230,
+        5,26,0,0,230,231,5,59,0,0,231,232,5,70,0,0,232,41,1,0,0,0,233,237,
+        3,50,25,0,234,237,3,44,22,0,235,237,3,46,23,0,236,233,1,0,0,0,236,
+        234,1,0,0,0,236,235,1,0,0,0,237,43,1,0,0,0,238,239,5,27,0,0,239,
+        240,5,59,0,0,240,241,5,62,0,0,241,242,5,70,0,0,242,45,1,0,0,0,243,
+        244,5,59,0,0,244,245,3,48,24,0,245,246,5,59,0,0,246,247,5,70,0,0,
+        247,47,1,0,0,0,248,249,7,5,0,0,249,49,1,0,0,0,250,251,5,32,0,0,251,
+        257,5,65,0,0,252,256,3,44,22,0,253,256,3,46,23,0,254,256,3,50,25,
         0,255,252,1,0,0,0,255,253,1,0,0,0,255,254,1,0,0,0,256,259,1,0,0,
         0,257,255,1,0,0,0,257,258,1,0,0,0,258,260,1,0,0,0,259,257,1,0,0,
-        0,260,261,5,4,0,0,261,51,1,0,0,0,262,264,5,41,0,0,263,265,5,65,0,
-        0,264,263,1,0,0,0,264,265,1,0,0,0,265,269,1,0,0,0,266,268,3,54,27,
-        0,267,266,1,0,0,0,268,271,1,0,0,0,269,267,1,0,0,0,269,270,1,0,0,
-        0,270,275,1,0,0,0,271,269,1,0,0,0,272,274,3,56,28,0,273,272,1,0,
-        0,0,274,277,1,0,0,0,275,273,1,0,0,0,275,276,1,0,0,0,276,53,1,0,0,
-        0,277,275,1,0,0,0,278,279,5,42,0,0,279,280,5,65,0,0,280,281,5,9,
-        0,0,281,55,1,0,0,0,282,285,3,64,32,0,283,285,3,58,29,0,284,282,1,
-        0,0,0,284,283,1,0,0,0,285,57,1,0,0,0,286,287,5,65,0,0,287,288,3,
-        60,30,0,288,291,5,65,0,0,289,290,5,8,0,0,290,292,5,68,0,0,291,289,
-        1,0,0,0,291,292,1,0,0,0,292,293,1,0,0,0,293,294,5,9,0,0,294,59,1,
-        0,0,0,295,303,3,62,31,0,296,297,3,62,31,0,297,298,5,43,0,0,298,303,
-        1,0,0,0,299,300,3,62,31,0,300,301,5,44,0,0,301,303,1,0,0,0,302,295,
-        1,0,0,0,302,296,1,0,0,0,302,299,1,0,0,0,303,61,1,0,0,0,304,305,7,
-        6,0,0,305,63,1,0,0,0,306,313,3,66,33,0,307,313,3,68,34,0,308,313,
-        3,70,35,0,309,313,3,72,36,0,310,313,3,74,37,0,311,313,3,76,38,0,
-        312,306,1,0,0,0,312,307,1,0,0,0,312,308,1,0,0,0,312,309,1,0,0,0,
-        312,310,1,0,0,0,312,311,1,0,0,0,313,65,1,0,0,0,314,315,5,49,0,0,
-        315,316,3,80,40,0,316,317,3,78,39,0,317,67,1,0,0,0,318,319,5,49,
-        0,0,319,320,3,80,40,0,320,321,3,78,39,0,321,322,5,50,0,0,322,323,
-        3,78,39,0,323,69,1,0,0,0,324,325,5,51,0,0,325,330,3,78,39,0,326,
-        327,5,52,0,0,327,329,3,78,39,0,328,326,1,0,0,0,329,332,1,0,0,0,330,
-        328,1,0,0,0,330,331,1,0,0,0,331,71,1,0,0,0,332,330,1,0,0,0,333,334,
-        5,53,0,0,334,335,3,78,39,0,335,73,1,0,0,0,336,337,5,54,0,0,337,338,
-        5,66,0,0,338,339,3,78,39,0,339,75,1,0,0,0,340,341,5,55,0,0,341,342,
-        3,80,40,0,342,343,3,78,39,0,343,77,1,0,0,0,344,350,3,58,29,0,345,
-        346,5,3,0,0,346,347,3,58,29,0,347,348,5,4,0,0,348,350,1,0,0,0,349,
-        344,1,0,0,0,349,345,1,0,0,0,350,79,1,0,0,0,351,352,7,7,0,0,352,353,
-        3,82,41,0,353,354,7,7,0,0,354,359,1,0,0,0,355,356,5,56,0,0,356,359,
-        5,65,0,0,357,359,5,65,0,0,358,351,1,0,0,0,358,355,1,0,0,0,358,357,
-        1,0,0,0,359,81,1,0,0,0,360,361,7,8,0,0,361,83,1,0,0,0,31,87,93,99,
-        101,106,135,137,150,153,169,178,186,194,202,211,215,220,226,236,
-        255,257,264,269,275,284,291,302,312,330,349,358
+        0,260,261,5,66,0,0,261,51,1,0,0,0,262,264,5,33,0,0,263,265,5,59,
+        0,0,264,263,1,0,0,0,264,265,1,0,0,0,265,269,1,0,0,0,266,268,3,54,
+        27,0,267,266,1,0,0,0,268,271,1,0,0,0,269,267,1,0,0,0,269,270,1,0,
+        0,0,270,275,1,0,0,0,271,269,1,0,0,0,272,274,3,56,28,0,273,272,1,
+        0,0,0,274,277,1,0,0,0,275,273,1,0,0,0,275,276,1,0,0,0,276,53,1,0,
+        0,0,277,275,1,0,0,0,278,279,5,34,0,0,279,280,5,59,0,0,280,281,5,
+        70,0,0,281,55,1,0,0,0,282,285,3,64,32,0,283,285,3,58,29,0,284,282,
+        1,0,0,0,284,283,1,0,0,0,285,57,1,0,0,0,286,287,5,59,0,0,287,288,
+        3,60,30,0,288,291,5,59,0,0,289,290,5,71,0,0,290,292,5,62,0,0,291,
+        289,1,0,0,0,291,292,1,0,0,0,292,293,1,0,0,0,293,294,5,70,0,0,294,
+        59,1,0,0,0,295,303,3,62,31,0,296,297,3,62,31,0,297,298,5,35,0,0,
+        298,303,1,0,0,0,299,300,3,62,31,0,300,301,5,36,0,0,301,303,1,0,0,
+        0,302,295,1,0,0,0,302,296,1,0,0,0,302,299,1,0,0,0,303,61,1,0,0,0,
+        304,305,7,6,0,0,305,63,1,0,0,0,306,313,3,66,33,0,307,313,3,68,34,
+        0,308,313,3,70,35,0,309,313,3,72,36,0,310,313,3,74,37,0,311,313,
+        3,76,38,0,312,306,1,0,0,0,312,307,1,0,0,0,312,308,1,0,0,0,312,309,
+        1,0,0,0,312,310,1,0,0,0,312,311,1,0,0,0,313,65,1,0,0,0,314,315,5,
+        43,0,0,315,316,3,80,40,0,316,317,3,78,39,0,317,318,5,44,0,0,318,
+        319,3,78,39,0,319,67,1,0,0,0,320,321,5,43,0,0,321,322,3,80,40,0,
+        322,323,3,78,39,0,323,69,1,0,0,0,324,325,5,45,0,0,325,330,3,78,39,
+        0,326,327,5,46,0,0,327,329,3,78,39,0,328,326,1,0,0,0,329,332,1,0,
+        0,0,330,328,1,0,0,0,330,331,1,0,0,0,331,71,1,0,0,0,332,330,1,0,0,
+        0,333,334,5,47,0,0,334,335,3,78,39,0,335,73,1,0,0,0,336,337,5,48,
+        0,0,337,338,5,60,0,0,338,339,3,78,39,0,339,75,1,0,0,0,340,341,5,
+        49,0,0,341,342,3,80,40,0,342,343,3,78,39,0,343,77,1,0,0,0,344,350,
+        3,58,29,0,345,346,5,65,0,0,346,347,3,58,29,0,347,348,5,66,0,0,348,
+        350,1,0,0,0,349,344,1,0,0,0,349,345,1,0,0,0,350,79,1,0,0,0,351,352,
+        7,7,0,0,352,353,3,82,41,0,353,354,7,7,0,0,354,359,1,0,0,0,355,356,
+        5,50,0,0,356,359,5,59,0,0,357,359,5,59,0,0,358,351,1,0,0,0,358,355,
+        1,0,0,0,358,357,1,0,0,0,359,81,1,0,0,0,360,361,7,8,0,0,361,83,1,
+        0,0,0,31,87,93,99,101,106,135,137,150,153,169,178,186,194,202,211,
+        215,220,226,236,255,257,264,269,275,284,291,302,312,330,349,358
     ]
 
 class UMLParser ( Parser ):
@@ -147,36 +147,40 @@ class UMLParser ( Parser ):
 
     sharedContextCache = PredictionContextCache()
 
-    literalNames = [ "<INVALID>", "'!classdiagram'", "'class'", "'{'", "'}'", 
-                     "'interface'", "'abstract'", "'enum'", "':'", "';'", 
-                     "'+'", "'-'", "'#'", "'~'", "'int'", "'string'", "'double'", 
-                     "'char'", "'float'", "'['", "']'", "'('", "')'", "','", 
-                     "'..'", "'--'", "'o--'", "'--o'", "'*--'", "'--*'", 
-                     "'<--'", "'-->'", "'*'", "'!usecase'", "'actor'", "'case'", 
-                     "'-i>'", "'<i-'", "'-e>'", "'<e-'", "'package'", "'!sequence'", 
-                     "'lifeline'", "'new'", "'delete'", "'==>'", "'<=='", 
-                     "'-*>'", "'<*-'", "'if'", "'else'", "'par'", "'and'", 
-                     "'critical'", "'for'", "'while'", "'!'", "'<'", "'>'", 
-                     "'>='", "'<='", "'!='", "'=='" ]
+    literalNames = [ "<INVALID>", "'!classdiagram'", "'class'", "'interface'", 
+                     "'enum'", "'abstract'", "'+'", "'-'", "'#'", "'~'", 
+                     "'int'", "'string'", "'double'", "'char'", "'float'", 
+                     "'...'", "'--'", "'-->'", "'<--'", "'--o'", "'o--'", 
+                     "'--*'", "'*--'", "'..'", "'*'", "'!usecase'", "'actor'", 
+                     "'case'", "'-i>'", "'<i-'", "'-e>'", "'<e-'", "'package'", 
+                     "'!sequence'", "'lifeline'", "'new'", "'delete'", "'==>'", 
+                     "'<=='", "'..>'", "'<..'", "'-*>'", "'<*-'", "'if'", 
+                     "'else'", "'par'", "'and'", "'critical'", "'for'", 
+                     "'while'", "'!'", "'<'", "'>'", "'<='", "'>='", "'!='", 
+                     "'=='", "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
+                     "<INVALID>", "<INVALID>", "'['", "']'", "'{'", "'}'", 
+                     "'('", "')'", "','", "';'", "':'" ]
 
-    symbolicNames = [ "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                      "<INVALID>", "<INVALID>", "<INVALID>", "WHITESPACE", 
-                      "COMMENT", "IDENTIFIER", "NUMBER", "NUMBER_NON_ZERO", 
-                      "STRING" ]
+    symbolicNames = [ "<INVALID>", "CLASS_START", "CLASS", "INTERFACE", 
+                      "ENUM", "ABSTRACT", "PUBLIC_SCOPE", "PRIVATE_SCOPE", 
+                      "PROTECTED_SCOPE", "PACKAGE_SCOPE", "INT_TYPE", "STRING_TYPE", 
+                      "DOUBLE_TYPE", "CHAR_TYPE", "FLOAT_TYPE", "DEPENDENCY", 
+                      "ASSOCIATION", "INHERITANCE_RIGHT", "INHERITANCE_LEFT", 
+                      "PARTIAL_AGGREGATION_RIGHT", "PARTIAL_AGGREGATION_LEFT", 
+                      "FULL_AGGREGATION_RIGHT", "FULL_AGGREGATION_LEFT", 
+                      "MULTIPLICITY_OPERATOR", "MANY", "USE_CASE_START", 
+                      "ACTOR", "CASE", "INCLUDE_RIGHT", "INCLUDE_LEFT", 
+                      "EXTEND_RIGHT", "EXTEND_LEFT", "PACKAGE", "SEQUENCE_START", 
+                      "LIFELINE", "NEW", "DELETE", "MESSAGE_RIGHT", "MESSAGE_LEFT", 
+                      "BACK_MESSAGE_RIGHT", "BACK_MESSAGE_LEFT", "ASYNC_MESSAGE_RIGHT", 
+                      "ASYNC_MESSAGE_LEFT", "IF", "ELSE", "PAR", "AND", 
+                      "CRITICAL", "FOR", "WHILE", "NOT", "LESS_THAN", "GREATER_THAN", 
+                      "LESS_THAN_OR_EQUAL", "GREATER_THAN_OR_EQUAL", "NOT_EQUAL", 
+                      "EQUAL", "WHITESPACE", "COMMENT", "IDENTIFIER", "NUMBER", 
+                      "NUMBER_NON_ZERO", "STRING", "LEFT_SQUARE_BRACKET", 
+                      "RIGHT_SQUARE_BRACKET", "LEFT_CURLY_BRACKET", "RIGHT_CURLY_BRACKET", 
+                      "LEFT_PARENTHESIS", "RIGHT_PARENTHESIS", "COMMA", 
+                      "LINE_END", "COLON" ]
 
     RULE_s = 0
     RULE_classDiagram = 1
@@ -233,74 +237,77 @@ class UMLParser ( Parser ):
                    "instruction", "condition", "booleanOperator" ]
 
     EOF = Token.EOF
-    T__0=1
-    T__1=2
-    T__2=3
-    T__3=4
-    T__4=5
-    T__5=6
-    T__6=7
-    T__7=8
-    T__8=9
-    T__9=10
-    T__10=11
-    T__11=12
-    T__12=13
-    T__13=14
-    T__14=15
-    T__15=16
-    T__16=17
-    T__17=18
-    T__18=19
-    T__19=20
-    T__20=21
-    T__21=22
-    T__22=23
-    T__23=24
-    T__24=25
-    T__25=26
-    T__26=27
-    T__27=28
-    T__28=29
-    T__29=30
-    T__30=31
-    T__31=32
-    T__32=33
-    T__33=34
-    T__34=35
-    T__35=36
-    T__36=37
-    T__37=38
-    T__38=39
-    T__39=40
-    T__40=41
-    T__41=42
-    T__42=43
-    T__43=44
-    T__44=45
-    T__45=46
-    T__46=47
-    T__47=48
-    T__48=49
-    T__49=50
-    T__50=51
-    T__51=52
-    T__52=53
-    T__53=54
-    T__54=55
-    T__55=56
-    T__56=57
-    T__57=58
-    T__58=59
-    T__59=60
-    T__60=61
-    T__61=62
-    WHITESPACE=63
-    COMMENT=64
-    IDENTIFIER=65
-    NUMBER=66
-    NUMBER_NON_ZERO=67
-    STRING=68
+    CLASS_START=1
+    CLASS=2
+    INTERFACE=3
+    ENUM=4
+    ABSTRACT=5
+    PUBLIC_SCOPE=6
+    PRIVATE_SCOPE=7
+    PROTECTED_SCOPE=8
+    PACKAGE_SCOPE=9
+    INT_TYPE=10
+    STRING_TYPE=11
+    DOUBLE_TYPE=12
+    CHAR_TYPE=13
+    FLOAT_TYPE=14
+    DEPENDENCY=15
+    ASSOCIATION=16
+    INHERITANCE_RIGHT=17
+    INHERITANCE_LEFT=18
+    PARTIAL_AGGREGATION_RIGHT=19
+    PARTIAL_AGGREGATION_LEFT=20
+    FULL_AGGREGATION_RIGHT=21
+    FULL_AGGREGATION_LEFT=22
+    MULTIPLICITY_OPERATOR=23
+    MANY=24
+    USE_CASE_START=25
+    ACTOR=26
+    CASE=27
+    INCLUDE_RIGHT=28
+    INCLUDE_LEFT=29
+    EXTEND_RIGHT=30
+    EXTEND_LEFT=31
+    PACKAGE=32
+    SEQUENCE_START=33
+    LIFELINE=34
+    NEW=35
+    DELETE=36
+    MESSAGE_RIGHT=37
+    MESSAGE_LEFT=38
+    BACK_MESSAGE_RIGHT=39
+    BACK_MESSAGE_LEFT=40
+    ASYNC_MESSAGE_RIGHT=41
+    ASYNC_MESSAGE_LEFT=42
+    IF=43
+    ELSE=44
+    PAR=45
+    AND=46
+    CRITICAL=47
+    FOR=48
+    WHILE=49
+    NOT=50
+    LESS_THAN=51
+    GREATER_THAN=52
+    LESS_THAN_OR_EQUAL=53
+    GREATER_THAN_OR_EQUAL=54
+    NOT_EQUAL=55
+    EQUAL=56
+    WHITESPACE=57
+    COMMENT=58
+    IDENTIFIER=59
+    NUMBER=60
+    NUMBER_NON_ZERO=61
+    STRING=62
+    LEFT_SQUARE_BRACKET=63
+    RIGHT_SQUARE_BRACKET=64
+    LEFT_CURLY_BRACKET=65
+    RIGHT_CURLY_BRACKET=66
+    LEFT_PARENTHESIS=67
+    RIGHT_PARENTHESIS=68
+    COMMA=69
+    LINE_END=70
+    COLON=71
 
     def __init__(self, input:TokenStream, output:TextIO = sys.stdout):
         super().__init__(input, output)
@@ -360,11 +367,11 @@ class UMLParser ( Parser ):
                 self.state = 84
                 self.classDiagram()
                 pass
-            elif token in [41]:
+            elif token in [33]:
                 self.state = 85
                 self.sequenceDiagram()
                 pass
-            elif token in [33]:
+            elif token in [25]:
                 self.state = 86
                 self.useCaseDiagram()
                 pass
@@ -388,6 +395,9 @@ class UMLParser ( Parser ):
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
+
+        def CLASS_START(self):
+            return self.getToken(UMLParser.CLASS_START, 0)
 
         def IDENTIFIER(self):
             return self.getToken(UMLParser.IDENTIFIER, 0)
@@ -449,11 +459,11 @@ class UMLParser ( Parser ):
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 91
-            self.match(UMLParser.T__0)
+            self.match(UMLParser.CLASS_START)
             self.state = 93
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if _la==65:
+            if _la==59:
                 self.state = 92
                 self.match(UMLParser.IDENTIFIER)
 
@@ -469,15 +479,15 @@ class UMLParser ( Parser ):
                     self.state = 95
                     self.class_()
                     pass
-                elif token in [5]:
+                elif token in [3]:
                     self.state = 96
                     self.interface()
                     pass
-                elif token in [7]:
+                elif token in [4]:
                     self.state = 97
                     self.enum()
                     pass
-                elif token in [6]:
+                elif token in [5]:
                     self.state = 98
                     self.abstractClass()
                     pass
@@ -487,13 +497,13 @@ class UMLParser ( Parser ):
                 self.state = 101 
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if not (((_la) & ~0x3f) == 0 and ((1 << _la) & 228) != 0):
+                if not (((_la) & ~0x3f) == 0 and ((1 << _la) & 60) != 0):
                     break
 
             self.state = 106
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==65:
+            while _la==59:
                 self.state = 103
                 self.relationship()
                 self.state = 108
@@ -516,12 +526,21 @@ class UMLParser ( Parser ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
+        def CLASS(self):
+            return self.getToken(UMLParser.CLASS, 0)
+
         def IDENTIFIER(self):
             return self.getToken(UMLParser.IDENTIFIER, 0)
+
+        def LEFT_CURLY_BRACKET(self):
+            return self.getToken(UMLParser.LEFT_CURLY_BRACKET, 0)
 
         def classContents(self):
             return self.getTypedRuleContext(UMLParser.ClassContentsContext,0)
 
+
+        def RIGHT_CURLY_BRACKET(self):
+            return self.getToken(UMLParser.RIGHT_CURLY_BRACKET, 0)
 
         def getRuleIndex(self):
             return UMLParser.RULE_class
@@ -544,15 +563,15 @@ class UMLParser ( Parser ):
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 109
-            self.match(UMLParser.T__1)
+            self.match(UMLParser.CLASS)
             self.state = 110
             self.match(UMLParser.IDENTIFIER)
             self.state = 111
-            self.match(UMLParser.T__2)
+            self.match(UMLParser.LEFT_CURLY_BRACKET)
             self.state = 112
             self.classContents()
             self.state = 113
-            self.match(UMLParser.T__3)
+            self.match(UMLParser.RIGHT_CURLY_BRACKET)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -569,12 +588,21 @@ class UMLParser ( Parser ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
+        def INTERFACE(self):
+            return self.getToken(UMLParser.INTERFACE, 0)
+
         def IDENTIFIER(self):
             return self.getToken(UMLParser.IDENTIFIER, 0)
+
+        def LEFT_CURLY_BRACKET(self):
+            return self.getToken(UMLParser.LEFT_CURLY_BRACKET, 0)
 
         def classContents(self):
             return self.getTypedRuleContext(UMLParser.ClassContentsContext,0)
 
+
+        def RIGHT_CURLY_BRACKET(self):
+            return self.getToken(UMLParser.RIGHT_CURLY_BRACKET, 0)
 
         def getRuleIndex(self):
             return UMLParser.RULE_interface
@@ -597,15 +625,15 @@ class UMLParser ( Parser ):
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 115
-            self.match(UMLParser.T__4)
+            self.match(UMLParser.INTERFACE)
             self.state = 116
             self.match(UMLParser.IDENTIFIER)
             self.state = 117
-            self.match(UMLParser.T__2)
+            self.match(UMLParser.LEFT_CURLY_BRACKET)
             self.state = 118
             self.classContents()
             self.state = 119
-            self.match(UMLParser.T__3)
+            self.match(UMLParser.RIGHT_CURLY_BRACKET)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -622,12 +650,21 @@ class UMLParser ( Parser ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
+        def ABSTRACT(self):
+            return self.getToken(UMLParser.ABSTRACT, 0)
+
         def IDENTIFIER(self):
             return self.getToken(UMLParser.IDENTIFIER, 0)
+
+        def LEFT_CURLY_BRACKET(self):
+            return self.getToken(UMLParser.LEFT_CURLY_BRACKET, 0)
 
         def classContents(self):
             return self.getTypedRuleContext(UMLParser.ClassContentsContext,0)
 
+
+        def RIGHT_CURLY_BRACKET(self):
+            return self.getToken(UMLParser.RIGHT_CURLY_BRACKET, 0)
 
         def getRuleIndex(self):
             return UMLParser.RULE_abstractClass
@@ -650,15 +687,15 @@ class UMLParser ( Parser ):
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 121
-            self.match(UMLParser.T__5)
+            self.match(UMLParser.ABSTRACT)
             self.state = 122
             self.match(UMLParser.IDENTIFIER)
             self.state = 123
-            self.match(UMLParser.T__2)
+            self.match(UMLParser.LEFT_CURLY_BRACKET)
             self.state = 124
             self.classContents()
             self.state = 125
-            self.match(UMLParser.T__3)
+            self.match(UMLParser.RIGHT_CURLY_BRACKET)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -675,12 +712,21 @@ class UMLParser ( Parser ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
+        def ENUM(self):
+            return self.getToken(UMLParser.ENUM, 0)
+
         def IDENTIFIER(self):
             return self.getToken(UMLParser.IDENTIFIER, 0)
+
+        def LEFT_CURLY_BRACKET(self):
+            return self.getToken(UMLParser.LEFT_CURLY_BRACKET, 0)
 
         def enumContents(self):
             return self.getTypedRuleContext(UMLParser.EnumContentsContext,0)
 
+
+        def RIGHT_CURLY_BRACKET(self):
+            return self.getToken(UMLParser.RIGHT_CURLY_BRACKET, 0)
 
         def getRuleIndex(self):
             return UMLParser.RULE_enum
@@ -703,15 +749,15 @@ class UMLParser ( Parser ):
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 127
-            self.match(UMLParser.T__6)
+            self.match(UMLParser.ENUM)
             self.state = 128
             self.match(UMLParser.IDENTIFIER)
             self.state = 129
-            self.match(UMLParser.T__2)
+            self.match(UMLParser.LEFT_CURLY_BRACKET)
             self.state = 130
             self.enumContents()
             self.state = 131
-            self.match(UMLParser.T__3)
+            self.match(UMLParser.RIGHT_CURLY_BRACKET)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -784,7 +830,7 @@ class UMLParser ( Parser ):
                 self.state = 137 
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if not (((_la) & ~0x3f) == 0 and ((1 << _la) & 15360) != 0):
+                if not (((_la) & ~0x3f) == 0 and ((1 << _la) & 960) != 0):
                     break
 
         except RecognitionException as re:
@@ -810,9 +856,15 @@ class UMLParser ( Parser ):
         def IDENTIFIER(self):
             return self.getToken(UMLParser.IDENTIFIER, 0)
 
+        def COLON(self):
+            return self.getToken(UMLParser.COLON, 0)
+
         def type_(self):
             return self.getTypedRuleContext(UMLParser.TypeContext,0)
 
+
+        def LINE_END(self):
+            return self.getToken(UMLParser.LINE_END, 0)
 
         def getRuleIndex(self):
             return UMLParser.RULE_field
@@ -839,11 +891,11 @@ class UMLParser ( Parser ):
             self.state = 140
             self.match(UMLParser.IDENTIFIER)
             self.state = 141
-            self.match(UMLParser.T__7)
+            self.match(UMLParser.COLON)
             self.state = 142
             self.type_()
             self.state = 143
-            self.match(UMLParser.T__8)
+            self.match(UMLParser.LINE_END)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -860,6 +912,17 @@ class UMLParser ( Parser ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
+        def PUBLIC_SCOPE(self):
+            return self.getToken(UMLParser.PUBLIC_SCOPE, 0)
+
+        def PRIVATE_SCOPE(self):
+            return self.getToken(UMLParser.PRIVATE_SCOPE, 0)
+
+        def PROTECTED_SCOPE(self):
+            return self.getToken(UMLParser.PROTECTED_SCOPE, 0)
+
+        def PACKAGE_SCOPE(self):
+            return self.getToken(UMLParser.PACKAGE_SCOPE, 0)
 
         def getRuleIndex(self):
             return UMLParser.RULE_scope
@@ -884,7 +947,7 @@ class UMLParser ( Parser ):
             self.enterOuterAlt(localctx, 1)
             self.state = 145
             _la = self._input.LA(1)
-            if not(((_la) & ~0x3f) == 0 and ((1 << _la) & 15360) != 0):
+            if not(((_la) & ~0x3f) == 0 and ((1 << _la) & 960) != 0):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
@@ -905,8 +968,29 @@ class UMLParser ( Parser ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
+        def INT_TYPE(self):
+            return self.getToken(UMLParser.INT_TYPE, 0)
+
+        def STRING_TYPE(self):
+            return self.getToken(UMLParser.STRING_TYPE, 0)
+
+        def DOUBLE_TYPE(self):
+            return self.getToken(UMLParser.DOUBLE_TYPE, 0)
+
+        def CHAR_TYPE(self):
+            return self.getToken(UMLParser.CHAR_TYPE, 0)
+
+        def FLOAT_TYPE(self):
+            return self.getToken(UMLParser.FLOAT_TYPE, 0)
+
         def IDENTIFIER(self):
             return self.getToken(UMLParser.IDENTIFIER, 0)
+
+        def LEFT_SQUARE_BRACKET(self):
+            return self.getToken(UMLParser.LEFT_SQUARE_BRACKET, 0)
+
+        def RIGHT_SQUARE_BRACKET(self):
+            return self.getToken(UMLParser.RIGHT_SQUARE_BRACKET, 0)
 
         def NUMBER_NON_ZERO(self):
             return self.getToken(UMLParser.NUMBER_NON_ZERO, 0)
@@ -934,7 +1018,7 @@ class UMLParser ( Parser ):
             self.enterOuterAlt(localctx, 1)
             self.state = 147
             _la = self._input.LA(1)
-            if not((((_la - 14)) & ~0x3f) == 0 and ((1 << (_la - 14)) & 2251799813685279) != 0):
+            if not(((_la) & ~0x3f) == 0 and ((1 << _la) & 576460752303455232) != 0):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
@@ -942,19 +1026,19 @@ class UMLParser ( Parser ):
             self.state = 153
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if _la==19:
+            if _la==63:
                 self.state = 148
-                self.match(UMLParser.T__18)
+                self.match(UMLParser.LEFT_SQUARE_BRACKET)
                 self.state = 150
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if _la==67:
+                if _la==61:
                     self.state = 149
                     self.match(UMLParser.NUMBER_NON_ZERO)
 
 
                 self.state = 152
-                self.match(UMLParser.T__19)
+                self.match(UMLParser.RIGHT_SQUARE_BRACKET)
 
 
         except RecognitionException as re:
@@ -980,13 +1064,25 @@ class UMLParser ( Parser ):
         def IDENTIFIER(self):
             return self.getToken(UMLParser.IDENTIFIER, 0)
 
+        def LEFT_PARENTHESIS(self):
+            return self.getToken(UMLParser.LEFT_PARENTHESIS, 0)
+
         def arguments(self):
             return self.getTypedRuleContext(UMLParser.ArgumentsContext,0)
 
 
+        def RIGHT_PARENTHESIS(self):
+            return self.getToken(UMLParser.RIGHT_PARENTHESIS, 0)
+
+        def COLON(self):
+            return self.getToken(UMLParser.COLON, 0)
+
         def type_(self):
             return self.getTypedRuleContext(UMLParser.TypeContext,0)
 
+
+        def LINE_END(self):
+            return self.getToken(UMLParser.LINE_END, 0)
 
         def getRuleIndex(self):
             return UMLParser.RULE_method
@@ -1013,17 +1109,17 @@ class UMLParser ( Parser ):
             self.state = 156
             self.match(UMLParser.IDENTIFIER)
             self.state = 157
-            self.match(UMLParser.T__20)
+            self.match(UMLParser.LEFT_PARENTHESIS)
             self.state = 158
             self.arguments()
             self.state = 159
-            self.match(UMLParser.T__21)
+            self.match(UMLParser.RIGHT_PARENTHESIS)
             self.state = 160
-            self.match(UMLParser.T__7)
+            self.match(UMLParser.COLON)
             self.state = 161
             self.type_()
             self.state = 162
-            self.match(UMLParser.T__8)
+            self.match(UMLParser.LINE_END)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -1043,6 +1139,9 @@ class UMLParser ( Parser ):
         def argument(self):
             return self.getTypedRuleContext(UMLParser.ArgumentContext,0)
 
+
+        def COMMA(self):
+            return self.getToken(UMLParser.COMMA, 0)
 
         def arguments(self):
             return self.getTypedRuleContext(UMLParser.ArgumentsContext,0)
@@ -1081,7 +1180,7 @@ class UMLParser ( Parser ):
                 self.state = 165
                 self.argument()
                 self.state = 166
-                self.match(UMLParser.T__22)
+                self.match(UMLParser.COMMA)
                 self.state = 167
                 self.arguments()
                 pass
@@ -1105,6 +1204,9 @@ class UMLParser ( Parser ):
 
         def IDENTIFIER(self):
             return self.getToken(UMLParser.IDENTIFIER, 0)
+
+        def COLON(self):
+            return self.getToken(UMLParser.COLON, 0)
 
         def type_(self):
             return self.getTypedRuleContext(UMLParser.TypeContext,0)
@@ -1133,7 +1235,7 @@ class UMLParser ( Parser ):
             self.state = 171
             self.match(UMLParser.IDENTIFIER)
             self.state = 172
-            self.match(UMLParser.T__7)
+            self.match(UMLParser.COLON)
             self.state = 173
             self.type_()
         except RecognitionException as re:
@@ -1189,7 +1291,7 @@ class UMLParser ( Parser ):
                 self.state = 178 
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if not (_la==65):
+                if not (_la==59):
                     break
 
         except RecognitionException as re:
@@ -1210,6 +1312,9 @@ class UMLParser ( Parser ):
 
         def IDENTIFIER(self):
             return self.getToken(UMLParser.IDENTIFIER, 0)
+
+        def LINE_END(self):
+            return self.getToken(UMLParser.LINE_END, 0)
 
         def getRuleIndex(self):
             return UMLParser.RULE_enumField
@@ -1234,7 +1339,7 @@ class UMLParser ( Parser ):
             self.state = 180
             self.match(UMLParser.IDENTIFIER)
             self.state = 181
-            self.match(UMLParser.T__8)
+            self.match(UMLParser.LINE_END)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -1253,6 +1358,9 @@ class UMLParser ( Parser ):
 
         def IDENTIFIER(self):
             return self.getToken(UMLParser.IDENTIFIER, 0)
+
+        def LINE_END(self):
+            return self.getToken(UMLParser.LINE_END, 0)
 
         def objectRelationship(self):
             return self.getTypedRuleContext(UMLParser.ObjectRelationshipContext,0)
@@ -1287,11 +1395,11 @@ class UMLParser ( Parser ):
             self.state = 186
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [3, 24, 25, 26, 27, 28, 29]:
+            if token in [15, 16, 19, 20, 21, 22, 65]:
                 self.state = 184
                 self.objectRelationship()
                 pass
-            elif token in [30, 31]:
+            elif token in [17, 18]:
                 self.state = 185
                 self.inheritance()
                 pass
@@ -1299,7 +1407,7 @@ class UMLParser ( Parser ):
                 raise NoViableAltException(self)
 
             self.state = 188
-            self.match(UMLParser.T__8)
+            self.match(UMLParser.LINE_END)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -1319,12 +1427,42 @@ class UMLParser ( Parser ):
         def IDENTIFIER(self):
             return self.getToken(UMLParser.IDENTIFIER, 0)
 
+        def DEPENDENCY(self):
+            return self.getToken(UMLParser.DEPENDENCY, 0)
+
+        def ASSOCIATION(self):
+            return self.getToken(UMLParser.ASSOCIATION, 0)
+
+        def PARTIAL_AGGREGATION_LEFT(self):
+            return self.getToken(UMLParser.PARTIAL_AGGREGATION_LEFT, 0)
+
+        def PARTIAL_AGGREGATION_RIGHT(self):
+            return self.getToken(UMLParser.PARTIAL_AGGREGATION_RIGHT, 0)
+
+        def FULL_AGGREGATION_LEFT(self):
+            return self.getToken(UMLParser.FULL_AGGREGATION_LEFT, 0)
+
+        def FULL_AGGREGATION_RIGHT(self):
+            return self.getToken(UMLParser.FULL_AGGREGATION_RIGHT, 0)
+
+        def LEFT_CURLY_BRACKET(self, i:int=None):
+            if i is None:
+                return self.getTokens(UMLParser.LEFT_CURLY_BRACKET)
+            else:
+                return self.getToken(UMLParser.LEFT_CURLY_BRACKET, i)
+
         def multiplicity(self, i:int=None):
             if i is None:
                 return self.getTypedRuleContexts(UMLParser.MultiplicityContext)
             else:
                 return self.getTypedRuleContext(UMLParser.MultiplicityContext,i)
 
+
+        def RIGHT_CURLY_BRACKET(self, i:int=None):
+            if i is None:
+                return self.getTokens(UMLParser.RIGHT_CURLY_BRACKET)
+            else:
+                return self.getToken(UMLParser.RIGHT_CURLY_BRACKET, i)
 
         def getRuleIndex(self):
             return UMLParser.RULE_objectRelationship
@@ -1350,18 +1488,18 @@ class UMLParser ( Parser ):
             self.state = 194
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if _la==3:
+            if _la==65:
                 self.state = 190
-                self.match(UMLParser.T__2)
+                self.match(UMLParser.LEFT_CURLY_BRACKET)
                 self.state = 191
                 self.multiplicity()
                 self.state = 192
-                self.match(UMLParser.T__3)
+                self.match(UMLParser.RIGHT_CURLY_BRACKET)
 
 
             self.state = 196
             _la = self._input.LA(1)
-            if not(((_la) & ~0x3f) == 0 and ((1 << _la) & 1056964608) != 0):
+            if not(((_la) & ~0x3f) == 0 and ((1 << _la) & 7962624) != 0):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
@@ -1371,13 +1509,13 @@ class UMLParser ( Parser ):
             self.state = 202
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if _la==3:
+            if _la==65:
                 self.state = 198
-                self.match(UMLParser.T__2)
+                self.match(UMLParser.LEFT_CURLY_BRACKET)
                 self.state = 199
                 self.multiplicity()
                 self.state = 200
-                self.match(UMLParser.T__3)
+                self.match(UMLParser.RIGHT_CURLY_BRACKET)
 
 
         except RecognitionException as re:
@@ -1398,6 +1536,12 @@ class UMLParser ( Parser ):
 
         def IDENTIFIER(self):
             return self.getToken(UMLParser.IDENTIFIER, 0)
+
+        def INHERITANCE_LEFT(self):
+            return self.getToken(UMLParser.INHERITANCE_LEFT, 0)
+
+        def INHERITANCE_RIGHT(self):
+            return self.getToken(UMLParser.INHERITANCE_RIGHT, 0)
 
         def getRuleIndex(self):
             return UMLParser.RULE_inheritance
@@ -1422,7 +1566,7 @@ class UMLParser ( Parser ):
             self.enterOuterAlt(localctx, 1)
             self.state = 204
             _la = self._input.LA(1)
-            if not(_la==30 or _la==31):
+            if not(_la==17 or _la==18):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
@@ -1450,6 +1594,15 @@ class UMLParser ( Parser ):
                 return self.getTokens(UMLParser.NUMBER)
             else:
                 return self.getToken(UMLParser.NUMBER, i)
+
+        def MULTIPLICITY_OPERATOR(self):
+            return self.getToken(UMLParser.MULTIPLICITY_OPERATOR, 0)
+
+        def MANY(self, i:int=None):
+            if i is None:
+                return self.getTokens(UMLParser.MANY)
+            else:
+                return self.getToken(UMLParser.MANY, i)
 
         def getRuleIndex(self):
             return UMLParser.RULE_multiplicity
@@ -1484,16 +1637,16 @@ class UMLParser ( Parser ):
                 self.enterOuterAlt(localctx, 2)
                 self.state = 208
                 _la = self._input.LA(1)
-                if not(_la==32 or _la==66):
+                if not(_la==24 or _la==60):
                     self._errHandler.recoverInline(self)
                 else:
                     self._errHandler.reportMatch(self)
                     self.consume()
                 self.state = 209
-                self.match(UMLParser.T__23)
+                self.match(UMLParser.MULTIPLICITY_OPERATOR)
                 self.state = 210
                 _la = self._input.LA(1)
-                if not(_la==32 or _la==66):
+                if not(_la==24 or _la==60):
                     self._errHandler.recoverInline(self)
                 else:
                     self._errHandler.reportMatch(self)
@@ -1516,6 +1669,9 @@ class UMLParser ( Parser ):
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
+
+        def USE_CASE_START(self):
+            return self.getToken(UMLParser.USE_CASE_START, 0)
 
         def IDENTIFIER(self):
             return self.getToken(UMLParser.IDENTIFIER, 0)
@@ -1556,7 +1712,7 @@ class UMLParser ( Parser ):
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 213
-            self.match(UMLParser.T__32)
+            self.match(UMLParser.USE_CASE_START)
             self.state = 215
             self._errHandler.sync(self)
             la_ = self._interp.adaptivePredict(self._input,15,self._ctx)
@@ -1568,7 +1724,7 @@ class UMLParser ( Parser ):
             self.state = 220
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==34:
+            while _la==26:
                 self.state = 217
                 self.actor()
                 self.state = 222
@@ -1578,7 +1734,7 @@ class UMLParser ( Parser ):
             self.state = 226
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while (((_la - 35)) & ~0x3f) == 0 and ((1 << (_la - 35)) & 1073741857) != 0:
+            while ((_la) & ~0x3f) == 0 and ((1 << _la) & 576460756732608512) != 0:
                 self.state = 223
                 self.useCaseStatement()
                 self.state = 228
@@ -1601,8 +1757,14 @@ class UMLParser ( Parser ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
+        def ACTOR(self):
+            return self.getToken(UMLParser.ACTOR, 0)
+
         def IDENTIFIER(self):
             return self.getToken(UMLParser.IDENTIFIER, 0)
+
+        def LINE_END(self):
+            return self.getToken(UMLParser.LINE_END, 0)
 
         def getRuleIndex(self):
             return UMLParser.RULE_actor
@@ -1625,11 +1787,11 @@ class UMLParser ( Parser ):
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 229
-            self.match(UMLParser.T__33)
+            self.match(UMLParser.ACTOR)
             self.state = 230
             self.match(UMLParser.IDENTIFIER)
             self.state = 231
-            self.match(UMLParser.T__8)
+            self.match(UMLParser.LINE_END)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -1680,17 +1842,17 @@ class UMLParser ( Parser ):
             self.state = 236
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [40]:
+            if token in [32]:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 233
                 self.package()
                 pass
-            elif token in [35]:
+            elif token in [27]:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 234
                 self.useCaseDeclaration()
                 pass
-            elif token in [65]:
+            elif token in [59]:
                 self.enterOuterAlt(localctx, 3)
                 self.state = 235
                 self.dependency()
@@ -1714,11 +1876,17 @@ class UMLParser ( Parser ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
+        def CASE(self):
+            return self.getToken(UMLParser.CASE, 0)
+
         def IDENTIFIER(self):
             return self.getToken(UMLParser.IDENTIFIER, 0)
 
         def STRING(self):
             return self.getToken(UMLParser.STRING, 0)
+
+        def LINE_END(self):
+            return self.getToken(UMLParser.LINE_END, 0)
 
         def getRuleIndex(self):
             return UMLParser.RULE_useCaseDeclaration
@@ -1741,13 +1909,13 @@ class UMLParser ( Parser ):
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 238
-            self.match(UMLParser.T__34)
+            self.match(UMLParser.CASE)
             self.state = 239
             self.match(UMLParser.IDENTIFIER)
             self.state = 240
             self.match(UMLParser.STRING)
             self.state = 241
-            self.match(UMLParser.T__8)
+            self.match(UMLParser.LINE_END)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -1773,6 +1941,9 @@ class UMLParser ( Parser ):
         def dependencyOperator(self):
             return self.getTypedRuleContext(UMLParser.DependencyOperatorContext,0)
 
+
+        def LINE_END(self):
+            return self.getToken(UMLParser.LINE_END, 0)
 
         def getRuleIndex(self):
             return UMLParser.RULE_dependency
@@ -1801,7 +1972,7 @@ class UMLParser ( Parser ):
             self.state = 245
             self.match(UMLParser.IDENTIFIER)
             self.state = 246
-            self.match(UMLParser.T__8)
+            self.match(UMLParser.LINE_END)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -1818,6 +1989,20 @@ class UMLParser ( Parser ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
+        def ASSOCIATION(self):
+            return self.getToken(UMLParser.ASSOCIATION, 0)
+
+        def INCLUDE_RIGHT(self):
+            return self.getToken(UMLParser.INCLUDE_RIGHT, 0)
+
+        def INCLUDE_LEFT(self):
+            return self.getToken(UMLParser.INCLUDE_LEFT, 0)
+
+        def EXTEND_RIGHT(self):
+            return self.getToken(UMLParser.EXTEND_RIGHT, 0)
+
+        def EXTEND_LEFT(self):
+            return self.getToken(UMLParser.EXTEND_LEFT, 0)
 
         def getRuleIndex(self):
             return UMLParser.RULE_dependencyOperator
@@ -1842,7 +2027,7 @@ class UMLParser ( Parser ):
             self.enterOuterAlt(localctx, 1)
             self.state = 248
             _la = self._input.LA(1)
-            if not(((_la) & ~0x3f) == 0 and ((1 << _la) & 1030825705472) != 0):
+            if not(((_la) & ~0x3f) == 0 and ((1 << _la) & 4026597376) != 0):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
@@ -1862,6 +2047,15 @@ class UMLParser ( Parser ):
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
+
+        def PACKAGE(self):
+            return self.getToken(UMLParser.PACKAGE, 0)
+
+        def LEFT_CURLY_BRACKET(self):
+            return self.getToken(UMLParser.LEFT_CURLY_BRACKET, 0)
+
+        def RIGHT_CURLY_BRACKET(self):
+            return self.getToken(UMLParser.RIGHT_CURLY_BRACKET, 0)
 
         def useCaseDeclaration(self, i:int=None):
             if i is None:
@@ -1906,25 +2100,25 @@ class UMLParser ( Parser ):
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 250
-            self.match(UMLParser.T__39)
+            self.match(UMLParser.PACKAGE)
             self.state = 251
-            self.match(UMLParser.T__2)
+            self.match(UMLParser.LEFT_CURLY_BRACKET)
             self.state = 257
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while (((_la - 35)) & ~0x3f) == 0 and ((1 << (_la - 35)) & 1073741857) != 0:
+            while ((_la) & ~0x3f) == 0 and ((1 << _la) & 576460756732608512) != 0:
                 self.state = 255
                 self._errHandler.sync(self)
                 token = self._input.LA(1)
-                if token in [35]:
+                if token in [27]:
                     self.state = 252
                     self.useCaseDeclaration()
                     pass
-                elif token in [65]:
+                elif token in [59]:
                     self.state = 253
                     self.dependency()
                     pass
-                elif token in [40]:
+                elif token in [32]:
                     self.state = 254
                     self.package()
                     pass
@@ -1936,7 +2130,7 @@ class UMLParser ( Parser ):
                 _la = self._input.LA(1)
 
             self.state = 260
-            self.match(UMLParser.T__3)
+            self.match(UMLParser.RIGHT_CURLY_BRACKET)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -1952,6 +2146,9 @@ class UMLParser ( Parser ):
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
+
+        def SEQUENCE_START(self):
+            return self.getToken(UMLParser.SEQUENCE_START, 0)
 
         def IDENTIFIER(self):
             return self.getToken(UMLParser.IDENTIFIER, 0)
@@ -1992,7 +2189,7 @@ class UMLParser ( Parser ):
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 262
-            self.match(UMLParser.T__40)
+            self.match(UMLParser.SEQUENCE_START)
             self.state = 264
             self._errHandler.sync(self)
             la_ = self._interp.adaptivePredict(self._input,21,self._ctx)
@@ -2004,7 +2201,7 @@ class UMLParser ( Parser ):
             self.state = 269
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==42:
+            while _la==34:
                 self.state = 266
                 self.lifeline()
                 self.state = 271
@@ -2014,7 +2211,7 @@ class UMLParser ( Parser ):
             self.state = 275
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while (((_la - 49)) & ~0x3f) == 0 and ((1 << (_la - 49)) & 65653) != 0:
+            while ((_la) & ~0x3f) == 0 and ((1 << _la) & 577489895187021824) != 0:
                 self.state = 272
                 self.seqStatement()
                 self.state = 277
@@ -2037,8 +2234,14 @@ class UMLParser ( Parser ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
+        def LIFELINE(self):
+            return self.getToken(UMLParser.LIFELINE, 0)
+
         def IDENTIFIER(self):
             return self.getToken(UMLParser.IDENTIFIER, 0)
+
+        def LINE_END(self):
+            return self.getToken(UMLParser.LINE_END, 0)
 
         def getRuleIndex(self):
             return UMLParser.RULE_lifeline
@@ -2061,11 +2264,11 @@ class UMLParser ( Parser ):
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 278
-            self.match(UMLParser.T__41)
+            self.match(UMLParser.LIFELINE)
             self.state = 279
             self.match(UMLParser.IDENTIFIER)
             self.state = 280
-            self.match(UMLParser.T__8)
+            self.match(UMLParser.LINE_END)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -2112,12 +2315,12 @@ class UMLParser ( Parser ):
             self.state = 284
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [49, 51, 53, 54, 55]:
+            if token in [43, 45, 47, 48, 49]:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 282
                 self.actionsBlock()
                 pass
-            elif token in [65]:
+            elif token in [59]:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 283
                 self.action()
@@ -2150,6 +2353,12 @@ class UMLParser ( Parser ):
         def actionType(self):
             return self.getTypedRuleContext(UMLParser.ActionTypeContext,0)
 
+
+        def LINE_END(self):
+            return self.getToken(UMLParser.LINE_END, 0)
+
+        def COLON(self):
+            return self.getToken(UMLParser.COLON, 0)
 
         def STRING(self):
             return self.getToken(UMLParser.STRING, 0)
@@ -2184,15 +2393,15 @@ class UMLParser ( Parser ):
             self.state = 291
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if _la==8:
+            if _la==71:
                 self.state = 289
-                self.match(UMLParser.T__7)
+                self.match(UMLParser.COLON)
                 self.state = 290
                 self.match(UMLParser.STRING)
 
 
             self.state = 293
-            self.match(UMLParser.T__8)
+            self.match(UMLParser.LINE_END)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -2212,6 +2421,12 @@ class UMLParser ( Parser ):
         def actionOperator(self):
             return self.getTypedRuleContext(UMLParser.ActionOperatorContext,0)
 
+
+        def NEW(self):
+            return self.getToken(UMLParser.NEW, 0)
+
+        def DELETE(self):
+            return self.getToken(UMLParser.DELETE, 0)
 
         def getRuleIndex(self):
             return UMLParser.RULE_actionType
@@ -2246,7 +2461,7 @@ class UMLParser ( Parser ):
                 self.state = 296
                 self.actionOperator()
                 self.state = 297
-                self.match(UMLParser.T__42)
+                self.match(UMLParser.NEW)
                 pass
 
             elif la_ == 3:
@@ -2254,7 +2469,7 @@ class UMLParser ( Parser ):
                 self.state = 299
                 self.actionOperator()
                 self.state = 300
-                self.match(UMLParser.T__43)
+                self.match(UMLParser.DELETE)
                 pass
 
 
@@ -2274,6 +2489,23 @@ class UMLParser ( Parser ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
+        def MESSAGE_LEFT(self):
+            return self.getToken(UMLParser.MESSAGE_LEFT, 0)
+
+        def MESSAGE_RIGHT(self):
+            return self.getToken(UMLParser.MESSAGE_RIGHT, 0)
+
+        def ASYNC_MESSAGE_LEFT(self):
+            return self.getToken(UMLParser.ASYNC_MESSAGE_LEFT, 0)
+
+        def ASYNC_MESSAGE_RIGHT(self):
+            return self.getToken(UMLParser.ASYNC_MESSAGE_RIGHT, 0)
+
+        def BACK_MESSAGE_LEFT(self):
+            return self.getToken(UMLParser.BACK_MESSAGE_LEFT, 0)
+
+        def BACK_MESSAGE_RIGHT(self):
+            return self.getToken(UMLParser.BACK_MESSAGE_RIGHT, 0)
 
         def getRuleIndex(self):
             return UMLParser.RULE_actionOperator
@@ -2298,7 +2530,7 @@ class UMLParser ( Parser ):
             self.enterOuterAlt(localctx, 1)
             self.state = 304
             _la = self._input.LA(1)
-            if not(((_la) & ~0x3f) == 0 and ((1 << _la) & 527768802557952) != 0):
+            if not(((_la) & ~0x3f) == 0 and ((1 << _la) & 8658654068736) != 0):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
@@ -2418,13 +2650,22 @@ class UMLParser ( Parser ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
+        def IF(self):
+            return self.getToken(UMLParser.IF, 0)
+
         def condition(self):
             return self.getTypedRuleContext(UMLParser.ConditionContext,0)
 
 
-        def instruction(self):
-            return self.getTypedRuleContext(UMLParser.InstructionContext,0)
+        def instruction(self, i:int=None):
+            if i is None:
+                return self.getTypedRuleContexts(UMLParser.InstructionContext)
+            else:
+                return self.getTypedRuleContext(UMLParser.InstructionContext,i)
 
+
+        def ELSE(self):
+            return self.getToken(UMLParser.ELSE, 0)
 
         def getRuleIndex(self):
             return UMLParser.RULE_alt
@@ -2447,10 +2688,14 @@ class UMLParser ( Parser ):
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 314
-            self.match(UMLParser.T__48)
+            self.match(UMLParser.IF)
             self.state = 315
             self.condition()
             self.state = 316
+            self.instruction()
+            self.state = 317
+            self.match(UMLParser.ELSE)
+            self.state = 318
             self.instruction()
         except RecognitionException as re:
             localctx.exception = re
@@ -2468,15 +2713,15 @@ class UMLParser ( Parser ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
+        def IF(self):
+            return self.getToken(UMLParser.IF, 0)
+
         def condition(self):
             return self.getTypedRuleContext(UMLParser.ConditionContext,0)
 
 
-        def instruction(self, i:int=None):
-            if i is None:
-                return self.getTypedRuleContexts(UMLParser.InstructionContext)
-            else:
-                return self.getTypedRuleContext(UMLParser.InstructionContext,i)
+        def instruction(self):
+            return self.getTypedRuleContext(UMLParser.InstructionContext,0)
 
 
         def getRuleIndex(self):
@@ -2499,14 +2744,10 @@ class UMLParser ( Parser ):
         self.enterRule(localctx, 68, self.RULE_opt)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 318
-            self.match(UMLParser.T__48)
-            self.state = 319
-            self.condition()
             self.state = 320
-            self.instruction()
+            self.match(UMLParser.IF)
             self.state = 321
-            self.match(UMLParser.T__49)
+            self.condition()
             self.state = 322
             self.instruction()
         except RecognitionException as re:
@@ -2525,12 +2766,21 @@ class UMLParser ( Parser ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
+        def PAR(self):
+            return self.getToken(UMLParser.PAR, 0)
+
         def instruction(self, i:int=None):
             if i is None:
                 return self.getTypedRuleContexts(UMLParser.InstructionContext)
             else:
                 return self.getTypedRuleContext(UMLParser.InstructionContext,i)
 
+
+        def AND(self, i:int=None):
+            if i is None:
+                return self.getTokens(UMLParser.AND)
+            else:
+                return self.getToken(UMLParser.AND, i)
 
         def getRuleIndex(self):
             return UMLParser.RULE_par
@@ -2554,15 +2804,15 @@ class UMLParser ( Parser ):
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 324
-            self.match(UMLParser.T__50)
+            self.match(UMLParser.PAR)
             self.state = 325
             self.instruction()
             self.state = 330
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==52:
+            while _la==46:
                 self.state = 326
-                self.match(UMLParser.T__51)
+                self.match(UMLParser.AND)
                 self.state = 327
                 self.instruction()
                 self.state = 332
@@ -2584,6 +2834,9 @@ class UMLParser ( Parser ):
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
+
+        def CRITICAL(self):
+            return self.getToken(UMLParser.CRITICAL, 0)
 
         def instruction(self):
             return self.getTypedRuleContext(UMLParser.InstructionContext,0)
@@ -2610,7 +2863,7 @@ class UMLParser ( Parser ):
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 333
-            self.match(UMLParser.T__52)
+            self.match(UMLParser.CRITICAL)
             self.state = 334
             self.instruction()
         except RecognitionException as re:
@@ -2628,6 +2881,9 @@ class UMLParser ( Parser ):
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
+
+        def FOR(self):
+            return self.getToken(UMLParser.FOR, 0)
 
         def NUMBER(self):
             return self.getToken(UMLParser.NUMBER, 0)
@@ -2657,7 +2913,7 @@ class UMLParser ( Parser ):
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 336
-            self.match(UMLParser.T__53)
+            self.match(UMLParser.FOR)
             self.state = 337
             self.match(UMLParser.NUMBER)
             self.state = 338
@@ -2677,6 +2933,9 @@ class UMLParser ( Parser ):
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
+
+        def WHILE(self):
+            return self.getToken(UMLParser.WHILE, 0)
 
         def condition(self):
             return self.getTypedRuleContext(UMLParser.ConditionContext,0)
@@ -2707,7 +2966,7 @@ class UMLParser ( Parser ):
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 340
-            self.match(UMLParser.T__54)
+            self.match(UMLParser.WHILE)
             self.state = 341
             self.condition()
             self.state = 342
@@ -2732,6 +2991,12 @@ class UMLParser ( Parser ):
             return self.getTypedRuleContext(UMLParser.ActionContext,0)
 
 
+        def LEFT_CURLY_BRACKET(self):
+            return self.getToken(UMLParser.LEFT_CURLY_BRACKET, 0)
+
+        def RIGHT_CURLY_BRACKET(self):
+            return self.getToken(UMLParser.RIGHT_CURLY_BRACKET, 0)
+
         def getRuleIndex(self):
             return UMLParser.RULE_instruction
 
@@ -2754,19 +3019,19 @@ class UMLParser ( Parser ):
             self.state = 349
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [65]:
+            if token in [59]:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 344
                 self.action()
                 pass
-            elif token in [3]:
+            elif token in [65]:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 345
-                self.match(UMLParser.T__2)
+                self.match(UMLParser.LEFT_CURLY_BRACKET)
                 self.state = 346
                 self.action()
                 self.state = 347
-                self.match(UMLParser.T__3)
+                self.match(UMLParser.RIGHT_CURLY_BRACKET)
                 pass
             else:
                 raise NoViableAltException(self)
@@ -2803,6 +3068,9 @@ class UMLParser ( Parser ):
             else:
                 return self.getToken(UMLParser.NUMBER, i)
 
+        def NOT(self):
+            return self.getToken(UMLParser.NOT, 0)
+
         def getRuleIndex(self):
             return UMLParser.RULE_condition
 
@@ -2830,7 +3098,7 @@ class UMLParser ( Parser ):
                 self.enterOuterAlt(localctx, 1)
                 self.state = 351
                 _la = self._input.LA(1)
-                if not(_la==65 or _la==66):
+                if not(_la==59 or _la==60):
                     self._errHandler.recoverInline(self)
                 else:
                     self._errHandler.reportMatch(self)
@@ -2839,7 +3107,7 @@ class UMLParser ( Parser ):
                 self.booleanOperator()
                 self.state = 353
                 _la = self._input.LA(1)
-                if not(_la==65 or _la==66):
+                if not(_la==59 or _la==60):
                     self._errHandler.recoverInline(self)
                 else:
                     self._errHandler.reportMatch(self)
@@ -2849,7 +3117,7 @@ class UMLParser ( Parser ):
             elif la_ == 2:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 355
-                self.match(UMLParser.T__55)
+                self.match(UMLParser.NOT)
                 self.state = 356
                 self.match(UMLParser.IDENTIFIER)
                 pass
@@ -2877,6 +3145,23 @@ class UMLParser ( Parser ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
+        def LESS_THAN(self):
+            return self.getToken(UMLParser.LESS_THAN, 0)
+
+        def GREATER_THAN(self):
+            return self.getToken(UMLParser.GREATER_THAN, 0)
+
+        def EQUAL(self):
+            return self.getToken(UMLParser.EQUAL, 0)
+
+        def NOT_EQUAL(self):
+            return self.getToken(UMLParser.NOT_EQUAL, 0)
+
+        def LESS_THAN_OR_EQUAL(self):
+            return self.getToken(UMLParser.LESS_THAN_OR_EQUAL, 0)
+
+        def GREATER_THAN_OR_EQUAL(self):
+            return self.getToken(UMLParser.GREATER_THAN_OR_EQUAL, 0)
 
         def getRuleIndex(self):
             return UMLParser.RULE_booleanOperator
@@ -2901,7 +3186,7 @@ class UMLParser ( Parser ):
             self.enterOuterAlt(localctx, 1)
             self.state = 360
             _la = self._input.LA(1)
-            if not(((_la) & ~0x3f) == 0 and ((1 << _la) & 9079256848778919936) != 0):
+            if not(((_la) & ~0x3f) == 0 and ((1 << _la) & 141863388262170624) != 0):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)

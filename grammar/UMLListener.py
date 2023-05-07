@@ -10,6 +10,7 @@ class UMLListener(ParseTreeListener):
 
     # Enter a parse tree produced by UMLParser#s.
     def enterS(self, ctx:UMLParser.SContext):
+        print("enterS") # test
         pass
 
     # Exit a parse tree produced by UMLParser#s.
@@ -19,10 +20,12 @@ class UMLListener(ParseTreeListener):
 
     # Enter a parse tree produced by UMLParser#classDiagram.
     def enterClassDiagram(self, ctx:UMLParser.ClassDiagramContext):
+        print("enterClassDiagram") # test
         pass
 
     # Exit a parse tree produced by UMLParser#classDiagram.
     def exitClassDiagram(self, ctx:UMLParser.ClassDiagramContext):
+        print("exitClassDiagram") # test
         pass
 
 
@@ -37,6 +40,7 @@ class UMLListener(ParseTreeListener):
 
     # Enter a parse tree produced by UMLParser#interface.
     def enterInterface(self, ctx:UMLParser.InterfaceContext):
+        print("enterInterface") # test
         pass
 
     # Exit a parse tree produced by UMLParser#interface.
