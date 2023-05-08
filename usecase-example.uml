@@ -4,8 +4,8 @@ actor Aktor1;
 actor Aktor2;
 
 package {
-    case nazwa1 "Tytuł";
-    case nazwa2 "Tytuł";
+    case nazwa1 "Tytul";
+    case nazwa2 "Tytul";
 
     nazwa1 <i- nazwa2;
     nazwa1 <e- nazwa2;
