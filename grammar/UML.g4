@@ -3,7 +3,7 @@ options {
 	language = 'Python3';
 }
 
-s: (classDiagram | sequenceDiagram | useCaseDiagram) EOF;
+program: (classDiagram | sequenceDiagram | useCaseDiagram | EOF);
 
 // Class diagram
 classDiagram:
