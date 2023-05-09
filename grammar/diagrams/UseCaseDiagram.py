@@ -7,7 +7,7 @@ class Actor:
     def __init__(self, name: str):
         self.name = name
 
-    def draw(self):
+    def render(self) -> str:
         # TODO: Implement this method
         pass
 
@@ -18,7 +18,7 @@ class UseCase:
     def __init__(self, name: str):
         self.name = name
 
-    def draw(self):
+    def render(self) -> str:
         # TODO: Implement this method
         pass
 
@@ -31,7 +31,7 @@ class UseCaseAssociation:
         self.actor = actor
         self.use_case = use_case
 
-    def draw(self):
+    def render(self) -> str:
         # TODO: Implement this method
         pass
 
@@ -46,7 +46,7 @@ class UseCaseRelation:
         self.target = target
         self.type = type
 
-    def draw(self):
+    def render(self) -> str:
         # TODO: Implement this method
         pass
 
@@ -63,6 +63,6 @@ class UseCaseDiagram(Diagram):
         self.use_cases = []
         self.relations = []
 
-    def draw(self):
+    def render(self) -> str:
         # TODO: Implement this method
         pass

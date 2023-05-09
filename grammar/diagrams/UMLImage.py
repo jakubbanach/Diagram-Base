@@ -19,5 +19,5 @@ class UMLImage:
         with open(f"{self.directory}{self.diagram.name}.svg", "w") as f:
             f.write(f'<!DOCTYPE svg>\n\
                     <svg height="{self.height}" width="{self.width}" style="background-color:{self.background}">')
-            self.diagram.draw()
+            f.write(self.diagram.render())
             f.write("\n</svg>")

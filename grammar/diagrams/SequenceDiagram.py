@@ -7,7 +7,7 @@ class Lifeline:
     def __init__(self, name: str):
         self.name = name
 
-    def draw(self):
+    def render(self) -> str:
         # TODO: Implement this method
         pass
 
@@ -24,7 +24,7 @@ class Message:
         self.type = type
         self.name = name
 
-    def draw(self):
+    def render(self) -> str:
         # TODO: Implement this method
         pass
 
@@ -38,7 +38,7 @@ class Block:
         self.type = type
         self.messages = []
 
-    def draw(self):
+    def render(self) -> str:
         # TODO: Implement this method
         pass
 
@@ -53,6 +53,6 @@ class SequenceDiagram(Diagram):
         self.actors = []
         self.messages = []
 
-    def draw(self):
+    def render(self) -> str:
         # TODO: Implement this method
         pass

@@ -1,15 +1,6 @@
-!classdiagram
+!classdiagram enumex
 
-class Klasa {
-    +asd: string;
-    -sd: int;
-    #sarae(arg1: int, arg2: string): void;
+abstract Abstract1 {
+    #pole1: integer;
+    -method2(a: int): character;
 }
-
-enum Enum {
-    pole;
-}
-
-Klasa --> Klasa;
-
-Klasa o-- Klasa;

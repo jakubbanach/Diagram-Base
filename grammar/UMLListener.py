@@ -7,6 +7,7 @@ else:
 
 from diagrams.UMLImage import UMLImage
 from diagrams.Diagram import Diagram
+from diagrams.ClassDiagram import *
 
 # This class defines a complete listener for a parse tree produced by UMLParser.
 
@@ -14,12 +15,9 @@ from diagrams.Diagram import Diagram
 class UMLListener(ParseTreeListener):
     image: UMLImage
 
-    def __init__(self):
-        self.image = UMLImage(Diagram())
-
     # Enter a parse tree produced by UMLParser#program.
     def enterProgram(self, ctx: UMLParser.ProgramContext):
-        pass
+        self.image = UMLImage(Diagram())
 
     # Exit a parse tree produced by UMLParser#program.
     def exitProgram(self, ctx: UMLParser.ProgramContext):
@@ -27,8 +25,7 @@ class UMLListener(ParseTreeListener):
 
     # Enter a parse tree produced by UMLParser#classDiagram.
     def enterClassDiagram(self, ctx: UMLParser.ClassDiagramContext):
-        if ctx.IDENTIFIER() is not None:
-            self.image.diagram.name = ctx.IDENTIFIER()
+        self.image = UMLImage(ClassDiagram(ctx.IDENTIFIER()))
 
     # Exit a parse tree produced by UMLParser#classDiagram.
     def exitClassDiagram(self, ctx: UMLParser.ClassDiagramContext):
@@ -36,7 +33,7 @@ class UMLListener(ParseTreeListener):
 
     # Enter a parse tree produced by UMLParser#class.
     def enterClass(self, ctx: UMLParser.ClassContext):
-        pass
+        self.image.diagram.add_class(UMLBasicClass(ctx.IDENTIFIER()))
 
     # Exit a parse tree produced by UMLParser#class.
     def exitClass(self, ctx: UMLParser.ClassContext):
@@ -44,7 +41,7 @@ class UMLListener(ParseTreeListener):
 
     # Enter a parse tree produced by UMLParser#interface.
     def enterInterface(self, ctx: UMLParser.InterfaceContext):
-        pass
+        self.image.diagram.add_class(UMLInterface(ctx.IDENTIFIER()))
 
     # Exit a parse tree produced by UMLParser#interface.
     def exitInterface(self, ctx: UMLParser.InterfaceContext):
@@ -52,7 +49,7 @@ class UMLListener(ParseTreeListener):
 
     # Enter a parse tree produced by UMLParser#abstractClass.
     def enterAbstractClass(self, ctx: UMLParser.AbstractClassContext):
-        pass
+        self.image.diagram.add_class(UMLAbstractClass(ctx.IDENTIFIER()))
 
     # Exit a parse tree produced by UMLParser#abstractClass.
     def exitAbstractClass(self, ctx: UMLParser.AbstractClassContext):
@@ -60,7 +57,7 @@ class UMLListener(ParseTreeListener):
 
     # Enter a parse tree produced by UMLParser#enum.
     def enterEnum(self, ctx: UMLParser.EnumContext):
-        pass
+        self.image.diagram.add_class(UMLEnum(ctx.IDENTIFIER()))
 
     # Exit a parse tree produced by UMLParser#enum.
     def exitEnum(self, ctx: UMLParser.EnumContext):
@@ -76,18 +73,14 @@ class UMLListener(ParseTreeListener):
 
     # Enter a parse tree produced by UMLParser#field.
     def enterField(self, ctx: UMLParser.FieldContext):
-        pass
+        # arrays ?...
+        self.image.diagram.get_last_class().add_field(
+            UMLClassField(ctx.IDENTIFIER(), ctx.SCOPE(),
+                          ctx.type_().IDENTIFIER())
+        )
 
     # Exit a parse tree produced by UMLParser#field.
     def exitField(self, ctx: UMLParser.FieldContext):
-        pass
-
-    # Enter a parse tree produced by UMLParser#scope.
-    def enterScope(self, ctx: UMLParser.ScopeContext):
-        pass
-
-    # Exit a parse tree produced by UMLParser#scope.
-    def exitScope(self, ctx: UMLParser.ScopeContext):
         pass
 
     # Enter a parse tree produced by UMLParser#type.
@@ -100,7 +93,10 @@ class UMLListener(ParseTreeListener):
 
     # Enter a parse tree produced by UMLParser#method.
     def enterMethod(self, ctx: UMLParser.MethodContext):
-        pass
+        self.image.diagram.get_last_class().add_method(
+            UMLClassMethod(ctx.IDENTIFIER(), ctx.SCOPE(),
+                           ctx.type_().IDENTIFIER())
+        )
 
     # Exit a parse tree produced by UMLParser#method.
     def exitMethod(self, ctx: UMLParser.MethodContext):
@@ -132,7 +128,9 @@ class UMLListener(ParseTreeListener):
 
     # Enter a parse tree produced by UMLParser#enumField.
     def enterEnumField(self, ctx: UMLParser.EnumFieldContext):
-        pass
+        self.image.diagram.get_last_class().add_field(
+            UMLEnumField(ctx.IDENTIFIER())
+        )
 
     # Exit a parse tree produced by UMLParser#enumField.
     def exitEnumField(self, ctx: UMLParser.EnumFieldContext):

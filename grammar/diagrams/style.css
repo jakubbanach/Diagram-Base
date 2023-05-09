@@ -1,0 +1,51 @@
+g {
+    stroke: #000;
+}
+
+rect,
+path {
+    fill: #fff;
+    fill-opacity: 0;
+}
+
+rect {
+    stroke-width: 6;
+}
+
+path,
+line {
+    stroke-width: 2;
+}
+
+text {
+    fill: #000;
+    stroke-width: 0;
+    font-family: sans-serif;
+}
+
+text.name {
+    font-size: 25px;
+    font-weight: bold;
+    text-anchor: middle;
+}
+
+text.item {
+    font-size: 25px;
+}
+
+text.visibility {
+    font-size: 28px;
+    font-family: monospace;
+    font-weight: bold;
+    text-anchor: middle;
+}
+
+text.relation {
+    font-size: 22px;
+    text-anchor: middle;
+}
+
+text.roll {
+    font-size: 22px;
+    text-anchor: left;
+}

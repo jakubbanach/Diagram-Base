@@ -3,7 +3,7 @@ options {
 	language = 'Python3';
 }
 
-program: (classDiagram | sequenceDiagram | useCaseDiagram | EOF);
+program: classDiagram | sequenceDiagram | useCaseDiagram | EOF;
 
 // Class diagram
 classDiagram:
@@ -22,22 +22,10 @@ abstractClass:
 enum:
 	ENUM IDENTIFIER LEFT_CURLY_BRACKET enumContents RIGHT_CURLY_BRACKET;
 classContents: (field | method)+;
-field: scope IDENTIFIER COLON type LINE_END;
-scope:
-	PUBLIC_SCOPE
-	| PRIVATE_SCOPE
-	| PROTECTED_SCOPE
-	| PACKAGE_SCOPE;
-type: (
-		INT_TYPE
-		| STRING_TYPE
-		| DOUBLE_TYPE
-		| CHAR_TYPE
-		| FLOAT_TYPE
-		| IDENTIFIER
-	) (LEFT_SQUARE_BRACKET NUMBER_NON_ZERO? RIGHT_SQUARE_BRACKET)?;
+field: SCOPE IDENTIFIER COLON type LINE_END;
+type: IDENTIFIER (LEFT_SQUARE_BRACKET NUMBER_NON_ZERO? RIGHT_SQUARE_BRACKET)?;
 method:
-	scope IDENTIFIER LEFT_PARENTHESIS arguments RIGHT_PARENTHESIS COLON type LINE_END;
+	SCOPE IDENTIFIER LEFT_PARENTHESIS arguments? RIGHT_PARENTHESIS COLON type LINE_END;
 arguments: argument | argument COMMA arguments;
 argument: IDENTIFIER COLON type;
 enumContents: (enumField)+;
@@ -129,15 +117,7 @@ CLASS: 'class';
 INTERFACE: 'interface';
 ENUM: 'enum';
 ABSTRACT: 'abstract';
-PUBLIC_SCOPE: '+';
-PRIVATE_SCOPE: '-';
-PROTECTED_SCOPE: '#';
-PACKAGE_SCOPE: '~';
-INT_TYPE: 'int';
-STRING_TYPE: 'string';
-DOUBLE_TYPE: 'double';
-CHAR_TYPE: 'char';
-FLOAT_TYPE: 'float';
+SCOPE: '+' | '-' | '#' | '~';
 DEPENDENCY: '...';
 ASSOCIATION: '--';
 INHERITANCE_RIGHT: '-->';
