@@ -4,3 +4,11 @@ abstract Abstract1 {
     #pole1: integer;
     -method2(a: int): character;
 }
+
+enum Enum1 {
+    pole;
+}
+
+class Class1 {
+    -pole: int;
+}

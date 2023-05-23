@@ -7,7 +7,9 @@ else:
 
 from diagrams.UMLImage import UMLImage
 from diagrams.Diagram import Diagram
-from diagrams.ClassDiagram import *
+from diagrams.classes.UMLCLass import *
+from diagrams.classes.UMLRelation import *
+from diagrams.classes.ClassDiagram import *
 
 # This class defines a complete listener for a parse tree produced by UMLParser.
 

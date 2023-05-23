@@ -1,6 +1,3 @@
-from .Diagram import Diagram
-
-
 class UMLClassMethodArgument:
     name: str
     type: str
@@ -82,7 +79,7 @@ class UMLBasicClass(UMLClass):
 
     def _render_fields(self) -> str:
         return [field.render((i+1)*35 + self.base_height - 15) for i, field in enumerate(self.fields)]
-    
+
     def _render_methods(self) -> str:
         return [method.render((i+1)*35 + self.base_height - 15 + len(self.fields * 35)) for i, method in enumerate(self.methods)]
 
@@ -180,45 +177,3 @@ class UMLEnum(UMLClass):
                 <text x="160" y="80" class="name">{self.name}</text>\
                 {[field.render((i+1)*35 + base_height - 15) for i, field in enumerate(self.fields)]}\
             </g>'
-
-
-class UMLRelation:
-    source_multiplicity: str
-    target_multiplicity: str
-    source: UMLClass
-    target: UMLClass
-    type: str  # np. association, aggregation, composition, inheritance
-
-    def __init__(self, source: str, target: str, type: str):
-        self.source = source
-        self.target = target
-        self.type = type
-
-    def render(self) -> str:
-        # TODO: Implement this method
-        pass
-
-
-class ClassDiagram(Diagram):
-    classes: list[UMLClass]
-    relations: list[UMLRelation]
-
-    def __init__(self, name: str):
-        super().__init__(name)
-        self.classes = []
-        self.relations = []
-
-    def add_class(self, uml_class: UMLClass):
-        self.classes.append(uml_class)
-
-    def add_relation(self, relation: UMLRelation):
-        self.relations.append(relation)
-
-    def get_last_class(self) -> UMLClass:
-        return self.classes[-1]
-
-    def render(self) -> str:
-        return super().render() + f'\
-            {[uml_class.render() for uml_class in self.classes]}\
-        '
-        # {[relation.render() for relation in self.relations]}\

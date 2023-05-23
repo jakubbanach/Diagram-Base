@@ -7,4 +7,4 @@ def main(argv):
     parser.parse(argv)
 
 if __name__ == '__main__':
-    main(sys.argv) 
+    main(sys.argv)
