@@ -1,4 +1,4 @@
-!classdiagram enumex
+!classdiagram example
 
 abstract Abstract1 {
     #pole1: integer;

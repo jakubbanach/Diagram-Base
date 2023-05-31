@@ -1,6 +1,7 @@
 import os
+from abc import ABC, abstractmethod
 
-class Diagram:
+class Diagram(ABC):
     name: str
 
     def __init__(self, name: str = "UML"):

@@ -144,11 +144,15 @@ class UMLListener(ParseTreeListener):
 
     # Exit a parse tree produced by UMLParser#relationship.
     def exitRelationship(self, ctx: UMLParser.RelationshipContext):
-        pass
+        self.image.diagram.add_relation(
+            UMLRelation(ctx.IDENTIFIER(), "unknown", "unknown")
+        )
 
     # Enter a parse tree produced by UMLParser#objectRelationship.
     def enterObjectRelationship(self, ctx: UMLParser.ObjectRelationshipContext):
-        pass
+        relation = self.image.diagram.get_last_relation()
+        relation.target = ctx.IDENTIFIER()
+        # TODO: set multiplicity, type
 
     # Exit a parse tree produced by UMLParser#objectRelationship.
     def exitObjectRelationship(self, ctx: UMLParser.ObjectRelationshipContext):
@@ -156,6 +160,7 @@ class UMLListener(ParseTreeListener):
 
     # Enter a parse tree produced by UMLParser#inheritance.
     def enterInheritance(self, ctx: UMLParser.InheritanceContext):
+        # TODO: set target, multiplicity, type
         pass
 
     # Exit a parse tree produced by UMLParser#inheritance.

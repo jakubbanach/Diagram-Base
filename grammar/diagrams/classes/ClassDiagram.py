@@ -23,6 +23,9 @@ class ClassDiagram(Diagram):
     def get_last_class(self) -> UMLClass:
         return self.classes[-1]
     
+    def get_last_relation(self) -> UMLRelation:
+        return self.relations[-1]
+    
     def _place_classes(self):
         for i, uml_class in enumerate(self.classes):
             uml_class.x = i * (self.GAP + uml_class.WIDTH)
