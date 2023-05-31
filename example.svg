@@ -1,5 +1,10 @@
 <!DOCTYPE svg>
 <svg height="1080" width="1920" style="background-color:#ffffff">
+    <defs>
+        <marker id="dotted_arrow" viewBox="0 -5 10 10" orient="auto">
+        <path d="M 0,-5 L 10,0 L 0,5 Z"> </path>
+        </marker>
+    </defs>
     <style type="text/css">
         g {
             stroke: #000;
@@ -74,5 +79,8 @@
             <line x1="0" x2="320" y1="80" y2="80" /> <text x="160" y="45" class="name">Class1</text> [' <text x="30"
                 y="110" class="visibility">-</text> <text x="60" y="110" class="item">pole: int</text> '] []
         </g>
+        <line x1="320" x2="560" y1="97.5" y2="97.5" stroke-dasharray="4 2" marker-end="dotted_arrow"></line>
+        <line x1="880" x2="1120" y1="80" y2="80" marker-end="dotted_arrow"></line>
+    </g>
     </g>
 </svg>
