@@ -19,7 +19,7 @@ class UMLListener(ParseTreeListener):
 
     # Enter a parse tree produced by UMLParser#program.
     def enterProgram(self, ctx: UMLParser.ProgramContext):
-        self.image = UMLImage(Diagram())
+        pass
 
     # Exit a parse tree produced by UMLParser#program.
     def exitProgram(self, ctx: UMLParser.ProgramContext):

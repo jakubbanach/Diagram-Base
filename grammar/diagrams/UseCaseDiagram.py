@@ -39,7 +39,7 @@ class UseCaseAssociation:
 class UseCaseRelation:
     source: UseCase
     target: UseCase
-    type: str # include / extend
+    type: str  # include / extend
 
     def __init__(self, source: UseCase, target: UseCase, type: str):
         self.source = source
@@ -62,6 +62,12 @@ class UseCaseDiagram(Diagram):
         self.actors = []
         self.use_cases = []
         self.relations = []
+
+    def calcualte_width(self) -> int:
+        return 0
+
+    def calculate_height(self) -> int:
+        return 0
 
     def render(self) -> str:
         # TODO: Implement this method

@@ -15,7 +15,7 @@ class Lifeline:
 class Message:
     source: Lifeline
     target: Lifeline
-    type: str # sync / async / return / create / destroy ...??
+    type: str  # sync / async / return / create / destroy ...??
     name: str
 
     def __init__(self, source: Lifeline, target: Lifeline, type: str, name: str):
@@ -31,7 +31,7 @@ class Message:
 
 # ???
 class Block:
-    type: str # alt / opt / loop / par / ... ??
+    type: str  # alt / opt / loop / par / ... ??
     messages: list[Message]
 
     def __init__(self, type: str):
@@ -52,6 +52,12 @@ class SequenceDiagram(Diagram):
         super().__init__(name)
         self.actors = []
         self.messages = []
+
+    def calcualte_width(self) -> int:
+        return 0
+
+    def calculate_height(self) -> int:
+        return 0
 
     def render(self) -> str:
         # TODO: Implement this method
