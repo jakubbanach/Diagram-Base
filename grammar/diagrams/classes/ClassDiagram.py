@@ -1,6 +1,7 @@
 from ..Diagram import Diagram
 from .UMLCLass import UMLClass
 from .UMLRelation import UMLRelation
+import math
 
 
 class ClassDiagram(Diagram):
@@ -22,14 +23,27 @@ class ClassDiagram(Diagram):
 
     def get_last_class(self) -> UMLClass:
         return self.classes[-1]
-    
+
     def get_last_relation(self) -> UMLRelation:
         return self.relations[-1]
-    
+
     def _place_classes(self):
-        for i, uml_class in enumerate(self.classes):
-            uml_class.x = i * (self.GAP + uml_class.WIDTH)
-            uml_class.y = 0
+        grid_size = math.ceil(math.sqrt(len(self.classes)))
+
+        for i in range(grid_size):
+            for j in range(grid_size):
+                index = i * grid_size + j
+                if index >= len(self.classes):
+                    break
+
+                if i == 0:
+                    self.classes[index].y = 0
+                else:
+                    self.classes[index].y = i * \
+                        (self.GAP + self.classes[index-grid_size].get_height())
+
+                self.classes[index].x = j * \
+                    (self.GAP + self.classes[index].WIDTH)
 
     def render(self) -> str:
         result = super().render()
@@ -46,4 +60,4 @@ class ClassDiagram(Diagram):
 
         result += '</g>'
 
-        return result 
+        return result

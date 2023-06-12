@@ -54,6 +54,7 @@ class UMLClass:
     x: int
     y: int
     WIDTH: int = 320
+    FIELD_HEIGHT: int = 35
 
     def __init__(self, name: str, x: int, y: int):
         self.name = name
@@ -78,14 +79,17 @@ class UMLBasicClass(UMLClass):
         self.methods.append(method)
 
     def _render_fields(self) -> str:
-        return [field.render((i+1)*35 + self.base_height - 15) for i, field in enumerate(self.fields)]
+        return [field.render((i+1)*self.FIELD_HEIGHT + self.base_height - 15) for i, field in enumerate(self.fields)]
 
     def _render_methods(self) -> str:
-        return [method.render((i+1)*35 + self.base_height - 15 + len(self.fields * 35)) for i, method in enumerate(self.methods)]
+        return [method.render((i+1)*self.FIELD_HEIGHT + self.base_height - 15 + len(self.fields * self.FIELD_HEIGHT)) for i, method in enumerate(self.methods)]
+
+    def get_height(self) -> int:
+        return self.base_height + len(self.fields) * self.FIELD_HEIGHT + len(self.methods) * self.FIELD_HEIGHT
 
     def render(self) -> str:
         height = self.base_height + len(self.fields) * \
-            35 + len(self.methods) * 35
+            self.FIELD_HEIGHT + len(self.methods) * self.FIELD_HEIGHT
 
         return f'\
             <g transform="translate({self.x},{self.y})">\
@@ -106,7 +110,7 @@ class UMLAbstractClass(UMLBasicClass):
 
     def render(self) -> str:
         height = self.base_height + len(self.fields) * \
-            35 + len(self.methods) * 35
+            self.FIELD_HEIGHT + len(self.methods) * self.FIELD_HEIGHT
 
         return f'\
             <g transform="translate({self.x},{self.y})">\
@@ -129,7 +133,7 @@ class UMLInterface(UMLBasicClass):
     def render(self) -> str:
         base_height = 125
         height = base_height + len(self.fields) * \
-            35 + len(self.methods) * 35
+            self.FIELD_HEIGHT + len(self.methods) * self.FIELD_HEIGHT
 
         return f'\
             <g transform="translate({self.x},{self.y})">\
@@ -155,18 +159,21 @@ class UMLEnumField:
 
 class UMLEnum(UMLClass):
     fields: list[UMLEnumField]
+    base_height: int = 125
 
     def __init__(self, name: str, x: int = 0, y: int = 0):
         super().__init__(name, x, y)
         self.name = name
         self.fields = []
 
+    def get_height(self) -> int:
+        return self.base_height + len(self.fields) * self.FIELD_HEIGHT
+
     def add_field(self, value: UMLEnumField):
         self.fields.append(value)
 
     def render(self) -> str:
-        base_height = 125
-        height = base_height + len(self.fields) * 35
+        height = self.base_height + len(self.fields) * self.FIELD_HEIGHT
 
         return f'\
             <g transform="translate({self.x},{self.y})">\
@@ -175,5 +182,5 @@ class UMLEnum(UMLClass):
                 <line x1="0" x2="320" y1="115" y2="115" />\
                 <text x="160" y="45" class="name">«Enumeration»</text>\
                 <text x="160" y="80" class="name">{self.name}</text>\
-                {[field.render((i+1)*35 + base_height - 15) for i, field in enumerate(self.fields)]}\
+                {[field.render((i+1)*self.FIELD_HEIGHT + self.base_height - 15) for i, field in enumerate(self.fields)]}\
             </g>'
