@@ -2,6 +2,7 @@ from ..Diagram import Diagram
 from .UMLCLass import UMLClass
 from .UMLRelation import UMLRelation
 import math
+import os
 
 
 class ClassDiagram(Diagram):
@@ -67,7 +68,7 @@ class ClassDiagram(Diagram):
                     (self.GAP + self.classes[index].WIDTH)
 
     def render(self) -> str:
-        result = super().render()
+        result = ""
 
         self._place_classes()
 
@@ -81,4 +82,7 @@ class ClassDiagram(Diagram):
 
         result += '</g>'
 
-        return result
+        with open(os.path.join(os.path.realpath(os.path.dirname(__file__)), "class_style.css"), "r") as f:
+            style = f.read()
+
+        return f'<style type="text/css">\n{style}\n</style>\n{result}'

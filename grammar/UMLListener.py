@@ -10,6 +10,7 @@ from diagrams.Diagram import Diagram
 from diagrams.classes.UMLCLass import *
 from diagrams.classes.UMLRelation import *
 from diagrams.classes.ClassDiagram import *
+from diagrams.sequence.SequenceDiagram import *
 
 # This class defines a complete listener for a parse tree produced by UMLParser.
 
@@ -233,7 +234,7 @@ class UMLListener(ParseTreeListener):
 
     # Enter a parse tree produced by UMLParser#sequenceDiagram.
     def enterSequenceDiagram(self, ctx: UMLParser.SequenceDiagramContext):
-        pass
+        self.image = UMLImage(SequenceDiagram(ctx.IDENTIFIER()))
 
     # Exit a parse tree produced by UMLParser#sequenceDiagram.
     def exitSequenceDiagram(self, ctx: UMLParser.SequenceDiagramContext):
@@ -241,7 +242,7 @@ class UMLListener(ParseTreeListener):
 
     # Enter a parse tree produced by UMLParser#lifeline.
     def enterLifeline(self, ctx: UMLParser.LifelineContext):
-        pass
+        self.image.diagram.add_lifeline(ctx.IDENTIFIER())
 
     # Exit a parse tree produced by UMLParser#lifeline.
     def exitLifeline(self, ctx: UMLParser.LifelineContext):
