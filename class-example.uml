@@ -12,3 +12,30 @@ enum Enum1 {
 class Class1 {
     -pole: int;
 }
+
+class Class1 {
+    -pole: int;
+}
+
+class Class1 {
+    -pole: int;
+}
+
+class Class1 {
+    -pole: int;
+    -pole: int;
+    -pole: int;
+    -pole: int;
+    -pole: int;
+    -pole: int;
+}
+
+class Class1 {
+    -pole: int;
+    -pole: int;
+    -pole: int;
+}
+
+class Class1 {
+    -pole: int;
+}

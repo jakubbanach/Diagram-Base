@@ -1,6 +1,8 @@
 from ..Diagram import Diagram
 from .UMLCLass import UMLClass
 from .UMLRelation import UMLRelation
+import math
+import os
 
 
 class ClassDiagram(Diagram):
@@ -22,17 +24,51 @@ class ClassDiagram(Diagram):
 
     def get_last_class(self) -> UMLClass:
         return self.classes[-1]
-    
+
     def get_last_relation(self) -> UMLRelation:
         return self.relations[-1]
-    
+
+    def calculate_width(self) -> int:
+        grid_size = math.ceil(math.sqrt(len(self.classes)))
+        return self.MARGIN * 2 + self.GAP * (grid_size - 1) + self.get_last_class().WIDTH * grid_size
+
+    def calculate_height(self) -> int:
+        max_column_height = 0
+        grid_size = math.ceil(math.sqrt(len(self.classes)))
+        for i in range(grid_size):
+            column_height = 0
+            for j in range(grid_size):
+                index = i * grid_size + j
+                if index >= len(self.classes):
+                    break
+
+                column_height += self.classes[index].get_height()
+
+            max_column_height = max(max_column_height, column_height)
+
+        return self.MARGIN * 2 + self.GAP * (grid_size - 1) + max_column_height
+
     def _place_classes(self):
-        for i, uml_class in enumerate(self.classes):
-            uml_class.x = i * (self.GAP + uml_class.WIDTH)
-            uml_class.y = 0
+        grid_size = math.ceil(math.sqrt(len(self.classes)))
+
+        for i in range(grid_size):
+            for j in range(grid_size):
+                index = i * grid_size + j
+                if index >= len(self.classes):
+                    break
+
+                if i == 0:
+                    self.classes[index].y = 0
+                else:
+                    self.classes[index].y = self.GAP + \
+                        self.classes[index - grid_size].y + \
+                        self.classes[index - grid_size].get_height()
+
+                self.classes[index].x = j * \
+                    (self.GAP + self.classes[index].WIDTH)
 
     def render(self) -> str:
-        result = super().render()
+        result = ""
 
         self._place_classes()
 
@@ -46,4 +82,7 @@ class ClassDiagram(Diagram):
 
         result += '</g>'
 
-        return result 
+        with open(os.path.join(os.path.realpath(os.path.dirname(__file__)), "class_style.css"), "r") as f:
+            style = f.read()
+
+        return f'<style type="text/css">\n{style}\n</style>\n{result}'
