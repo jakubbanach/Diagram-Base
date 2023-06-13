@@ -242,7 +242,7 @@ class UMLListener(ParseTreeListener):
 
     # Enter a parse tree produced by UMLParser#lifeline.
     def enterLifeline(self, ctx: UMLParser.LifelineContext):
-        self.image.diagram.add_lifeline(ctx.IDENTIFIER())
+        self.image.diagram.add_lifeline(str(ctx.IDENTIFIER()))
 
     # Exit a parse tree produced by UMLParser#lifeline.
     def exitLifeline(self, ctx: UMLParser.LifelineContext):
@@ -258,7 +258,46 @@ class UMLListener(ParseTreeListener):
 
     # Enter a parse tree produced by UMLParser#action.
     def enterAction(self, ctx: UMLParser.ActionContext):
-        pass
+        source_name = ""
+        target_name = ""
+        type_ = ""
+        name = ctx.STRING().getText() if ctx.STRING() else ""
+
+        match ctx.actionType().getText():
+            case "==>":
+                source_name = ctx.IDENTIFIER(0).getText()
+                target_name = ctx.IDENTIFIER(1).getText()
+                type_ = "sync"
+            case "<==":
+                source_name = ctx.IDENTIFIER(1).getText()
+                target_name = ctx.IDENTIFIER(0).getText()
+                type_ = "sync"
+            case "..>":
+                source_name = ctx.IDENTIFIER(0).getText()
+                target_name = ctx.IDENTIFIER(1).getText()
+                type_ = "return"
+            case "<..":
+                source_name = ctx.IDENTIFIER(1).getText()
+                target_name = ctx.IDENTIFIER(0).getText()
+                type_ = "return"
+            case "-*>":
+                source_name = ctx.IDENTIFIER(0).getText()
+                target_name = ctx.IDENTIFIER(1).getText()
+                type_ = "async"
+            case "<*-":
+                source_name = ctx.IDENTIFIER(1).getText()
+                target_name = ctx.IDENTIFIER(0).getText()
+                type_ = "async"
+
+        source = self.image.diagram.get_lifeline_by_name(source_name)
+        target = self.image.diagram.get_lifeline_by_name(target_name)
+
+        self.image.diagram.add_message(
+            source,
+            target,
+            type_,
+            name
+        )
 
     # Exit a parse tree produced by UMLParser#action.
     def exitAction(self, ctx: UMLParser.ActionContext):

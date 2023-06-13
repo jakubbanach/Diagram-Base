@@ -1,5 +1,5 @@
 <!DOCTYPE svg>
-                    <svg height="200" width="760" style="background-color:#ffffff"><style type="text/css">
+                    <svg height="290" width="730" style="background-color:#ffffff"><style type="text/css">
 g {
     stroke: black;
     fill: black;
@@ -7,11 +7,11 @@ g {
 </style>
 <g transform="translate(30, 30)">
 <g transform="translate(0, 0)">
-            <rect fill="none" x="0" width="100"                 height="30" y="0" stroke="black" />            <text fill="black" x="5" y="18"                text-decoration="underline" stroke="none">Linia1</text>            <line x1="50.0" x2="50.0"                 y1="30" y2="230"                 stroke="gray" />            </g>
+            <rect fill="none" x="0" width="70"                 height="30" y="0" stroke="black" />            <text fill="black" x="5" y="18"                text-decoration="underline" stroke="none">Linia1</text>            <line x1="35.0" x2="35.0"                 y1="30" y2="230"                 stroke="gray" />            </g>
 <g transform="translate(300, 0)">
-            <rect fill="none" x="0" width="100"                 height="30" y="0" stroke="black" />            <text fill="black" x="5" y="18"                text-decoration="underline" stroke="none">Linia2</text>            <line x1="50.0" x2="50.0"                 y1="30" y2="230"                 stroke="gray" />            </g>
+            <rect fill="none" x="0" width="40"                 height="30" y="0" stroke="black" />            <text fill="black" x="5" y="18"                text-decoration="underline" stroke="none">sss</text>            <line x1="20.0" x2="20.0"                 y1="30" y2="230"                 stroke="gray" />            </g>
 <g transform="translate(600, 0)">
-            <rect fill="none" x="0" width="100"                 height="30" y="0" stroke="black" />            <text fill="black" x="5" y="18"                text-decoration="underline" stroke="none">Linia3</text>            <line x1="50.0" x2="50.0"                 y1="30" y2="230"                 stroke="gray" />            </g>
-</g>
+            <rect fill="none" x="0" width="70"                 height="30" y="0" stroke="black" />            <text fill="black" x="5" y="18"                text-decoration="underline" stroke="none">Linia2</text>            <line x1="35.0" x2="35.0"                 y1="30" y2="230"                 stroke="gray" />            </g>
+            <g transform="translate(30 60)">                <line fill="none" x1="280" x2="10" stroke="black" /><polygon fill="black" points="283 0 270 6 270 -6" />                <text x="20" font-size="14" y="-3" fill="black" stroke="none">"message 1"</text>            </g>                    <g transform="translate(30 110)">                <line fill="none" x1="280" x2="10" stroke="black" /><polygon fill="black" points="283 0 270 6 270 -6" />                <text x="20" font-size="14" y="-3" fill="black" stroke="none">"message 2"</text>            </g>                    <g transform="translate(30 160)">                <line fill="none" x1="580" x2="310" stroke="black" /><polygon fill="black" points="583 0 570 6 570 -6" />                <text x="320" font-size="14" y="-3" fill="black" stroke="none">"message 3"</text>            </g>                    <g transform="translate(30 210)">                <line fill="none" x1="580" x2="10" stroke="black" /><polygon fill="black" points="583 0 570 6 570 -6" />                <text x="20" font-size="14" y="-3" fill="black" stroke="none"></text>            </g>        </g>
 
 </svg>

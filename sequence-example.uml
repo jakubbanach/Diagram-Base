@@ -1,10 +1,13 @@
 !sequence example
 
 lifeline Linia1;
+lifeline sss;
 lifeline Linia2;
-lifeline Linia3;
 
-// Linia1 ==> Linia2: "asdk";
+Linia1 ==> sss: "message 1";
+Linia1 ==> sss: "message 2";
+sss ==> Linia2: "message 3";
+Linia1 ==> Linia2;
 
 // if cond < 1 {
 //     Linia2 ..> Linia1;
