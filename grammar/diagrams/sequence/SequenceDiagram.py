@@ -23,14 +23,13 @@ class Lifeline:
         box_width = self.calculate_box_width()
 
         return f'\
-            <rect fill="none" x="0" width="{box_width}" \
-                height="{self.BOX_HEIGHT}" y="0" stroke="black" />\
-            <text fill="black" x="5" y="18"\
-                text-decoration="underline" stroke="none">{self.name}</text>\
-            <line x1="{box_width / 2}" x2="{box_width / 2}" \
-                y1="{self.BOX_HEIGHT}" y2="{self.BOX_HEIGHT + self.length}" \
-                stroke="gray" />\
-            '
+            <rect fill="none" x="0" width="{box_width}"\n \
+                height="{self.BOX_HEIGHT}" y="0" stroke="black" />\n\
+            <text fill="black" x="5" y="18"\n\
+                text-decoration="underline" stroke="none">{self.name}</text>\n\
+            <line x1="{box_width / 2}" x2="{box_width / 2}" \n\
+                y1="{self.BOX_HEIGHT}" y2="{self.BOX_HEIGHT + self.length}" \n\
+                stroke="gray" />\n'
 
 
 class Message:
@@ -67,11 +66,10 @@ class Message:
                 head = f''
 
         return f'\
-            <g transform="translate(30 {self.y})">\
-                <line fill="none" x1="{self.target.x - 20}" x2="{self.source.x + 10}" stroke="black" />{head}\
-                <text x="{self.source.x + 20}" font-size="14" y="-3" fill="black" stroke="none">{self.name}</text>\
-            </g>\
-        '
+            <g transform="translate(30 {self.y})">\n\
+                <line fill="none" x1="{self.target.x - 20}" x2="{self.source.x + 10}" stroke="black" />{head}\n\
+                <text x="{self.source.x + 20}" font-size="14" y="-3" fill="black" stroke="none">{self.name}</text>\n\
+            </g>\n'
 
 
 # Later...

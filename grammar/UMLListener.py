@@ -141,18 +141,70 @@ class UMLListener(ParseTreeListener):
 
     # Enter a parse tree produced by UMLParser#relationship.
     def enterRelationship(self, ctx: UMLParser.RelationshipContext):
-        pass
+        type_ = ""
+        inverted = False
+        if ctx.objectRelationship():
+            match ctx.objectRelationship().getText():
+                case "...":
+                    type_ = "dependency"
+                case "--":
+                    type_ = "association"
+                case "--o":
+                    type_ = "partial_aggregation"
+                case "o--":
+                    type_ = "partial_aggregation"
+                    inverted = True
+                case "--*":
+                    type_ = "full_aggregation"
+                case "*--":
+                    type_ = "full_aggregation"
+                    inverted = True
+                case _:
+                    type_ = "inheritance"
+        else:
+            type_ = "inheritance"
+            inverted = True
+        # if type_ ==  "inheritance" and ctx.inheritance().getText() == "<--":
+        #     inverted = True
+        # for i in ctx.objectRelationship():
+        #     print(i)
+        # print(len(str(ctx.objectRelationship())))
+        source = self.image.diagram.get_class_by_name(str(ctx.IDENTIFIER()))
+        self.image.diagram.add_relation(
+            UMLRelation(
+            source, 
+            None, 
+            type_,
+            inverted
+            )
+        )
 
     # Exit a parse tree produced by UMLParser#relationship.
     def exitRelationship(self, ctx: UMLParser.RelationshipContext):
-        self.image.diagram.add_relation(
-            UMLRelation(ctx.IDENTIFIER(), "unknown", "unknown")
-        )
+        pass
 
     # Enter a parse tree produced by UMLParser#objectRelationship.
-    def enterObjectRelationship(self, ctx: UMLParser.ObjectRelationshipContext):
+    def enterObjectRelationship(self, ctx: UMLParser.ObjectRelationshipContext):    
         relation = self.image.diagram.get_last_relation()
-        relation.target = ctx.IDENTIFIER()
+        source = relation.source
+        target_name = str(ctx.IDENTIFIER())
+        source_multiplicity = ""
+        target_multiplicity = ""
+        type_ = relation.type_ 
+        inverted = relation.inverted
+        
+        target = self.image.diagram.get_class_by_name(target_name)
+        
+        self.image.diagram.add_relation(
+            UMLRelation(
+            source, 
+            target, 
+            type_,
+            inverted
+            )
+        )
+
+        
         # TODO: set multiplicity, type
 
     # Exit a parse tree produced by UMLParser#objectRelationship.

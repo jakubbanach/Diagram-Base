@@ -13,29 +13,31 @@ class Class1 {
     -pole: int;
 }
 
-class Class1 {
+class Class2 {
     -pole: int;
 }
 
-class Class1 {
+class Class3 {
     -pole: int;
 }
 
-class Class1 {
+class Class4 {
     -pole: int;
     -pole: int;
     -pole: int;
-    -pole: int;
-    -pole: int;
-    -pole: int;
-}
-
-class Class1 {
     -pole: int;
     -pole: int;
     -pole: int;
 }
 
-class Class1 {
+class Class5 {
+    -pole: int;
+    -pole: int;
     -pole: int;
 }
+
+class Class6 {
+    -pole: int;
+}
+
+Enum1 -- Class1;

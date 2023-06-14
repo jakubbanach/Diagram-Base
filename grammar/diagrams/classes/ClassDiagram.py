@@ -27,6 +27,13 @@ class ClassDiagram(Diagram):
 
     def get_last_relation(self) -> UMLRelation:
         return self.relations[-1]
+    
+    def get_class_by_name(self, name: str) -> UMLClass:
+        for object in self.classes:
+            if str(object.name) == name:
+                return object
+
+        raise Exception(f"Class with name '{name}' not found")
 
     def calculate_width(self) -> int:
         grid_size = math.ceil(math.sqrt(len(self.classes)))
