@@ -47,13 +47,19 @@ class UMLRelation:
             #         <line x1="{self.source.x+self.source.WIDTH}" x2="{self.target.x}" y1="{self.source.y}" y2="{self.source.y}" />\
             #     </g>'
 
-            return f'\
-                <g transform="translate(30 {self.source.y})">\n\
-                    <line fill="none" x1="{self.target.x - 20}" x2="{self.source.x + 10}" stroke="black" />{head}\n\
-                    <text x="{self.source.x + 20}" font-size="14" y="-3" fill="black" stroke="none">{self.source_multiplicity}</text>\n\
-                </g>\n'
-        else:
-            return ""
+        add = ""
+        if(type == 'DEPENDENCY'):
+            add = "stroke-dasharray=\"4 2\""
+        if(type == 'INHERITANCE'):
+            add = ""
+        if(type == 'PARTIAL_AGGREGATIO'):
+            add = ""
+        if(type == 'FULL_AGGREGATION'):
+            add = ""
+        return f'\
+            <g>\
+                <line x1="{self.source.x+self.source.WIDTH}" x2="{self.target.x}" y1="{self.source.y}" y2="{self.source.y}" />\
+            </g>'
 
         # DEPENDENCY: '...'; Strzałka PRZERYWANA (dodajemy parametr) stroke-dasharray="4 2" - odcinki o długości 4 jednostek i przerw o długości 2 
         # ASSOCIATION: '--'; - LINIA ZWYKŁA 

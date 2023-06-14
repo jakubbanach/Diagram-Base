@@ -14,13 +14,16 @@ class Class1 {
 }
 
 class Class2 {
+class Class2 {
     -pole: int;
 }
 
 class Class3 {
+class Class3 {
     -pole: int;
 }
 
+class Class4 {
 class Class4 {
     -pole: int;
     -pole: int;
@@ -31,11 +34,13 @@ class Class4 {
 }
 
 class Class5 {
+class Class5 {
     -pole: int;
     -pole: int;
     -pole: int;
 }
 
+class Class6 {
 class Class6 {
     -pole: int;
 }

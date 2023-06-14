@@ -92,4 +92,12 @@ class ClassDiagram(Diagram):
         with open(os.path.join(os.path.realpath(os.path.dirname(__file__)), "class_style.css"), "r") as f:
             style = f.read()
 
-        return f'<style type="text/css">\n{style}\n</style>\n{result}'
+        defs = '<defs>\n\
+        <marker id=\"white_arrow\" viewBox=\"0 -5 10 10\" markerWidth=\"6\" markerHeight=\"6\" orient=\"auto\">\n\
+            <path d=\"M 0,-5 L 10,0 L 0,5 Z\" fill=\'white\' stroke=\"black\"/>\n\
+        </marker>\n\
+        <marker id=\"black_arrow\" viewBox=\"0 -5 10 10\" markerWidth=\"6\" markerHeight=\"6\" orient=\"auto\">\n\
+            <path d=\"M 0,-5 L 10,0 L 0,5 Z\" fill=\"black\" stroke=\"black\"/>\n\
+        </marker>\n</defs>'
+
+        return f'<style type="text/css">\n{style}\n</style>\n{defs}\n{result}'
