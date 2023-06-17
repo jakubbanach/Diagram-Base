@@ -82,10 +82,10 @@ class ClassDiagram(Diagram):
         result += f'<g transform="translate({self.MARGIN} {self.MARGIN})">\n'
 
         for uml_class in self.classes:
-            result += uml_class.render()
+            result += uml_class.render()+'\n'
 
         for relation in self.relations:
-            result += relation.render()
+            result += relation.render()+'\n'
 
         result += '</g>'
 
@@ -97,6 +97,12 @@ class ClassDiagram(Diagram):
             <path d=\"M 0,-5 L 10,0 L 0,5 Z\" fill=\'white\' stroke=\"black\"/>\n\
         </marker>\n\
         <marker id=\"black_arrow\" viewBox=\"0 -5 10 10\" markerWidth=\"6\" markerHeight=\"6\" orient=\"auto\">\n\
+            <path d=\"M 0,-5 L 10,0 L 0,5 Z\" fill=\"black\" stroke=\"black\"/>\n\
+        </marker>\n\
+        <marker id=\"aggregation_white_arrow\" viewBox=\"0 -5 10 10\" markerWidth=\"6\" markerHeight=\"6\" orient=\"auto\">\n\
+            <path d=\"M 0,-5 L 10,0 L 0,5 Z\" fill=\'white\' stroke=\"black\"/>\n\
+        </marker>\n\
+        <marker id=\"aggregation_black_arrow\" viewBox=\"0 -5 10 10\" markerWidth=\"6\" markerHeight=\"6\" orient=\"auto\">\n\
             <path d=\"M 0,-5 L 10,0 L 0,5 Z\" fill=\"black\" stroke=\"black\"/>\n\
         </marker>\n</defs>'
 

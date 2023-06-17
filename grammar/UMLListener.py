@@ -143,12 +143,19 @@ class UMLListener(ParseTreeListener):
     def enterRelationship(self, ctx: UMLParser.RelationshipContext):
         type_ = ""
         inverted = False
+        target_name = ""
         if ctx.objectRelationship():
-            match ctx.objectRelationship().getText():
+            #bez uwzgledniania krotnosci
+            relation_text = ctx.objectRelationship().getText()
+            #TODO: zmiana tego ifa (ewentualne rozważenie zmiany tokenu z '--' na '---')
+            # if relation_text[:2] == "--" and relation_text[3]!="*":
+            #     type_ = "association"
+            #     target_name = relation_text[2:]
+            # else:
+            target_name = relation_text[3:]
+            match ctx.objectRelationship().getText()[:3]:
                 case "...":
                     type_ = "dependency"
-                case "--":
-                    type_ = "association"
                 case "--o":
                     type_ = "partial_aggregation"
                 case "o--":
@@ -160,20 +167,19 @@ class UMLListener(ParseTreeListener):
                     type_ = "full_aggregation"
                     inverted = True
                 case _:
-                    type_ = "inheritance"
+                    type_ = "association"
+                    target_name = relation_text[2:]
         else:
+            target_name = ctx.inheritance().getText()[3:]
+            if ctx.inheritance().getText()[:3] == "<--":
+                inverted = True
             type_ = "inheritance"
-            inverted = True
-        # if type_ ==  "inheritance" and ctx.inheritance().getText() == "<--":
-        #     inverted = True
-        # for i in ctx.objectRelationship():
-        #     print(i)
-        # print(len(str(ctx.objectRelationship())))
         source = self.image.diagram.get_class_by_name(str(ctx.IDENTIFIER()))
+        target = self.image.diagram.get_class_by_name(str(target_name))
         self.image.diagram.add_relation(
             UMLRelation(
             source, 
-            None, 
+            target, 
             type_,
             inverted
             )
@@ -185,24 +191,25 @@ class UMLListener(ParseTreeListener):
 
     # Enter a parse tree produced by UMLParser#objectRelationship.
     def enterObjectRelationship(self, ctx: UMLParser.ObjectRelationshipContext):    
-        relation = self.image.diagram.get_last_relation()
-        source = relation.source
-        target_name = str(ctx.IDENTIFIER())
-        source_multiplicity = ""
-        target_multiplicity = ""
-        type_ = relation.type_ 
-        inverted = relation.inverted
+        # relation = self.image.diagram.get_last_relation()
+        # source = relation.source
+        # target_name = str(ctx.IDENTIFIER())
+        # source_multiplicity = ""
+        # target_multiplicity = ""
+        # type_ = relation.type_ 
+        # inverted = relation.inverted
         
-        target = self.image.diagram.get_class_by_name(target_name)
+        # target = self.image.diagram.get_class_by_name(target_name)
         
-        self.image.diagram.add_relation(
-            UMLRelation(
-            source, 
-            target, 
-            type_,
-            inverted
-            )
-        )
+        # self.image.diagram.add_relation(
+        #     UMLRelation(
+        #     source, 
+        #     target, 
+        #     type_,
+        #     inverted
+        #     )
+        # )
+        pass
 
         
         # TODO: set multiplicity, type
