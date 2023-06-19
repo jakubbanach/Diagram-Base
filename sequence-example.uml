@@ -4,8 +4,16 @@ lifeline Linia1;
 lifeline sss;
 lifeline Linia2;
 
+
+Linia1 ==> sss;
+Linia1 ==> sss;
+Linia1 ==> sss;
+sss ..> Linia1;
+sss ..> Linia1;
+sss ..> Linia1;
+
 Linia1 ==> sss: "message 1";
-Linia1 ==> sss: "message 2";
+Linia1 <.. sss: "message 2";
 sss ==> Linia2: "message 3";
 Linia1 ==> Linia2;
 

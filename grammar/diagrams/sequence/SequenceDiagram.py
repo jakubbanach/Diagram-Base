@@ -2,34 +2,90 @@ from ..Diagram import Diagram
 import os
 
 
+class Process:
+    start: int
+    end: int
+    offset: int
+    WIDTH: int = 16
+
+    def __init__(self, start: int, end: int = None):
+        self.start = start
+        self.end = end
+        self.offset = -self.WIDTH // 2
+
+    def render(self) -> str:
+        if self.end is None:
+            self.end = self.start + self.WIDTH
+
+        return f'\
+                <rect x="{self.offset}" y="{self.start}" fill="white" stroke="black" width="{self.WIDTH}" height="{self.end - self.start}" />\n\
+            '
+
+
 class Lifeline:
     name: str
-    MIN_LENGTH: int = 200
+    MIN_LENGTH: int = 100
     BOX_HEIGHT: int = 30
     MIN_BOX_WIDTH: int = 30
     FONT_SIZE: int = 10
     length: int
     x: int
+    processes: list[Process]
 
     def __init__(self, name: str):
         self.name = name
         self.x = 0
         self.length = self.MIN_LENGTH
+        self.processes = []
+
+    def activate_at(self, start: int) -> Process:
+        process = Process(start)
+
+        i = len(self.processes) - 1
+        none_count = 0
+        while i >= 0 and self.processes[i].end is None:
+            i -= 1
+            none_count += 1
+
+        if len(self.processes) > 0 and self.processes[-1].end is None:
+            process.offset += none_count * 8
+
+        self.processes.append(process)
+        return process
+
+    def deactivate_at(self, end: int) -> Process | None:
+        if len(self.processes) > 0:
+            for i, process in enumerate(self.processes[::-1]):
+                if process.end is None:
+                    activated_process_index = len(self.processes) - i - 1
+                    break
+
+            self.processes[activated_process_index].end = end
+            return self.processes[activated_process_index]
 
     def calculate_box_width(self) -> int:
         return max(self.MIN_BOX_WIDTH, len(self.name) * self.FONT_SIZE) + 10
+
+    def _render_processes(self) -> str:
+        for process in self.processes:
+            if process.end is None:
+                process.end = self.length + self.BOX_HEIGHT - 5
+
+        return f'<g transform="translate({self.calculate_box_width() // 2}, 0)">' + '\n'.join([process.render() for process in self.processes]) + '</g>'
 
     def render(self) -> str:
         box_width = self.calculate_box_width()
 
         return f'\
-            <rect fill="none" x="0" width="{box_width}"\n \
-                height="{self.BOX_HEIGHT}" y="0" stroke="black" />\n\
+            <rect fill="none" width="{box_width}"\n \
+                height="{self.BOX_HEIGHT}" stroke="black" />\n\
             <text fill="black" x="5" y="18"\n\
                 text-decoration="underline" stroke="none">{self.name}</text>\n\
             <line x1="{box_width / 2}" x2="{box_width / 2}" \n\
                 y1="{self.BOX_HEIGHT}" y2="{self.BOX_HEIGHT + self.length}" \n\
-                stroke="gray" />\n'
+                stroke="gray" />\n\
+            {self._render_processes()}\n\
+        '
 
 
 class Message:
@@ -37,7 +93,6 @@ class Message:
     target: Lifeline
     type_: str  # sync / async / return / create / destroy
     name: str
-    x: int
     y: int
     length: int
 
@@ -46,9 +101,21 @@ class Message:
         self.target = target
         self.type_ = type_
         self.name = name
-        self.x = source.x + 30
         self.y = y
         self.length = abs(target.length - source.length)
+
+        match self.type_:
+            case "sync":
+                self.target.activate_at(self.y)
+            case "async":
+                self.target.activate_at(self.y)
+            case "return":
+                self.source.deactivate_at(self.y)
+            case "create":
+                pass
+            case "destroy":
+                pass
+
 
     def render(self) -> str:
         head = ""
@@ -73,9 +140,13 @@ class Message:
                 line_type = f'stroke-dasharray=\"4 2\"'
                 title_loc = right_end + 5
             case "create":
+                # TODO: Na razie zostaw - tu trzeba będzię zrobić trochę więcej
                 head = f''
+                line = f''
             case "destroy":
+                # TODO: Tu też
                 head = f''
+                line = f''
 
         return f'\
             <g transform="translate(0 {self.y})">\n\
@@ -97,7 +168,6 @@ class Message:
 #     def render(self) -> str:
 #         # TODO: Implement this method
 #         pass
-
 
 class SequenceDiagram(Diagram):
     lifelines: list[Lifeline]
@@ -135,6 +205,10 @@ class SequenceDiagram(Diagram):
     def add_message(self, source: Lifeline, target: Lifeline, type_: str, name: str) -> Message:
         message = Message(source, target, type_, name,
                           self.MARGIN + Lifeline.BOX_HEIGHT + (self.MESSAGE_GAP * len(self.messages)))
+        
+        for i, lifeline in enumerate(self.lifelines):
+            self.lifelines[i].length = max(Lifeline.MIN_LENGTH, message.y - Lifeline.BOX_HEIGHT + self.MESSAGE_GAP // 2)
+
         self.messages.append(message)
 
         return message
@@ -144,7 +218,8 @@ class SequenceDiagram(Diagram):
 
         result += f'<g transform="translate({self.MARGIN}, {self.MARGIN})">\n'
 
-        for lifeline in self.lifelines:
+        for i, lifeline in enumerate(self.lifelines):
+            self.lifelines[i].length = self.calculate_height() - (2 * self.MARGIN) - Lifeline.BOX_HEIGHT
             result += f'<g transform="translate({lifeline.x}, 0)">\n'
             result += lifeline.render()
             result += "</g>\n"
