@@ -60,6 +60,7 @@ class UMLClass:
         self.name = name
         self.x = x
         self.y = y
+        # print(self.name, self.x, self.y)
 
 
 class UMLBasicClass(UMLClass):

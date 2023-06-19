@@ -27,6 +27,13 @@ class ClassDiagram(Diagram):
 
     def get_last_relation(self) -> UMLRelation:
         return self.relations[-1]
+    
+    def get_class_by_name(self, name: str) -> UMLClass:
+        for object in self.classes:
+            if str(object.name) == name:
+                return object
+
+        raise Exception(f"Class with name '{name}' not found")
 
     def calculate_width(self) -> int:
         grid_size = math.ceil(math.sqrt(len(self.classes)))
@@ -75,14 +82,28 @@ class ClassDiagram(Diagram):
         result += f'<g transform="translate({self.MARGIN} {self.MARGIN})">\n'
 
         for uml_class in self.classes:
-            result += uml_class.render()
+            result += uml_class.render()+'\n'
 
         for relation in self.relations:
-            result += relation.render()
+            result += relation.render()+'\n'
 
         result += '</g>'
 
         with open(os.path.join(os.path.realpath(os.path.dirname(__file__)), "class_style.css"), "r") as f:
             style = f.read()
 
-        return f'<style type="text/css">\n{style}\n</style>\n{result}'
+        defs = '<defs>\n\
+        <marker id=\"white_arrow\" viewBox=\"0 -5 10 10\" markerWidth=\"6\" markerHeight=\"6\" orient=\"auto\">\n\
+            <path d=\"M 0,-5 L 10,0 L 0,5 Z\" fill=\'white\' stroke=\"black\"/>\n\
+        </marker>\n\
+        <marker id=\"black_arrow\" viewBox=\"0 -5 10 10\" markerWidth=\"6\" markerHeight=\"6\" orient=\"auto\">\n\
+            <path d=\"M 0,-5 L 10,0 L 0,5 Z\" fill=\"black\" stroke=\"black\"/>\n\
+        </marker>\n\
+        <marker id=\"aggregation_white_arrow\" viewBox=\"0 -5 10 10\" markerWidth=\"6\" markerHeight=\"6\" orient=\"auto\">\n\
+            <path d=\"M 0,-5 L 10,0 L 0,5 Z\" fill=\'white\' stroke=\"black\"/>\n\
+        </marker>\n\
+        <marker id=\"aggregation_black_arrow\" viewBox=\"0 -5 10 10\" markerWidth=\"6\" markerHeight=\"6\" orient=\"auto\">\n\
+            <path d=\"M 0,-5 L 10,0 L 0,5 Z\" fill=\"black\" stroke=\"black\"/>\n\
+        </marker>\n</defs>'
+
+        return f'<style type="text/css">\n{style}\n</style>\n{defs}\n{result}'

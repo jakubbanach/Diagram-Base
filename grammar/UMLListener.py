@@ -141,18 +141,77 @@ class UMLListener(ParseTreeListener):
 
     # Enter a parse tree produced by UMLParser#relationship.
     def enterRelationship(self, ctx: UMLParser.RelationshipContext):
-        pass
+        type_ = ""
+        inverted = False
+        target_name = ""
+        if ctx.objectRelationship():
+            #bez uwzgledniania krotnosci
+            relation_text = ctx.objectRelationship().getText()
+            #TODO: zmiana tego ifa (ewentualne rozważenie zmiany tokenu z '--' na '---')
+            # if relation_text[:2] == "--" and relation_text[3]!="*":
+            #     type_ = "association"
+            #     target_name = relation_text[2:]
+            # else:
+            target_name = relation_text[3:]
+            match ctx.objectRelationship().getText()[:3]:
+                case "...":
+                    type_ = "dependency"
+                case "--o":
+                    type_ = "partial_aggregation"
+                case "o--":
+                    type_ = "partial_aggregation"
+                    inverted = True
+                case "--*":
+                    type_ = "full_aggregation"
+                case "*--":
+                    type_ = "full_aggregation"
+                    inverted = True
+                case _:
+                    type_ = "association"
+                    target_name = relation_text[2:]
+        else:
+            target_name = ctx.inheritance().getText()[3:]
+            if ctx.inheritance().getText()[:3] == "<--":
+                inverted = True
+            type_ = "inheritance"
+        source = self.image.diagram.get_class_by_name(str(ctx.IDENTIFIER()))
+        target = self.image.diagram.get_class_by_name(str(target_name))
+        self.image.diagram.add_relation(
+            UMLRelation(
+            source, 
+            target, 
+            type_,
+            inverted
+            )
+        )
 
     # Exit a parse tree produced by UMLParser#relationship.
     def exitRelationship(self, ctx: UMLParser.RelationshipContext):
-        self.image.diagram.add_relation(
-            UMLRelation(ctx.IDENTIFIER(), "unknown", "unknown")
-        )
+        pass
 
     # Enter a parse tree produced by UMLParser#objectRelationship.
-    def enterObjectRelationship(self, ctx: UMLParser.ObjectRelationshipContext):
-        relation = self.image.diagram.get_last_relation()
-        relation.target = ctx.IDENTIFIER()
+    def enterObjectRelationship(self, ctx: UMLParser.ObjectRelationshipContext):    
+        # relation = self.image.diagram.get_last_relation()
+        # source = relation.source
+        # target_name = str(ctx.IDENTIFIER())
+        # source_multiplicity = ""
+        # target_multiplicity = ""
+        # type_ = relation.type_ 
+        # inverted = relation.inverted
+        
+        # target = self.image.diagram.get_class_by_name(target_name)
+        
+        # self.image.diagram.add_relation(
+        #     UMLRelation(
+        #     source, 
+        #     target, 
+        #     type_,
+        #     inverted
+        #     )
+        # )
+        pass
+
+        
         # TODO: set multiplicity, type
 
     # Exit a parse tree produced by UMLParser#objectRelationship.
@@ -242,7 +301,7 @@ class UMLListener(ParseTreeListener):
 
     # Enter a parse tree produced by UMLParser#lifeline.
     def enterLifeline(self, ctx: UMLParser.LifelineContext):
-        self.image.diagram.add_lifeline(ctx.IDENTIFIER())
+        self.image.diagram.add_lifeline(str(ctx.IDENTIFIER()))
 
     # Exit a parse tree produced by UMLParser#lifeline.
     def exitLifeline(self, ctx: UMLParser.LifelineContext):
@@ -258,7 +317,46 @@ class UMLListener(ParseTreeListener):
 
     # Enter a parse tree produced by UMLParser#action.
     def enterAction(self, ctx: UMLParser.ActionContext):
-        pass
+        source_name = ""
+        target_name = ""
+        type_ = ""
+        name = ctx.STRING().getText() if ctx.STRING() else ""
+
+        match ctx.actionType().getText():
+            case "==>":
+                source_name = ctx.IDENTIFIER(0).getText()
+                target_name = ctx.IDENTIFIER(1).getText()
+                type_ = "sync"
+            case "<==":
+                source_name = ctx.IDENTIFIER(1).getText()
+                target_name = ctx.IDENTIFIER(0).getText()
+                type_ = "sync"
+            case "..>":
+                source_name = ctx.IDENTIFIER(0).getText()
+                target_name = ctx.IDENTIFIER(1).getText()
+                type_ = "return"
+            case "<..":
+                source_name = ctx.IDENTIFIER(1).getText()
+                target_name = ctx.IDENTIFIER(0).getText()
+                type_ = "return"
+            case "-*>":
+                source_name = ctx.IDENTIFIER(0).getText()
+                target_name = ctx.IDENTIFIER(1).getText()
+                type_ = "async"
+            case "<*-":
+                source_name = ctx.IDENTIFIER(1).getText()
+                target_name = ctx.IDENTIFIER(0).getText()
+                type_ = "async"
+
+        source = self.image.diagram.get_lifeline_by_name(source_name)
+        target = self.image.diagram.get_lifeline_by_name(target_name)
+
+        self.image.diagram.add_message(
+            source,
+            target,
+            type_,
+            name
+        )
 
     # Exit a parse tree produced by UMLParser#action.
     def exitAction(self, ctx: UMLParser.ActionContext):

@@ -2,18 +2,18 @@ g {
     stroke: #000;
 }
 
-rect,
-path {
+rect{
     fill: #fff;
     fill-opacity: 0;
-}
-
-rect {
     stroke-width: 6;
 }
 
-path,
 line {
+    stroke-width: 2;
+}
+
+path,
+marker-end {
     stroke-width: 2;
 }
 
