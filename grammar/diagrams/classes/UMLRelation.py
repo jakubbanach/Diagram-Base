@@ -26,17 +26,24 @@ class UMLRelation:
 
     def render(self) -> str:
         # TODO: Implement this method
-        orient = 'right'
         if self.target != None and self.source != None:
+            x1 = self.source.x+self.source.WIDTH+15
+            x2 = self.target.x - 15
+            y1 = self.source.y+self.source.BASE_HEIGHT/2
+            y2 = self.target.y+self.target.BASE_HEIGHT/2
             print(str(self.source.name), str(self.target.name), end =' ')
             print(self.type_, self.inverted)
-            if self.inverted:
-                # TODO: zmiana kierunku strzalki
-                orient = 'left'
-            if self.target.x < self.source.x:
-                temp = self.source
-                self.source = self.target
-                self.target = temp
+            if (self.inverted and self.source.x < self.target.x):
+                x1, x2 = x2, x1
+                y1, y2 = y2, y1
+            if (self.inverted and self.source.x > self.target.x):
+                x1 = self.source.x-15
+                x2 = self.target.x+self.target.WIDTH+15
+                y1, y2 = y2, y1
+            if (not self.inverted and self.source.x > self.target.x):
+                x1 = self.source.x-15
+                x2 = self.target.x+self.target.WIDTH+15
+                y1, y2 = y2, y1
             
             arrow_head = ""
             line_type = ""  #przerywana czy nie
@@ -44,7 +51,7 @@ class UMLRelation:
                 case "dependency":
                     # arrow_head = f'<polygon fill="black" points="{self.target.x - 17} 0 {self.target.x - 30} 6 {self.target.x - 30} -6" />'
                     arrow_head = f'marker-end=\"url(#white_arrow)\"'
-                    line_type = f'stroke-dasharray=\"4 2\"'
+                    line_type = f'stroke-dasharray=\"4 4\"'
                 case "partial_aggregation":
                     arrow_head = f'marker-end=\"url(#aggregation_white_arrow)\"'
                 case "full_aggregation":
@@ -53,7 +60,7 @@ class UMLRelation:
                     arrow_head = f'marker-end=\"url(#black_arrow)\"'
             return f'\
                 <g>\
-                    <line x1="{self.source.x+self.source.WIDTH+15}" x2="{self.target.x - 15}" y1="{self.source.y+self.source.BASE_HEIGHT/2}" y2="{self.target.y+self.target.BASE_HEIGHT/2}" {arrow_head} {line_type}/>\
+                    <line x1="{x1}" x2="{x2}" y1="{y1}" y2="{y2}" {arrow_head} {line_type}/>\
                 </g>'
         else:
             return ""
