@@ -1,84 +1,78 @@
 <!DOCTYPE svg>
-                    <svg height="1090" width="1500" style="background-color:#ffffff"><style type="text/css">
+                    <svg height="395" width="770" style="background-color:#ffffff"><style type="text/css">
 g {
-    stroke: #000;
-}
-
-rect{
-    fill: #fff;
-    fill-opacity: 0;
-    stroke-width: 6;
-}
-
-line {
-    stroke-width: 2;
-}
-
-path,
-marker-end {
-    stroke-width: 1;
-}
-
-text {
-    fill: #000;
-    stroke-width: 0;
-    font-family: sans-serif;
-}
-
-text.name {
-    font-size: 25px;
-    font-weight: bold;
-    text-anchor: middle;
-}
-
-text.item {
-    font-size: 25px;
-}
-
-text.visibility {
-    font-size: 28px;
-    font-family: monospace;
-    font-weight: bold;
-    text-anchor: middle;
-}
-
-text.relation {
-    font-size: 22px;
-    text-anchor: middle;
-}
-
-text.roll {
-    font-size: 22px;
-    text-anchor: left;
+    stroke: black;
+    fill: black;
 }
 </style>
-<defs>
-        <marker id="white_arrow" viewBox="0 -5 10 10" markerWidth="10" markerHeight="10" orient="auto">
-            <path d="M 0,-5 L 10,0 L 0,5 Z" fill='white' stroke="black"/>
-        </marker>
-        <marker id="black_arrow" viewBox="0 -5 10 10" markerWidth="10" markerHeight="10" orient="auto">
-            <path d="M 0,-5 L 10,0 L 0,5 Z" fill="black" stroke="black"/>
-        </marker>
-        <marker id="aggregation_white_arrow" refX="5" refY="5"  viewBox="0 0 10 10" markerWidth="14" markerHeight="14" orient="auto">
-            <path d="M0,5 L5,7.5 L10,5 L5,2.5 Z" fill="white" stroke="black"/>
-        </marker>
-        <marker id="aggregation_black_arrow" refX="5" refY="5"  viewBox="0 0 10 10" markerWidth="14" markerHeight="14" orient="auto">
-            <path d="M0,5 L5,7.5 L10,5 L5,2.5 Z" fill="black" stroke="black"/>
-        </marker>
-</defs>
-<g transform="translate(30 30)">
-            <g transform="translate(0,0)">                <rect width="320" height="195" />                <line x1="0" x2="320" y1="95" y2="95" />                <line x1="0" x2="320" y1="115" y2="115" />                <text x="160" y="45" class="name">«Abstract»</text>                <text x="160" y="80" class="name">Abstract1</text>                ['            <text x="30" y="145" class="visibility">#</text>            <text x="60" y="145" class="item">pole1: integer</text>        ']                ['            <text x="30" y="180" class="visibility">-</text>            <text x="60" y="180" class="item">method2(): character</text>        ']            </g>
-            <g transform="translate(560,0)">                <rect width="320" height="160" />                <line x1="0" x2="320" y1="95" y2="95" />                <line x1="0" x2="320" y1="115" y2="115" />                <text x="160" y="45" class="name">«Enumeration»</text>                <text x="160" y="80" class="name">Enum1</text>                ['<text x="60" y="145" class="item">pole</text>']            </g>
-            <g transform="translate(1120,0)">                <rect width="320" height="125" />                <line x1="0" x2="320" y1="60" y2="60" />                <line x1="0" x2="320" y1="80" y2="80" />                <text x="160" y="45" class="name">Class1</text>                ['            <text x="30" y="110" class="visibility">-</text>            <text x="60" y="110" class="item">pole: int</text>        ']                []            </g>
-            <g transform="translate(0,435)">                <rect width="320" height="125" />                <line x1="0" x2="320" y1="60" y2="60" />                <line x1="0" x2="320" y1="80" y2="80" />                <text x="160" y="45" class="name">Class2</text>                ['            <text x="30" y="110" class="visibility">-</text>            <text x="60" y="110" class="item">pole: int</text>        ']                []            </g>
-            <g transform="translate(560,400)">                <rect width="320" height="125" />                <line x1="0" x2="320" y1="60" y2="60" />                <line x1="0" x2="320" y1="80" y2="80" />                <text x="160" y="45" class="name">Class3</text>                ['            <text x="30" y="110" class="visibility">-</text>            <text x="60" y="110" class="item">pole: int</text>        ']                []            </g>
-            <g transform="translate(1120,365)">                <rect width="320" height="300" />                <line x1="0" x2="320" y1="60" y2="60" />                <line x1="0" x2="320" y1="80" y2="80" />                <text x="160" y="45" class="name">Class4</text>                ['            <text x="30" y="110" class="visibility">-</text>            <text x="60" y="110" class="item">pole: int</text>        ', '            <text x="30" y="145" class="visibility">-</text>            <text x="60" y="145" class="item">pole: int</text>        ', '            <text x="30" y="180" class="visibility">-</text>            <text x="60" y="180" class="item">pole: int</text>        ', '            <text x="30" y="215" class="visibility">-</text>            <text x="60" y="215" class="item">pole: int</text>        ', '            <text x="30" y="250" class="visibility">-</text>            <text x="60" y="250" class="item">pole: int</text>        ', '            <text x="30" y="285" class="visibility">-</text>            <text x="60" y="285" class="item">pole: int</text>        ']                []            </g>
-            <g transform="translate(0,800)">                <rect width="320" height="195" />                <line x1="0" x2="320" y1="60" y2="60" />                <line x1="0" x2="320" y1="80" y2="80" />                <text x="160" y="45" class="name">Class5</text>                ['            <text x="30" y="110" class="visibility">-</text>            <text x="60" y="110" class="item">pole: int</text>        ', '            <text x="30" y="145" class="visibility">-</text>            <text x="60" y="145" class="item">pole: int</text>        ', '            <text x="30" y="180" class="visibility">-</text>            <text x="60" y="180" class="item">pole: int</text>        ']                []            </g>
-            <g transform="translate(560,765)">                <rect width="320" height="125" />                <line x1="0" x2="320" y1="60" y2="60" />                <line x1="0" x2="320" y1="80" y2="80" />                <text x="160" y="45" class="name">Class6</text>                ['            <text x="30" y="110" class="visibility">-</text>            <text x="60" y="110" class="item">pole: int</text>        ']                []            </g>
-                <g>                    <line x1="905" x2="1095" y1="62.5" y2="45.0" marker-end="url(#white_arrow)" stroke-dasharray="4 4"/>                </g>
-                <g>                    <line x1="535" x2="345" y1="62.5" y2="62.5" marker-end="url(#black_arrow)" />                </g>
-                <g>                    <line x1="535" x2="345" y1="445.0" y2="480.0" marker-end="url(#aggregation_white_arrow)" />                </g>
-                <g>                    <line x1="345" x2="535" y1="845.0" y2="810.0"  />                </g>
-                <g>                    <line x1="1095" x2="905" y1="445.0" y2="410.0" marker-end="url(#aggregation_black_arrow)" />                </g>
+            <defs>
+                <marker id="back_message_arrow" viewBox="0 -5 10 10" markerWidth="10" markerHeight="10" orient="auto">
+                    <path d="M 0,-5 L 10,0 L 0,5 Z" fill='white' stroke="black"/>
+                </marker>
+                <marker id="message_arrow" viewBox="0 -5 10 10" markerWidth="10" markerHeight="10" orient="auto">
+                    <path d="M 0,-5 L 10,0 L 0,5 Z" fill="black" stroke="black"/>
+                </marker>
+            </defs>        
+<g transform="translate(30, 30)">
+<g transform="translate(0, 0)">
+            <rect fill="none" width="50"
+                 height="30" stroke="black" />
+            <text fill="black" x="5" y="18"
+                text-decoration="underline" stroke="none">Gosc</text>
+            <line x1="25.0" x2="25.0" 
+                y1="30" y2="335" 
+                stroke="gray" />
+            <g transform="translate(25, 0)">                <rect x="-8" y="310" fill="white" stroke="black" width="16" height="20" />
+            </g>
+        </g>
+<g transform="translate(300, 0)">
+            <rect fill="none" width="70"
+                 height="30" stroke="black" />
+            <text fill="black" x="5" y="18"
+                text-decoration="underline" stroke="none">System</text>
+            <line x1="35.0" x2="35.0" 
+                y1="30" y2="335" 
+                stroke="gray" />
+            <g transform="translate(35, 0)">                <rect x="-8" y="60" fill="white" stroke="black" width="16" height="270" />
+            </g>
+        </g>
+<g transform="translate(600, 0)">
+            <rect fill="none" width="110"
+                 height="30" stroke="black" />
+            <text fill="black" x="5" y="18"
+                text-decoration="underline" stroke="none">BazaDanych</text>
+            <line x1="55.0" x2="55.0" 
+                y1="30" y2="335" 
+                stroke="gray" />
+            <g transform="translate(55, 0)">                <rect x="-8" y="110" fill="white" stroke="black" width="16" height="50" />
+            
+                <rect x="-8" y="210" fill="white" stroke="black" width="16" height="50" />
+            </g>
+        </g>
+            <g transform="translate(0 60)">
+                <line fill="none" x1="25" x2="315" stroke="black" marker-end="url(#back_message_arrow)" />
+                <text x="30" font-size="14" y="-3" fill="black" stroke="none">"logowanie()"</text>
+            </g>
+            <g transform="translate(0 110)">
+                <line fill="none" x1="335" x2="635" stroke="black" marker-end="url(#message_arrow)" />
+                <text x="340" font-size="14" y="-3" fill="black" stroke="none">"odczytajDane()"</text>
+            </g>
+            <g transform="translate(0 160)">
+                <line fill="none" x1="655" x2="355" stroke="black" marker-end="url(#back_message_arrow)" stroke-dasharray="4 2"/>
+                <text x="360" font-size="14" y="-3" fill="black" stroke="none"></text>
+            </g>
+            <g transform="translate(0 210)">
+                <line fill="none" x1="335" x2="635" stroke="black" marker-end="url(#message_arrow)" />
+                <text x="340" font-size="14" y="-3" fill="black" stroke="none">"weryfikacjaDanych()"</text>
+            </g>
+            <g transform="translate(0 260)">
+                <line fill="none" x1="655" x2="355" stroke="black" marker-end="url(#back_message_arrow)" stroke-dasharray="4 2"/>
+                <text x="360" font-size="14" y="-3" fill="black" stroke="none"></text>
+            </g>
+            <g transform="translate(0 310)">
+                <line fill="none" x1="335" x2="45" stroke="black" marker-end="url(#message_arrow)" />
+                <text x="340" font-size="14" y="-3" fill="black" stroke="none"></text>
+            </g>
 </g>
+
 </svg>

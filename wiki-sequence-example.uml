@@ -1,0 +1,13 @@
+!sequence example
+
+lifeline Gosc;
+lifeline System;
+lifeline BazaDanych;
+
+
+Gosc -*> System: "logowanie()";
+System ==> BazaDanych: "odczytajDane()";
+BazaDanych ..> System;
+System ==> BazaDanych: "weryfikacjaDanych()";
+BazaDanych ..> System;
+System ==> Gosc;

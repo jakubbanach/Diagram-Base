@@ -137,17 +137,23 @@ class Message:
         match self.type_:
             case "sync":
                 head = f'marker-end=\"url(#message_arrow)\"'
-                # TODO: kierunek ustalania
-                # if right_end>left_end:
-                #     right_end -= 10 # cofniecie wyniku
-                # else:
-                #     left_end -=10
+                if right_end>left_end:
+                    right_end -= 15
+                else:
+                    right_end += 25
             case "async":
                 head = f'marker-end=\"url(#back_message_arrow)\"'
+                if right_end>left_end:
+                    right_end -= 15
+                else:
+                    right_end += 25
             case "return":
                 head = f'marker-end=\"url(#back_message_arrow)\"'
                 line_type = f'stroke-dasharray=\"4 2\"'
-                right_end += 10
+                if right_end>left_end:
+                    right_end -= 15 
+                else:
+                    right_end += 25
                 title_loc = right_end + 5
             case "create":
                 # TODO: Na razie zostaw - tu trzeba będzię zrobić trochę więcej

@@ -1,0 +1,83 @@
+!classdiagram example
+
+class Uzytkownik {
+    #login: string;
+    #mail: string;
+    #haslo: string;
+    #status: string;
+    +zaloguj(): void;
+    +pobierzStatus(): string;
+    +ustalStatus(): string;
+}
+
+class UczestnikAukcji{
+    - haslo: strint;
+    - imie: string;
+    - nazwisko: string;
+    - adres: Adres;
+    - pesel: int;
+    + Mail: string;
+    - stan: byte;
+    + setAdres() : void;
+    + setHaslo() : void;
+    + setImie() : void;
+    + setNazwisko() : void;
+    + setPesel() : void;
+    + przegladaj() : void;
+    + edytuj() : void;
+    - wyloguj() : void;
+    + Aktualizuj() : void;
+}
+
+class Sprzedawca{
+    + send_msg() : bool;
+    - komentarz() : void;
+    # usun_aukcje() : void;
+    + Dodaj_aukcje() : bool;
+}
+
+interface Mail_system{
+    + send_msg() : bool;
+}
+
+class Wysylanie_e_mail{
+    - uzytkownik: string;
+    + getNazwa() : string;
+    + send_msg() : bool;
+}
+
+class Aukcja{
+    - czas_trwania: int;
+    - Rejestruj_aukcje() : bool;
+    + setCzasTrwania() : void;
+    - Start() : void;
+    # Zakoncz() : void;
+    + Powiadom(): void;
+    + Przylacz(): void;
+    + Rozlacz(): void;
+}
+
+class Kupujacy{
+    + Aukcje() : void;
+    - licytuj() : bool;
+    - komentarz() : void;
+    + send_msg() : bool;
+}
+
+class Faktura{
+    - dataWystawienia: Date;
+    - dataPlatnosci: Data;
+    - czyZaplacone: boolean;
+    + Faktura(): string;
+    + pobierzDane() : void;
+    - ustalDate() : Faktura;
+    + usunPlatnosc() : void;
+}
+
+Uzytkownik --> UczestnikAukcji;
+Sprzedawca --> Wysylanie_e_mail;
+UczestnikAukcji --* Sprzedawca;
+Wysylanie_e_mail ... Mail_system;
+Sprzedawca -- Aukcja;
+Kupujacy --> Wysylanie_e_mail;
+Aukcja -- Faktura;

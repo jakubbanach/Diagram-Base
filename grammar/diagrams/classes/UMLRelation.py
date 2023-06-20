@@ -33,18 +33,27 @@ class UMLRelation:
             y2 = self.target.y+self.target.BASE_HEIGHT/2
             print(str(self.source.name), str(self.target.name), end =' ')
             print(self.type_, self.inverted)
+            # print(self.source.name, x1, y1)
+            # print(self.target.name, x2, y2)
+            #TODO: poprawa funkcji abs i przypadkow po niej
+            if abs(self.source.x-self.target.x)<10:
+                x1 = self.source.x+self.source.WIDTH/2
+                x2 = self.target.x+self.target.WIDTH/2
+                y1 = self.source.y + self.source.get_height()+25
+                y2 = self.target.y -25
             if (self.inverted and self.source.x < self.target.x):
                 x1, x2 = x2, x1
                 y1, y2 = y2, y1
-            if (self.inverted and self.source.x > self.target.x):
+            elif (self.inverted and self.source.x > self.target.x):
                 x1 = self.source.x-25
                 x2 = self.target.x+self.target.WIDTH+25
                 y1, y2 = y2, y1
-            if (not self.inverted and self.source.x > self.target.x):
+            elif (not self.inverted and self.source.x > self.target.x):
                 x1 = self.source.x-25
                 x2 = self.target.x+self.target.WIDTH+25
-                y1, y2 = y2, y1
-            
+
+                # y1, y2 = y2, y1
+            # print(x1, x2, y1, y2)
             arrow_head = ""
             line_type = ""  #przerywana czy nie
             match self.type_:
