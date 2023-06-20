@@ -1,78 +1,33 @@
 <!DOCTYPE svg>
-                    <svg height="395" width="770" style="background-color:#ffffff"><style type="text/css">
-g {
-    stroke: black;
-    fill: black;
-}
-</style>
-            <defs>
-                <marker id="back_message_arrow" viewBox="0 -5 10 10" markerWidth="10" markerHeight="10" orient="auto">
+                    <svg height="510" width="916" style="background-color:#ffffff">            <defs>
+                <marker id="arrow" viewBox="0 -5 10 10" markerWidth="10" markerHeight="10" orient="auto">
                     <path d="M 0,-5 L 10,0 L 0,5 Z" fill='white' stroke="black"/>
-                </marker>
-                <marker id="message_arrow" viewBox="0 -5 10 10" markerWidth="10" markerHeight="10" orient="auto">
-                    <path d="M 0,-5 L 10,0 L 0,5 Z" fill="black" stroke="black"/>
                 </marker>
             </defs>        
 <g transform="translate(30, 30)">
-<g transform="translate(0, 0)">
-            <rect fill="none" width="50"
-                 height="30" stroke="black" />
-            <text fill="black" x="5" y="18"
-                text-decoration="underline" stroke="none">Gosc</text>
-            <line x1="25.0" x2="25.0" 
-                y1="30" y2="335" 
-                stroke="gray" />
-            <g transform="translate(25, 0)">                <rect x="-8" y="310" fill="white" stroke="black" width="16" height="20" />
-            </g>
-        </g>
-<g transform="translate(300, 0)">
-            <rect fill="none" width="70"
-                 height="30" stroke="black" />
-            <text fill="black" x="5" y="18"
-                text-decoration="underline" stroke="none">System</text>
-            <line x1="35.0" x2="35.0" 
-                y1="30" y2="335" 
-                stroke="gray" />
-            <g transform="translate(35, 0)">                <rect x="-8" y="60" fill="white" stroke="black" width="16" height="270" />
-            </g>
-        </g>
-<g transform="translate(600, 0)">
-            <rect fill="none" width="110"
-                 height="30" stroke="black" />
-            <text fill="black" x="5" y="18"
-                text-decoration="underline" stroke="none">BazaDanych</text>
-            <line x1="55.0" x2="55.0" 
-                y1="30" y2="335" 
-                stroke="gray" />
-            <g transform="translate(55, 0)">                <rect x="-8" y="110" fill="white" stroke="black" width="16" height="50" />
-            
-                <rect x="-8" y="210" fill="white" stroke="black" width="16" height="50" />
-            </g>
-        </g>
-            <g transform="translate(0 60)">
-                <line fill="none" x1="25" x2="315" stroke="black" marker-end="url(#back_message_arrow)" />
-                <text x="30" font-size="14" y="-3" fill="black" stroke="none">"logowanie()"</text>
-            </g>
-            <g transform="translate(0 110)">
-                <line fill="none" x1="335" x2="635" stroke="black" marker-end="url(#message_arrow)" />
-                <text x="340" font-size="14" y="-3" fill="black" stroke="none">"odczytajDane()"</text>
-            </g>
-            <g transform="translate(0 160)">
-                <line fill="none" x1="655" x2="355" stroke="black" marker-end="url(#back_message_arrow)" stroke-dasharray="4 2"/>
-                <text x="360" font-size="14" y="-3" fill="black" stroke="none"></text>
-            </g>
-            <g transform="translate(0 210)">
-                <line fill="none" x1="335" x2="635" stroke="black" marker-end="url(#message_arrow)" />
-                <text x="340" font-size="14" y="-3" fill="black" stroke="none">"weryfikacjaDanych()"</text>
-            </g>
-            <g transform="translate(0 260)">
-                <line fill="none" x1="655" x2="355" stroke="black" marker-end="url(#back_message_arrow)" stroke-dasharray="4 2"/>
-                <text x="360" font-size="14" y="-3" fill="black" stroke="none"></text>
-            </g>
-            <g transform="translate(0 310)">
-                <line fill="none" x1="335" x2="45" stroke="black" marker-end="url(#message_arrow)" />
-                <text x="340" font-size="14" y="-3" fill="black" stroke="none"></text>
-            </g>
+<g transform="translate(25 30)">            <path                d="m 0,0,0,41.7649 -13.92164,18.79028 m 13.92164,-18.54025 11.466,15.64351 m -31.02188,-39.24135 39.77164,-13.52236 m -6.12305,-18.98745 c 0,7.7832 -6.30952,14.09272 -14.09271,14.09272 -7.78319,0 -14.09272,-6.30952 -14.09272,-14.09272 0,-7.78319 6.30953,-14.09271 14.09272,-14.09271 7.78319,0 14.09271,6.30952 14.09271,14.09271 z"                style="fill:none;stroke:#000000"            />            <text                x="0"                y="75"                style="font-size:12px;text-anchor:middle"            >                Uzytkownik            </text>        </g>
+<g transform="translate(831 30)">            <path                d="m 0,0,0,41.7649 -13.92164,18.79028 m 13.92164,-18.54025 11.466,15.64351 m -31.02188,-39.24135 39.77164,-13.52236 m -6.12305,-18.98745 c 0,7.7832 -6.30952,14.09272 -14.09271,14.09272 -7.78319,0 -14.09272,-6.30952 -14.09272,-14.09272 0,-7.78319 6.30953,-14.09271 14.09272,-14.09271 7.78319,0 14.09271,6.30952 14.09271,14.09271 z"                style="fill:none;stroke:#000000"            />            <text                x="0"                y="75"                style="font-size:12px;text-anchor:middle"            >                Administrator            </text>        </g>
+<g transform="translate(120 0)">            <ellipse                cx="112"                cy="25"                rx="112"                ry="25"                style="fill:white;stroke:#000000"            />            <text                x="112"                y="25"                style="font-size:12px;text-anchor:middle"            >                Przegladaj aukcje            </text>        </g>
+<g transform="translate(404 50)">            <ellipse                cx="52"                cy="25"                rx="52"                ry="25"                style="fill:white;stroke:#000000"            />            <text                x="52"                y="25"                style="font-size:12px;text-anchor:middle"            >                Licytuj            </text>        </g>
+<g transform="translate(120 100)">            <ellipse                cx="76"                cy="25"                rx="76"                ry="25"                style="fill:white;stroke:#000000"            />            <text                x="76"                y="25"                style="font-size:12px;text-anchor:middle"            >                Zaloz konto            </text>        </g>
+<g transform="translate(332 150)">            <ellipse                cx="106"                cy="25"                rx="106"                ry="25"                style="fill:white;stroke:#000000"            />            <text                x="106"                y="25"                style="font-size:12px;text-anchor:middle"            >                Finalizuj aukcje            </text>        </g>
+<g transform="translate(120 200)">            <ellipse                cx="160"                cy="25"                rx="160"                ry="25"                style="fill:white;stroke:#000000"            />            <text                x="160"                y="25"                style="font-size:12px;text-anchor:middle"            >                Przegladaj swoja historie            </text>        </g>
+<g transform="translate(500 250)">            <ellipse                cx="118"                cy="25"                rx="118"                ry="25"                style="fill:white;stroke:#000000"            />            <text                x="118"                y="25"                style="font-size:12px;text-anchor:middle"            >                Zarzadzaj systemem            </text>        </g>
+<g transform="translate(120 300)">            <ellipse                cx="82"                cy="25"                rx="82"                ry="25"                style="fill:white;stroke:#000000"            />            <text                x="82"                y="25"                style="font-size:12px;text-anchor:middle"            >                Wystaw towar            </text>        </g>
+<g transform="translate(344 350)">            <ellipse                cx="118"                cy="25"                rx="118"                ry="25"                style="fill:white;stroke:#000000"            />            <text                x="118"                y="25"                style="font-size:12px;text-anchor:middle"            >                Zarzadzaj aukcjami            </text>        </g>
+<g transform="translate(120 400)">            <ellipse                cx="112"                cy="25"                rx="112"                ry="25"                style="fill:white;stroke:#000000"            />            <text                x="112"                y="25"                style="font-size:12px;text-anchor:middle"            >                Zarzadzaj kontami            </text>        </g>
+            <line x1="404" y1="75" x2="344" y2="25" stroke="black" marker-end="url(#arrow)" stroke-dasharray="5,5"/>            <text style="font-size:10px;text-anchor:middle" x="374" y="50"> «include» </text>        
+            <line x1="544" y1="175" x2="404" y2="75" stroke="black" marker-end="url(#arrow)" stroke-dasharray="5,5"/>            <text style="font-size:10px;text-anchor:middle" x="474" y="125"> «extend» </text>        
+            <line x1="344" y1="425" x2="500" y2="275" stroke="black" marker-end="url(#arrow)" stroke-dasharray="5,5"/>            <text style="font-size:10px;text-anchor:middle" x="422" y="350"> «extend» </text>        
+            <line x1="580" y1="375" x2="500" y2="275" stroke="black" marker-end="url(#arrow)" stroke-dasharray="5,5"/>            <text style="font-size:10px;text-anchor:middle" x="540" y="325"> «extend» </text>        
+<line x1="40" y1="40" x2="120" y2="25" stroke="black"/>
+<line x1="40" y1="40" x2="120" y2="125" stroke="black"/>
+<line x1="40" y1="40" x2="404" y2="75" stroke="black"/>
+<line x1="40" y1="40" x2="120" y2="225" stroke="black"/>
+<line x1="40" y1="40" x2="332" y2="175" stroke="black"/>
+<line x1="40" y1="40" x2="120" y2="325" stroke="black"/>
+<line x1="816" y1="40" x2="544" y2="175" stroke="black"/>
+<line x1="816" y1="40" x2="736" y2="275" stroke="black"/>
 </g>
 
 </svg>

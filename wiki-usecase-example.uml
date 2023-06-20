@@ -1,0 +1,28 @@
+!usecase example
+
+actor Uzytkownik;
+actor Administrator;
+
+case przegladajAukcje "Przegladaj aukcje";
+case licytuj "Licytuj";
+case zalozKonto "Zaloz konto";
+case finalizujAukcje "Finalizuj aukcje";
+case przegladajSwojaHistorie "Przegladaj swoja historie";
+case zarzadzajSystemem "Zarzadzaj systemem";
+case wystawTowar "Wystaw towar";
+case zarzadzajAukcjami "Zarzadzaj aukcjami";
+case zarzadzajKontami "Zarzadzaj kontami";
+
+Uzytkownik -- przegladajAukcje;
+Uzytkownik -- zalozKonto;
+Uzytkownik -- licytuj;
+Uzytkownik -- przegladajSwojaHistorie;
+Uzytkownik -- finalizujAukcje;
+Uzytkownik -- wystawTowar;
+finalizujAukcje -- Administrator;
+zarzadzajSystemem -- Administrator;
+
+licytuj -i> przegladajAukcje;
+finalizujAukcje -e> licytuj;
+zarzadzajKontami -e> zarzadzajSystemem;
+zarzadzajAukcjami -e> zarzadzajSystemem;
