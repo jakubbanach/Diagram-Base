@@ -6,11 +6,12 @@ lifeline Linia2;
 
 
 Linia1 ==> sss;
+Linia1 -*> sss;
 Linia1 ==> sss;
-Linia1 ==> sss;
 sss ..> Linia1;
 sss ..> Linia1;
 sss ..> Linia1;
+Linia1 ==> Linia1: "petla";
 
 Linia1 ==> sss: "message 1";
 Linia1 <.. sss: "message 2";

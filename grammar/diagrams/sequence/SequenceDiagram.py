@@ -104,21 +104,25 @@ class Message:
         self.source = source
         self.target = target
         self.type_ = type_
-        self.name = name
+        self.name = name[1:-1]
         self.y = y
         self.length = abs(target.length - source.length)
 
-        match self.type_:
-            case "sync":
-                self.target.activate_at(self.y)
-            case "async":
-                self.target.activate_at(self.y)
-            case "return":
-                self.source.deactivate_at(self.y)
-            case "create":
-                pass
-            case "destroy":
-                pass
+        if source == target:
+            target.activate_at(self.y)
+            target.deactivate_at(self.y + 20)
+        else:
+            match self.type_:
+                case "sync":
+                    self.target.activate_at(self.y)
+                case "async":
+                    self.target.activate_at(self.y)
+                case "return":
+                    self.source.deactivate_at(self.y)
+                case "create":
+                    pass
+                case "destroy":
+                    pass
 
     def render(self) -> str:
         head = ""
