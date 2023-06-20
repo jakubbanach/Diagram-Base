@@ -55,10 +55,14 @@ class Lifeline:
 
     def deactivate_at(self, end: int) -> Process | None:
         if len(self.processes) > 0:
+            activated_process_index = None
             for i, process in enumerate(self.processes[::-1]):
                 if process.end is None:
                     activated_process_index = len(self.processes) - i - 1
                     break
+
+            if activated_process_index is None:
+                activated_process_index = len(self.processes) - 1
 
             self.processes[activated_process_index].end = end
             return self.processes[activated_process_index]
@@ -116,31 +120,28 @@ class Message:
             case "destroy":
                 pass
 
-
     def render(self) -> str:
         head = ""
         left_end = self.source.x + self.source.calculate_box_width() // 2
-        right_end = self.target.x + self.target.calculate_box_width() // 2
+        right_end = self.target.x + self.target.calculate_box_width() // 2 - 5
         title_loc = left_end + 5
-        line_type = "" 
-#         line = ""
+        line_type = ""
 
-        #TODO: kierunek ustalania i odległość od Lifeline'u
+        # TODO: kierunek ustalania i odległość od Lifeline'u
         match self.type_:
             case "sync":
-#                 head = f'<polygon fill="black" points="{right_end} 0 {right_end - 13} 6 {right_end - 13} -6" />'
-#                 line = f'<line fill="none" x1="{right_end}" x2="{left_end}" stroke="black" />'
                 head = f'marker-end=\"url(#message_arrow)\"'
-                      # TODO: kierunek ustalania
-                      # if right_end>left_end:
-                      #     right_end -= 10 # cofniecie wyniku
-                      # else:
-                      #     left_end -=10
+                # TODO: kierunek ustalania
+                # if right_end>left_end:
+                #     right_end -= 10 # cofniecie wyniku
+                # else:
+                #     left_end -=10
             case "async":
-                head = f'marker-end=\"url(#back_message_arrow)\"'                
+                head = f'marker-end=\"url(#back_message_arrow)\"'
             case "return":
                 head = f'marker-end=\"url(#back_message_arrow)\"'
                 line_type = f'stroke-dasharray=\"4 2\"'
+                right_end += 10
                 title_loc = right_end + 5
             case "create":
                 # TODO: Na razie zostaw - tu trzeba będzię zrobić trochę więcej
@@ -156,7 +157,7 @@ class Message:
                 <line fill="none" x1="{left_end}" x2="{right_end}" stroke="black" {head} {line_type}/>\n\
                 <text x="{title_loc}" font-size="14" y="-3" fill="black" stroke="none">{self.name}</text>\n\
             </g>\n'
-      
+
 # Later...
 #
 # class Block:
@@ -208,9 +209,10 @@ class SequenceDiagram(Diagram):
     def add_message(self, source: Lifeline, target: Lifeline, type_: str, name: str) -> Message:
         message = Message(source, target, type_, name,
                           self.MARGIN + Lifeline.BOX_HEIGHT + (self.MESSAGE_GAP * len(self.messages)))
-        
+
         for i, lifeline in enumerate(self.lifelines):
-            self.lifelines[i].length = max(Lifeline.MIN_LENGTH, message.y - Lifeline.BOX_HEIGHT + self.MESSAGE_GAP // 2)
+            self.lifelines[i].length = max(
+                Lifeline.MIN_LENGTH, message.y - Lifeline.BOX_HEIGHT + self.MESSAGE_GAP // 2)
 
         self.messages.append(message)
 
@@ -222,7 +224,8 @@ class SequenceDiagram(Diagram):
         result += f'<g transform="translate({self.MARGIN}, {self.MARGIN})">\n'
 
         for i, lifeline in enumerate(self.lifelines):
-            self.lifelines[i].length = self.calculate_height() - (2 * self.MARGIN) - Lifeline.BOX_HEIGHT
+            self.lifelines[i].length = self.calculate_height(
+            ) - (2 * self.MARGIN) - Lifeline.BOX_HEIGHT
             result += f'<g transform="translate({lifeline.x}, 0)">\n'
             result += lifeline.render()
             result += "</g>\n"
@@ -235,12 +238,15 @@ class SequenceDiagram(Diagram):
         with open(os.path.join(os.path.realpath(os.path.dirname(__file__)), "sequence_style.css"), "r") as f:
             style = f.read()
 
-        defs = '<defs>\n\
-        <marker id=\"back_message_arrow\" viewBox=\"0 -5 10 10\" markerWidth=\"6\" markerHeight=\"6\" orient=\"auto\">\n\
-            <path d=\"M 0,-5 L 10,0 L 0,5 Z\" fill=\'white\' stroke=\"black\"/>\n\
-        </marker>\n\
-        <marker id=\"message_arrow\" viewBox=\"0 -5 10 10\" markerWidth=\"6\" markerHeight=\"6\" orient=\"auto\">\n\
-            <path d=\"M 0,-5 L 10,0 L 0,5 Z\" fill=\"black\" stroke=\"black\"/>\n\
-        </marker>\n</defs>'
+        defs = '\
+            <defs>\n\
+                <marker id=\"back_message_arrow\" viewBox=\"0 -5 10 10\" markerWidth=\"10\" markerHeight=\"10\" orient=\"auto\">\n\
+                    <path d=\"M 0,-5 L 10,0 L 0,5 Z\" fill=\'white\' stroke=\"black\"/>\n\
+                </marker>\n\
+                <marker id=\"message_arrow\" viewBox=\"0 -5 10 10\" markerWidth=\"10\" markerHeight=\"10\" orient=\"auto\">\n\
+                    <path d=\"M 0,-5 L 10,0 L 0,5 Z\" fill=\"black\" stroke=\"black\"/>\n\
+                </marker>\n\
+            </defs>\
+        '
 
         return f'<style type="text/css">\n{style}\n</style>\n{defs}\n{result}'
