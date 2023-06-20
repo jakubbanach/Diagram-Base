@@ -122,17 +122,20 @@ class Message:
         left_end = self.source.x + self.source.calculate_box_width() // 2
         right_end = self.target.x + self.target.calculate_box_width() // 2
         title_loc = left_end + 5
-        line = ""
         line_type = "" 
+#         line = ""
+
         #TODO: kierunek ustalania i odległość od Lifeline'u
         match self.type_:
             case "sync":
+#                 head = f'<polygon fill="black" points="{right_end} 0 {right_end - 13} 6 {right_end - 13} -6" />'
+#                 line = f'<line fill="none" x1="{right_end}" x2="{left_end}" stroke="black" />'
                 head = f'marker-end=\"url(#message_arrow)\"'
-                # TODO: kierunek ustalania
-                # if right_end>left_end:
-                #     right_end -= 10 # cofniecie wyniku
-                # else:
-                #     left_end -=10
+                      # TODO: kierunek ustalania
+                      # if right_end>left_end:
+                      #     right_end -= 10 # cofniecie wyniku
+                      # else:
+                      #     left_end -=10
             case "async":
                 head = f'marker-end=\"url(#back_message_arrow)\"'                
             case "return":
@@ -142,19 +145,18 @@ class Message:
             case "create":
                 # TODO: Na razie zostaw - tu trzeba będzię zrobić trochę więcej
                 head = f''
-                line = f''
+                line_type = f''
             case "destroy":
                 # TODO: Tu też
                 head = f''
-                line = f''
+                line_type = f''
 
         return f'\
             <g transform="translate(0 {self.y})">\n\
                 <line fill="none" x1="{left_end}" x2="{right_end}" stroke="black" {head} {line_type}/>\n\
                 <text x="{title_loc}" font-size="14" y="-3" fill="black" stroke="none">{self.name}</text>\n\
             </g>\n'
-
-
+      
 # Later...
 #
 # class Block:
@@ -168,6 +170,7 @@ class Message:
 #     def render(self) -> str:
 #         # TODO: Implement this method
 #         pass
+
 
 class SequenceDiagram(Diagram):
     lifelines: list[Lifeline]
