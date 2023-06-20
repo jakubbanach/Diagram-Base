@@ -99,11 +99,11 @@ class ClassDiagram(Diagram):
         <marker id=\"black_arrow\" viewBox=\"0 -5 10 10\" markerWidth=\"6\" markerHeight=\"6\" orient=\"auto\">\n\
             <path d=\"M 0,-5 L 10,0 L 0,5 Z\" fill=\"black\" stroke=\"black\"/>\n\
         </marker>\n\
-        <marker id=\"aggregation_white_arrow\" viewBox=\"0 -5 10 10\" markerWidth=\"6\" markerHeight=\"6\" orient=\"auto\">\n\
-            <path d=\"M 0,-5 L 10,0 L 0,5 Z\" fill=\'white\' stroke=\"black\"/>\n\
+        <marker id=\"aggregation_white_arrow\" refX=\"5\" refY=\"5\"  viewBox=\"0 0 10 10\" markerWidth=\"10\" markerHeight=\"10\" orient=\"auto\">\n\
+            <path d=\"M0,5 L5,7.5 L10,5 L5,2.5 Z\" fill=\"white\" stroke=\"black\"/>\n\
         </marker>\n\
-        <marker id=\"aggregation_black_arrow\" viewBox=\"0 -5 10 10\" markerWidth=\"6\" markerHeight=\"6\" orient=\"auto\">\n\
-            <path d=\"M 0,-5 L 10,0 L 0,5 Z\" fill=\"black\" stroke=\"black\"/>\n\
+        <marker id=\"aggregation_black_arrow\" refX=\"5\" refY=\"5\"  viewBox=\"0 0 10 10\" markerWidth=\"10\" markerHeight=\"10\" orient=\"auto\">\n\
+            <path d=\"M0,5 L5,7.5 L10,5 L5,2.5 Z\" fill=\"black\" stroke=\"black\"/>\n\
         </marker>\n</defs>'
 
         return f'<style type="text/css">\n{style}\n</style>\n{defs}\n{result}'
