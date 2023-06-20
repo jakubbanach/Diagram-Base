@@ -27,8 +27,8 @@ class UMLRelation:
     def render(self) -> str:
         # TODO: Implement this method
         if self.target != None and self.source != None:
-            x1 = self.source.x+self.source.WIDTH+15
-            x2 = self.target.x - 15
+            x1 = self.source.x+self.source.WIDTH+25
+            x2 = self.target.x - 25
             y1 = self.source.y+self.source.BASE_HEIGHT/2
             y2 = self.target.y+self.target.BASE_HEIGHT/2
             print(str(self.source.name), str(self.target.name), end =' ')
@@ -37,12 +37,12 @@ class UMLRelation:
                 x1, x2 = x2, x1
                 y1, y2 = y2, y1
             if (self.inverted and self.source.x > self.target.x):
-                x1 = self.source.x-15
-                x2 = self.target.x+self.target.WIDTH+15
+                x1 = self.source.x-25
+                x2 = self.target.x+self.target.WIDTH+25
                 y1, y2 = y2, y1
             if (not self.inverted and self.source.x > self.target.x):
-                x1 = self.source.x-15
-                x2 = self.target.x+self.target.WIDTH+15
+                x1 = self.source.x-25
+                x2 = self.target.x+self.target.WIDTH+25
                 y1, y2 = y2, y1
             
             arrow_head = ""

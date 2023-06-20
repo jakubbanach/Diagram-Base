@@ -93,16 +93,16 @@ class ClassDiagram(Diagram):
             style = f.read()
 
         defs = '<defs>\n\
-        <marker id=\"white_arrow\" viewBox=\"0 -5 10 10\" markerWidth=\"6\" markerHeight=\"6\" orient=\"auto\">\n\
+        <marker id=\"white_arrow\" viewBox=\"0 -5 10 10\" markerWidth=\"10\" markerHeight=\"10\" orient=\"auto\">\n\
             <path d=\"M 0,-5 L 10,0 L 0,5 Z\" fill=\'white\' stroke=\"black\"/>\n\
         </marker>\n\
-        <marker id=\"black_arrow\" viewBox=\"0 -5 10 10\" markerWidth=\"6\" markerHeight=\"6\" orient=\"auto\">\n\
+        <marker id=\"black_arrow\" viewBox=\"0 -5 10 10\" markerWidth=\"10\" markerHeight=\"10\" orient=\"auto\">\n\
             <path d=\"M 0,-5 L 10,0 L 0,5 Z\" fill=\"black\" stroke=\"black\"/>\n\
         </marker>\n\
-        <marker id=\"aggregation_white_arrow\" refX=\"5\" refY=\"5\"  viewBox=\"0 0 10 10\" markerWidth=\"10\" markerHeight=\"10\" orient=\"auto\">\n\
+        <marker id=\"aggregation_white_arrow\" refX=\"5\" refY=\"5\"  viewBox=\"0 0 10 10\" markerWidth=\"14\" markerHeight=\"14\" orient=\"auto\">\n\
             <path d=\"M0,5 L5,7.5 L10,5 L5,2.5 Z\" fill=\"white\" stroke=\"black\"/>\n\
         </marker>\n\
-        <marker id=\"aggregation_black_arrow\" refX=\"5\" refY=\"5\"  viewBox=\"0 0 10 10\" markerWidth=\"10\" markerHeight=\"10\" orient=\"auto\">\n\
+        <marker id=\"aggregation_black_arrow\" refX=\"5\" refY=\"5\"  viewBox=\"0 0 10 10\" markerWidth=\"14\" markerHeight=\"14\" orient=\"auto\">\n\
             <path d=\"M0,5 L5,7.5 L10,5 L5,2.5 Z\" fill=\"black\" stroke=\"black\"/>\n\
         </marker>\n</defs>'
 
