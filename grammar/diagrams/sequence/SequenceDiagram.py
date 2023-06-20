@@ -122,36 +122,41 @@ class Message:
         left_end = self.source.x + self.source.calculate_box_width() // 2
         right_end = self.target.x + self.target.calculate_box_width() // 2
         title_loc = left_end + 5
-        line = f'<line fill="none" x1="{right_end}" x2="{left_end}" stroke="black" />'
+        line_type = "" 
+#         line = ""
 
+        #TODO: kierunek ustalania i odległość od Lifeline'u
         match self.type_:
             case "sync":
-                head = f'<polygon fill="black" points="{right_end} 0 {right_end - 13} 6 {right_end - 13} -6" />'
+#                 head = f'<polygon fill="black" points="{right_end} 0 {right_end - 13} 6 {right_end - 13} -6" />'
+#                 line = f'<line fill="none" x1="{right_end}" x2="{left_end}" stroke="black" />'
+                head = f'marker-end=\"url(#message_arrow)\"'
+                      # TODO: kierunek ustalania
+                      # if right_end>left_end:
+                      #     right_end -= 10 # cofniecie wyniku
+                      # else:
+                      #     left_end -=10
             case "async":
-                # TODO
-                head = f''
-                line = f''
+                head = f'marker-end=\"url(#back_message_arrow)\"'                
             case "return":
-                # TODO
-                head = f''
-                # line = f''
+                head = f'marker-end=\"url(#back_message_arrow)\"'
+                line_type = f'stroke-dasharray=\"4 2\"'
                 title_loc = right_end + 5
             case "create":
                 # TODO: Na razie zostaw - tu trzeba będzię zrobić trochę więcej
                 head = f''
-                line = f''
+                line_type = f''
             case "destroy":
                 # TODO: Tu też
                 head = f''
-                line = f''
+                line_type = f''
 
         return f'\
             <g transform="translate(0 {self.y})">\n\
-                {line}{head}\n\
+                <line fill="none" x1="{left_end}" x2="{right_end}" stroke="black" {head} {line_type}/>\n\
                 <text x="{title_loc}" font-size="14" y="-3" fill="black" stroke="none">{self.name}</text>\n\
             </g>\n'
-
-
+      
 # Later...
 #
 # class Block:
@@ -165,6 +170,7 @@ class Message:
 #     def render(self) -> str:
 #         # TODO: Implement this method
 #         pass
+
 
 class SequenceDiagram(Diagram):
     lifelines: list[Lifeline]
@@ -229,4 +235,12 @@ class SequenceDiagram(Diagram):
         with open(os.path.join(os.path.realpath(os.path.dirname(__file__)), "sequence_style.css"), "r") as f:
             style = f.read()
 
-        return f'<style type="text/css">\n{style}\n</style>\n{result}'
+        defs = '<defs>\n\
+        <marker id=\"back_message_arrow\" viewBox=\"0 -5 10 10\" markerWidth=\"6\" markerHeight=\"6\" orient=\"auto\">\n\
+            <path d=\"M 0,-5 L 10,0 L 0,5 Z\" fill=\'white\' stroke=\"black\"/>\n\
+        </marker>\n\
+        <marker id=\"message_arrow\" viewBox=\"0 -5 10 10\" markerWidth=\"6\" markerHeight=\"6\" orient=\"auto\">\n\
+            <path d=\"M 0,-5 L 10,0 L 0,5 Z\" fill=\"black\" stroke=\"black\"/>\n\
+        </marker>\n</defs>'
+
+        return f'<style type="text/css">\n{style}\n</style>\n{defs}\n{result}'
