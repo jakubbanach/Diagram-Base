@@ -146,9 +146,9 @@ class UMLListener(ParseTreeListener):
         inverted = False
         target_name = ""
         if ctx.objectRelationship():
-            #bez uwzgledniania krotnosci
+            # bez uwzgledniania krotnosci
             relation_text = ctx.objectRelationship().getText()
-            #TODO: zmiana tego ifa (ewentualne rozważenie zmiany tokenu z '--' na '---')
+            # TODO: zmiana tego ifa (ewentualne rozważenie zmiany tokenu z '--' na '---')
             # if relation_text[:2] == "--" and relation_text[3]!="*":
             #     type_ = "association"
             #     target_name = relation_text[2:]
@@ -179,10 +179,10 @@ class UMLListener(ParseTreeListener):
         target = self.image.diagram.get_class_by_name(str(target_name))
         self.image.diagram.add_relation(
             UMLRelation(
-            source, 
-            target, 
-            type_,
-            inverted
+                source,
+                target,
+                type_,
+                inverted
             )
         )
 
@@ -191,31 +191,31 @@ class UMLListener(ParseTreeListener):
         pass
 
     # Enter a parse tree produced by UMLParser#objectRelationship.
-    def enterObjectRelationship(self, ctx: UMLParser.ObjectRelationshipContext):    
+    def enterObjectRelationship(self, ctx: UMLParser.ObjectRelationshipContext):
         # relation = self.image.diagram.get_last_relation()
         # source = relation.source
         # target_name = str(ctx.IDENTIFIER())
         # source_multiplicity = ""
         # target_multiplicity = ""
-        # type_ = relation.type_ 
+        # type_ = relation.type_
         # inverted = relation.inverted
-        
+
         # target = self.image.diagram.get_class_by_name(target_name)
-        
+
         # self.image.diagram.add_relation(
         #     UMLRelation(
-        #     source, 
-        #     target, 
+        #     source,
+        #     target,
         #     type_,
         #     inverted
         #     )
         # )
         pass
 
-        
         # TODO: set multiplicity, type
 
     # Exit a parse tree produced by UMLParser#objectRelationship.
+
     def exitObjectRelationship(self, ctx: UMLParser.ObjectRelationshipContext):
         pass
 
@@ -266,11 +266,45 @@ class UMLListener(ParseTreeListener):
 
     # Exit a parse tree produced by UMLParser#useCaseDeclaration.
     def exitUseCaseDeclaration(self, ctx: UMLParser.UseCaseDeclarationContext):
-        self.image.diagram.add_usecase(ctx.IDENTIFIER().getText(), ctx.STRING().getText()[1:-1])
+        self.image.diagram.add_usecase(
+            ctx.IDENTIFIER().getText(), ctx.STRING().getText()[1:-1])
 
     # Enter a parse tree produced by UMLParser#dependency.
     def enterDependency(self, ctx: UMLParser.DependencyContext):
-        pass
+        if ctx.dependencyOperator().getText() == "--":
+            actor = self.image.diagram.get_actor_by_name(
+                str(ctx.IDENTIFIER()[0]))
+            if actor is None:
+                actor = self.image.diagram.get_actor_by_name(
+                    str(ctx.IDENTIFIER()[1]))
+
+            usecase = self.image.diagram.get_usecase_by_name(
+                str(ctx.IDENTIFIER()[0]))
+            if usecase is None:
+                usecase = self.image.diagram.get_usecase_by_name(
+                    str(ctx.IDENTIFIER()[1]))
+
+            if usecase is None or actor is None:
+                raise Exception("Invalid association")
+
+            self.image.diagram.add_association(actor, usecase)
+        else:
+            left = self.image.diagram.get_usecase_by_name(
+                str(ctx.IDENTIFIER()[0]))
+            right = self.image.diagram.get_usecase_by_name(
+                str(ctx.IDENTIFIER()[1]))
+            if left is None or right is None:
+                raise Exception("Usecase not found")
+
+            match ctx.dependencyOperator().getText():
+                case "-i>":
+                    self.image.diagram.add_relation(left, right, "include")
+                case "-e>":
+                    self.image.diagram.add_relation(left, right, "extend")
+                case "<i-":
+                    self.image.diagram.add_relation(right, left, "include")
+                case "<e-":
+                    self.image.diagram.add_relation(right, left, "extend")
 
     # Exit a parse tree produced by UMLParser#dependency.
     def exitDependency(self, ctx: UMLParser.DependencyContext):

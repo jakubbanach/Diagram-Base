@@ -123,6 +123,8 @@ class Message:
                     pass
                 case "destroy":
                     pass
+                case _:
+                    raise Exception("Unknown message type")
 
     def render(self) -> str:
         head = ""

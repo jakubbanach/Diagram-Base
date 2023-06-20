@@ -53,7 +53,7 @@ class UseCase:
         self.y = 0
 
     def calculate_width(self) -> int:
-        return 2 * self.MARGIN + self.FONT_SIZE * len(self.name)
+        return 2 * self.MARGIN + self.FONT_SIZE * len(self.text)
 
     def render(self) -> str:
         return f'<g transform="translate({self.x} {self.y})">\
@@ -83,23 +83,55 @@ class UseCaseAssociation:
         self.use_case = use_case
 
     def render(self) -> str:
-        # TODO: Implement this method
-        pass
+        x1 = self.actor.x
+        if self.actor.x > self.use_case.x:
+            x1 = self.actor.x - self.actor.WIDTH
+
+        x2 = self.use_case.x
+        if self.actor.x > self.use_case.x:
+            x2 = self.use_case.x + self.use_case.width
+
+        y1 = self.actor.y + self.actor.HEIGHT // 2
+        y2 = self.use_case.y + self.use_case.HEIGHT // 2
+
+        return f'<line x1="{x1}" y1="{y1}" x2="{x2}" y2="{y2}" stroke="black"/>'
 
 
 class UseCaseRelation:
     source: UseCase
     target: UseCase
     type_: str  # include / extend
+    FONT_SIZE = 10
 
     def __init__(self, source: UseCase, target: UseCase, type_: str):
         self.source = source
         self.target = target
         self.type_ = type_
+        if self.type_ != "include" and self.type_ != "extend":
+            raise Exception("Invalid use case relation type")
 
     def render(self) -> str:
-        # TODO: Implement this method
-        pass
+        x1 = self.source.x
+        if self.source.x < self.target.x:
+            x1 = self.source.x + self.source.width
+
+        x2 = self.target.x
+        if self.source.x > self.target.x:
+            x2 = self.target.x + self.target.width
+
+        y1 = self.source.y + self.source.HEIGHT // 2
+        y2 = self.target.y + self.target.HEIGHT // 2
+
+        head = 'marker-end="url(#arrow)"'
+        line_type = 'stroke-dasharray="5,5"'
+
+        x_center = (x1 + x2) // 2
+        y_center = (y1 + y2) // 2
+
+        return f'\
+            <line x1="{x1}" y1="{y1}" x2="{x2}" y2="{y2}" stroke="black" {head} {line_type}/>\
+            <text style="font-size:{self.FONT_SIZE}px;text-anchor:middle" x="{x_center}" y="{y_center}"> «{self.type_}» </text>\
+        '
 
 
 class Package:
@@ -124,12 +156,15 @@ class Package:
         self.usecases.append(usecase)
 
     def calculate_width(self) -> int:
+        # TODO
         return 0
 
     def calculate_height(self) -> int:
+        # TODO
         return 0
 
     def render(self) -> str:
+        # TODO
         pass
 
 
@@ -140,7 +175,7 @@ class UseCaseDiagram(Diagram):
     associations: list[UseCaseAssociation]
     relations: list[UseCaseRelation]
     MARGIN = 30
-    ACTORS_SPACE = 100
+    ACTORS_SPACE = 120
     ACTORS_GAP = 30
     USECASES_GAP = 60
     MIN_WIDTH = 200
@@ -166,6 +201,18 @@ class UseCaseDiagram(Diagram):
     def add_association(self, actor: Actor, use_case: UseCase):
         self.associations.append(UseCaseAssociation(actor, use_case))
 
+    def get_actor_by_name(self, name: str) -> Actor:
+        for actor in self.actors:
+            if actor.name == name:
+                return actor
+        return None
+
+    def get_usecase_by_name(self, name: str) -> UseCase:
+        for usecase in self.use_cases:
+            if usecase.name == name:
+                return usecase
+        return None
+
     def calculate_width(self) -> int:
         width = 2 * self.MARGIN + self.ACTORS_SPACE
         if len(self.actors) > 1:
@@ -181,9 +228,10 @@ class UseCaseDiagram(Diagram):
             max_usecase = max([usecase.calculate_width()
                               for usecase in self.use_cases])
         else:
-            max_usecase = max([usecase.calculate_width() for usecase in self.use_cases[0::2]]) + \
-                self.USECASES_GAP + max([usecase.calculate_width()
-                                        for usecase in self.use_cases[1::2]])
+            max_usecase = max(
+                [usecase1.calculate_width() + usecase2.calculate_width()
+                 for usecase1, usecase2 in zip(self.use_cases[::2], self.use_cases[1::2])]
+            ) + self.USECASES_GAP
 
         width += max(max_package, max_usecase)
 
@@ -211,9 +259,9 @@ class UseCaseDiagram(Diagram):
 
         for i, actor in enumerate(self.actors):
             if i % 2 == 0:
-                actor.x = self.ACTORS_SPACE // 2
+                actor.x = self.ACTORS_SPACE // 3
             else:
-                actor.x = self.calculate_width() - self.ACTORS_SPACE // 2 - Actor.WIDTH
+                actor.x = self.calculate_width() - self.ACTORS_SPACE // 3 - Actor.WIDTH
 
             actor.y = math.floor(i / 2) * (self.ACTORS_GAP +
                                            Actor.HEIGHT + Actor.FONT_SIZE)
@@ -239,4 +287,12 @@ class UseCaseDiagram(Diagram):
 
         result += "</g>\n"
 
-        return result
+        defs = '\
+            <defs>\n\
+                <marker id=\"arrow\" viewBox=\"0 -5 10 10\" markerWidth=\"10\" markerHeight=\"10\" orient=\"auto\">\n\
+                    <path d=\"M 0,-5 L 10,0 L 0,5 Z\" fill=\'white\' stroke=\"black\"/>\n\
+                </marker>\n\
+            </defs>\
+        '
+
+        return defs + "\n" + result

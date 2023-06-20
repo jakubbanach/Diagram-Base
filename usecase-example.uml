@@ -2,13 +2,22 @@
 
 actor Aktor1;
 actor Aktor2;
-actor Aktor2;
-actor Aktor2;
-actor Aktor2;
 
-case nazwa1 "Tytul";
+case nazwa1 "Tytul Tytul Tytul";
 case nazwa2 "Tytul";
-case nazwa2 "Tytul";
-case nazwa2 "Tytul";
-case nazwa2 "Tytul";
-case nazwa2 "Tytul";
+case nazwa3 "Tytul Tytul";
+case nazwa4 "Tytul Tytul";
+case nazwa5 "Tytul Tytul";
+case nazwa6 "Tytul";
+
+Aktor1 -- nazwa1;
+Aktor1 -- nazwa2;
+Aktor1 -- nazwa3;
+nazwa2 -- Aktor2;
+
+nazwa1 -i> nazwa2;
+nazwa2 -e> nazwa3;
+nazwa2 -e> nazwa4;
+nazwa4 -e> nazwa5;
+nazwa2 -e> nazwa6;
+
