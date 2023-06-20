@@ -1,16 +1,14 @@
-!usecase daess
+!usecase example
 
 actor Aktor1;
 actor Aktor2;
+actor Aktor2;
+actor Aktor2;
+actor Aktor2;
 
-package {
-    case nazwa1 "Tytul";
-    case nazwa2 "Tytul";
-
-    nazwa1 <i- nazwa2;
-    nazwa1 <e- nazwa2;
-    nazwa1 -i> nazwa2;
-    nazwa1 -e> nazwa2;
-}
-
-Aktor1 -- nazwa1;
+case nazwa1 "Tytul";
+case nazwa2 "Tytul";
+case nazwa2 "Tytul";
+case nazwa2 "Tytul";
+case nazwa2 "Tytul";
+case nazwa2 "Tytul";

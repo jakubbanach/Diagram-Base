@@ -11,6 +11,7 @@ from diagrams.classes.UMLCLass import *
 from diagrams.classes.UMLRelation import *
 from diagrams.classes.ClassDiagram import *
 from diagrams.sequence.SequenceDiagram import *
+from diagrams.usecase.UseCaseDiagram import *
 
 # This class defines a complete listener for a parse tree produced by UMLParser.
 
@@ -237,7 +238,7 @@ class UMLListener(ParseTreeListener):
 
     # Enter a parse tree produced by UMLParser#useCaseDiagram.
     def enterUseCaseDiagram(self, ctx: UMLParser.UseCaseDiagramContext):
-        pass
+        self.image = UMLImage(UseCaseDiagram(ctx.IDENTIFIER().getText()))
 
     # Exit a parse tree produced by UMLParser#useCaseDiagram.
     def exitUseCaseDiagram(self, ctx: UMLParser.UseCaseDiagramContext):
@@ -245,7 +246,7 @@ class UMLListener(ParseTreeListener):
 
     # Enter a parse tree produced by UMLParser#actor.
     def enterActor(self, ctx: UMLParser.ActorContext):
-        pass
+        self.image.diagram.add_actor(ctx.IDENTIFIER().getText())
 
     # Exit a parse tree produced by UMLParser#actor.
     def exitActor(self, ctx: UMLParser.ActorContext):
@@ -265,7 +266,7 @@ class UMLListener(ParseTreeListener):
 
     # Exit a parse tree produced by UMLParser#useCaseDeclaration.
     def exitUseCaseDeclaration(self, ctx: UMLParser.UseCaseDeclarationContext):
-        pass
+        self.image.diagram.add_usecase(ctx.IDENTIFIER().getText(), ctx.STRING().getText()[1:-1])
 
     # Enter a parse tree produced by UMLParser#dependency.
     def enterDependency(self, ctx: UMLParser.DependencyContext):
