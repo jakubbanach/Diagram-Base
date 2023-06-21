@@ -19,6 +19,6 @@ class UMLImage:
     def draw(self):
         with open(f"{self.directory}{self.diagram.name}.svg", "w") as f:
             f.write(f'<!DOCTYPE svg>\n\
-                    <svg height="{self._calculate_height()}" width="{self._calculate_width()}" style="background-color:{self.BACKGROUND_COLOR}">')
+                    <svg xmlns="http://www.w3.org/2000/svg" height="{self._calculate_height()}" width="{self._calculate_width()}" style="background-color:{self.BACKGROUND_COLOR}">')
             f.write(self.diagram.render())
             f.write("\n</svg>")
