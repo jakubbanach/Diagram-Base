@@ -130,7 +130,7 @@ class UseCaseRelation:
 
         return f'\
             <line x1="{x1}" y1="{y1}" x2="{x2}" y2="{y2}" stroke="black" {head} {line_type}/>\
-            <text style="font-size:{self.FONT_SIZE}px;text-anchor:middle" x="{x_center}" y="{y_center}"> «{self.type_}» </text>\
+            <text style="font-size:{self.FONT_SIZE}px;text-anchor:middle" x="{x_center}" y="{y_center}"> &lt;&lt;{self.type_}&gt;&gt; </text>\
         '
 
 

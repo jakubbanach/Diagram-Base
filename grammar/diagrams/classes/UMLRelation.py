@@ -32,7 +32,7 @@ class UMLRelation:
             y1 = self.source.y+self.source.BASE_HEIGHT/2
             y2 = self.target.y+self.target.BASE_HEIGHT/2
             # print(str(self.source.name), str(self.target.name), end =' ')
-            print(self.type_, self.inverted)
+            # print(self.type_, self.inverted)
             # print(self.source.name, x1, y1)
             # print(self.target.name, x2, y2)
             #TODO: poprawa funkcji abs i przypadkow po niej

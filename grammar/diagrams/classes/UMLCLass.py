@@ -117,7 +117,7 @@ class UMLAbstractClass(UMLBasicClass):
                 <rect width="{self.WIDTH}" height="{height}" />\
                 <line x1="0" x2="320" y1="95" y2="95" />\
                 <line x1="0" x2="320" y1="115" y2="115" />\
-                <text x="160" y="45" class="name">«Abstract»</text>\
+                <text x="160" y="45" class="name">&lt;&lt;Abstract&gt;&gt;</text>\
                 <text x="160" y="80" class="name">{self.name}</text>\
                 {self._render_fields()}\
                 {self._render_methods()}\
@@ -140,7 +140,7 @@ class UMLInterface(UMLBasicClass):
                 <rect width="{self.WIDTH}" height="{height}" />\
                 <line x1="0" x2="320" y1="95" y2="95" />\
                 <line x1="0" x2="320" y1="115" y2="115" />\
-                <text x="160" y="45" class="name">«Interface»</text>\
+                <text x="160" y="45" class="name">&lt;&lt;Interface&gt;&gt;</text>\
                 <text x="160" y="80" class="name">{self.name}</text>\
                 {self._render_fields()}\
                 {self._render_methods()}\
@@ -180,7 +180,7 @@ class UMLEnum(UMLClass):
                 <rect width="{self.WIDTH}" height="{height}" />\
                 <line x1="0" x2="320" y1="95" y2="95" />\
                 <line x1="0" x2="320" y1="115" y2="115" />\
-                <text x="160" y="45" class="name">«Enumeration»</text>\
+                <text x="160" y="45" class="name">&lt;&lt;Enumeration&gt;&gt;</text>\
                 <text x="160" y="80" class="name">{self.name}</text>\
                 {[field.render((i+1)*self.FIELD_HEIGHT + self.BASE_HEIGHT - 15) for i, field in enumerate(self.fields)]}\
             </g>'
