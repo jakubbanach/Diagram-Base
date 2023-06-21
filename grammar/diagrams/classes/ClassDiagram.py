@@ -33,7 +33,7 @@ class ClassDiagram(Diagram):
             if str(object.name) == name:
                 return object
 
-        raise Exception(f"Class with name '{name}' not found")
+        return None
 
     def calculate_width(self) -> int:
         grid_size = math.ceil(math.sqrt(len(self.classes)))

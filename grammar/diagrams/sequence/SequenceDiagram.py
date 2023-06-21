@@ -216,7 +216,7 @@ class SequenceDiagram(Diagram):
             if lifeline.name == name:
                 return lifeline
 
-        raise Exception(f"Lifeline with name '{name}' not found")
+        return None
 
     def add_message(self, source: Lifeline, target: Lifeline, type_: str, name: str) -> Message:
         message = Message(source, target, type_, name,

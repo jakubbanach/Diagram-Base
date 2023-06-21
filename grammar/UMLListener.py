@@ -37,7 +37,12 @@ class UMLListener(ParseTreeListener):
 
     # Enter a parse tree produced by UMLParser#class.
     def enterClass(self, ctx: UMLParser.ClassContext):
-        self.image.diagram.add_class(UMLBasicClass(ctx.IDENTIFIER()))
+        name = ctx.IDENTIFIER().getText()
+
+        if self.image.diagram.get_class_by_name(name) is not None:
+            raise Exception("Class with name " + name + " already exists")
+
+        self.image.diagram.add_class(UMLBasicClass(name))
 
     # Exit a parse tree produced by UMLParser#class.
     def exitClass(self, ctx: UMLParser.ClassContext):
@@ -45,7 +50,12 @@ class UMLListener(ParseTreeListener):
 
     # Enter a parse tree produced by UMLParser#interface.
     def enterInterface(self, ctx: UMLParser.InterfaceContext):
-        self.image.diagram.add_class(UMLInterface(ctx.IDENTIFIER()))
+        name = ctx.IDENTIFIER().getText()
+
+        if self.image.diagram.get_class_by_name(name) is not None:
+            raise Exception("Class with name " + name + " already exists")
+
+        self.image.diagram.add_class(UMLInterface(name))
 
     # Exit a parse tree produced by UMLParser#interface.
     def exitInterface(self, ctx: UMLParser.InterfaceContext):
@@ -53,7 +63,12 @@ class UMLListener(ParseTreeListener):
 
     # Enter a parse tree produced by UMLParser#abstractClass.
     def enterAbstractClass(self, ctx: UMLParser.AbstractClassContext):
-        self.image.diagram.add_class(UMLAbstractClass(ctx.IDENTIFIER()))
+        name = ctx.IDENTIFIER().getText()
+
+        if self.image.diagram.get_class_by_name(name) is not None:
+            raise Exception("Class with name " + name + " already exists")
+
+        self.image.diagram.add_class(UMLAbstractClass(name))
 
     # Exit a parse tree produced by UMLParser#abstractClass.
     def exitAbstractClass(self, ctx: UMLParser.AbstractClassContext):
@@ -61,7 +76,12 @@ class UMLListener(ParseTreeListener):
 
     # Enter a parse tree produced by UMLParser#enum.
     def enterEnum(self, ctx: UMLParser.EnumContext):
-        self.image.diagram.add_class(UMLEnum(ctx.IDENTIFIER()))
+        name = ctx.IDENTIFIER().getText()
+
+        if self.image.diagram.get_class_by_name(name) is not None:
+            raise Exception("Class with name " + name + " already exists")
+
+        self.image.diagram.add_class(UMLEnum(name))
 
     # Exit a parse tree produced by UMLParser#enum.
     def exitEnum(self, ctx: UMLParser.EnumContext):
@@ -77,7 +97,6 @@ class UMLListener(ParseTreeListener):
 
     # Enter a parse tree produced by UMLParser#field.
     def enterField(self, ctx: UMLParser.FieldContext):
-        # arrays ?...
         self.image.diagram.get_last_class().add_field(
             UMLClassField(ctx.IDENTIFIER(), ctx.SCOPE(),
                           ctx.type_().IDENTIFIER())
@@ -175,6 +194,16 @@ class UMLListener(ParseTreeListener):
             if ctx.inheritance().getText()[:3] == "<--":
                 inverted = True
             type_ = "inheritance"
+
+        if str(ctx.IDENTIFIER()) == target_name:
+            raise Exception(f"Class {target_name} cannot be related to itself")
+
+        if self.image.diagram.get_class_by_name(target_name) is None:
+            raise Exception(f"Class {target_name} does not exist")
+
+        if self.image.diagram.get_class_by_name(str(ctx.IDENTIFIER())) is None:
+            raise Exception(f"Class {str(ctx.IDENTIFIER())} does not exist")
+
         source = self.image.diagram.get_class_by_name(str(ctx.IDENTIFIER()))
         target = self.image.diagram.get_class_by_name(str(target_name))
         self.image.diagram.add_relation(
@@ -246,7 +275,11 @@ class UMLListener(ParseTreeListener):
 
     # Enter a parse tree produced by UMLParser#actor.
     def enterActor(self, ctx: UMLParser.ActorContext):
-        self.image.diagram.add_actor(ctx.IDENTIFIER().getText())
+        name = ctx.IDENTIFIER().getText()
+        if self.image.diagram.get_actor_by_name(name) is not None:
+            raise Exception(f"Actor {name} already exists")
+
+        self.image.diagram.add_actor(name)
 
     # Exit a parse tree produced by UMLParser#actor.
     def exitActor(self, ctx: UMLParser.ActorContext):
@@ -266,11 +299,16 @@ class UMLListener(ParseTreeListener):
 
     # Exit a parse tree produced by UMLParser#useCaseDeclaration.
     def exitUseCaseDeclaration(self, ctx: UMLParser.UseCaseDeclarationContext):
+        name = ctx.IDENTIFIER().getText()
+        if self.image.diagram.get_usecase_by_name(name) is not None:
+            raise Exception(f"Use case {name} already exists")
+        
         self.image.diagram.add_usecase(
-            ctx.IDENTIFIER().getText(), ctx.STRING().getText()[1:-1])
+            name, ctx.STRING().getText()[1:-1])
 
     # Enter a parse tree produced by UMLParser#dependency.
     def enterDependency(self, ctx: UMLParser.DependencyContext):
+
         if ctx.dependencyOperator().getText() == "--":
             actor = self.image.diagram.get_actor_by_name(
                 str(ctx.IDENTIFIER()[0]))
@@ -283,7 +321,6 @@ class UMLListener(ParseTreeListener):
             if usecase is None:
                 usecase = self.image.diagram.get_usecase_by_name(
                     str(ctx.IDENTIFIER()[1]))
-
             if usecase is None or actor is None:
                 raise Exception("Invalid association")
 
@@ -293,8 +330,12 @@ class UMLListener(ParseTreeListener):
                 str(ctx.IDENTIFIER()[0]))
             right = self.image.diagram.get_usecase_by_name(
                 str(ctx.IDENTIFIER()[1]))
-            if left is None or right is None:
-                raise Exception("Usecase not found")
+            if left is None:
+                raise Exception(f"Usecase {ctx.IDENTIFIER()[0]} does not exist")
+            if right is None:
+                raise Exception(f"Usecase {ctx.IDENTIFIER()[1]} does not exist")
+            if ctx.IDENTIFIER(0).getText() == ctx.IDENTIFIER(1).getText():
+                raise Exception(f"Invalid dependency - usecase {ctx.IDENTIFIER(0).getText()} cannot depend on itself")
 
             match ctx.dependencyOperator().getText():
                 case "-i>":
@@ -336,7 +377,11 @@ class UMLListener(ParseTreeListener):
 
     # Enter a parse tree produced by UMLParser#lifeline.
     def enterLifeline(self, ctx: UMLParser.LifelineContext):
-        self.image.diagram.add_lifeline(str(ctx.IDENTIFIER()))
+        name = ctx.IDENTIFIER().getText()
+        if self.image.diagram.get_lifeline_by_name(name) is not None:
+            raise Exception(f"Lifeline {name} already exists")
+        
+        self.image.diagram.add_lifeline(name)
 
     # Exit a parse tree produced by UMLParser#lifeline.
     def exitLifeline(self, ctx: UMLParser.LifelineContext):
@@ -382,6 +427,12 @@ class UMLListener(ParseTreeListener):
                 source_name = ctx.IDENTIFIER(1).getText()
                 target_name = ctx.IDENTIFIER(0).getText()
                 type_ = "async"
+
+        if self.image.diagram.get_lifeline_by_name(source_name) is None:
+            raise Exception(f"Lifeline {source_name} does not exist")
+        
+        if self.image.diagram.get_lifeline_by_name(target_name) is None:
+            raise Exception(f"Lifeline {target_name} does not exist")
 
         source = self.image.diagram.get_lifeline_by_name(source_name)
         target = self.image.diagram.get_lifeline_by_name(target_name)
